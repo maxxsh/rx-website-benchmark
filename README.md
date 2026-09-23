@@ -14,22 +14,22 @@ This project connects frontend implementation with interface design and health-i
 
 ## Four perspectives on the experience
 
-| | Assessment | What it helps a team examine |
-| :---: | --- | --- |
-| <img src="static/assets/img/lighthouse-icon.svg" width="32" height="32" alt="Lighthouse logo"> | **[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)** · Lab audits | Loading performance, implementation best practices, and discoverability. Connect technical findings with page weight, assets, and frontend delivery decisions. |
-| <img src="static/assets/img/pa11y-icon.svg" width="32" height="32" alt="Pa11y logo"> | **[Pa11y](https://pa11y.org/)** · Automated accessibility | Potential barriers involving contrast, text alternatives, labels, and semantics. Give design and engineering teams concrete issues to investigate together. |
-| <img src="docs/assets/crux.svg" width="32" height="32" alt="Field experience chart icon"> | **[CrUX](https://developer.chrome.com/docs/crux/)** · Field experience | Loading, responsiveness, and layout stability experienced by eligible Chrome users. Add field evidence alongside lab measurements, where data are available. |
-| <img src="docs/assets/readability.svg" width="32" height="32" alt="Readable content icon"> | **Readability** · Content analysis | Text extracted with [Mozilla Readability](https://github.com/mozilla/readability), evaluated using Flesch Reading Ease, Gunning Fog, and word count. Inform content reviews while accounting for short extracts. |
+|                                                                                                  | Assessment                                                                            | What it helps a team examine                                                                                                                                                                                     |
+| :----------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  <img src="static/assets/img/lighthouse-icon.svg" width="32" height="32" alt="Lighthouse logo">  | **[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)** · Lab audits | Loading performance, implementation best practices, and discoverability. Connect technical findings with page weight, assets, and frontend delivery decisions.                                                   |
+|       <img src="static/assets/img/pa11y-icon.svg" width="32" height="32" alt="Pa11y logo">       | **[Pa11y](https://pa11y.org/)** · Automated accessibility                             | Potential barriers involving contrast, text alternatives, labels, and semantics. Give design and engineering teams concrete issues to investigate together.                                                      |
+| <img src="static/assets/img/crux.svg" width="32" height="32" alt="Field experience chart icon">  | **[CrUX](https://developer.chrome.com/docs/crux/)** · Field experience                | Loading, responsiveness, and layout stability experienced by eligible Chrome users. Add field evidence alongside lab measurements, where data are available.                                                     |
+| <img src="static/assets/img/readability.svg" width="32" height="32" alt="Readable content icon"> | **Readability** · Content analysis                                                    | Text extracted with [Mozilla Readability](https://github.com/mozilla/readability), evaluated using Flesch Reading Ease, Gunning Fog, and word count. Inform content reviews while accounting for short extracts. |
 
 Readability is a project pipeline, combining several tools and scoring rules. Automated checks identify signals for review; accessibility findings do not establish WCAG conformance, and readability formulas do not directly measure patient comprehension.
 
 ## Selected findings
 
-| Study finding | Relevance to interface design |
-| --- | --- |
-| **56 / 100** median Lighthouse Performance | Performance deserves attention alongside visual presentation and content structure. |
-| **7** median Level A accessibility findings per homepage; **2.7%** had zero | Accessibility checks need to be part of component design, implementation, and review. |
-| **20.4%** of homepages with visual-stability data were classified as Poor | Layout stability is a meaningful part of the reading and interaction experience. The denominator is the **269** homepages with CLS data. |
+| Study finding                                                               | Relevance to interface design                                                                                                            |
+| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **56 / 100** median Lighthouse Performance                                  | Performance deserves attention alongside visual presentation and content structure.                                                      |
+| **7** median Level A accessibility findings per homepage; **2.7%** had zero | Accessibility checks need to be part of component design, implementation, and review.                                                    |
+| **20.4%** of homepages with visual-stability data were classified as Poor   | Layout stability is a meaningful part of the reading and interaction experience. The denominator is the **269** homepages with CLS data. |
 
 The composite **Score** had a median of **67.1 / 100** (interquartile range **57.4–75.3**). Individual dimensions provide the detail needed to investigate a homepage; the composite provides a common summary for comparison.
 
@@ -58,12 +58,12 @@ The companion code connects four parts of the research workflow:
 
 ### How the summary score works
 
-| Component | Weight |
-| --- | ---: |
-| CrUX field experience | 40% |
-| Lighthouse implementation quality | 35% |
-| Pa11y accessibility issue burden | 20% |
-| Confidence-adjusted readability | 5% |
+| Component                         | Weight |
+| --------------------------------- | -----: |
+| CrUX field experience             |    40% |
+| Lighthouse implementation quality |    35% |
+| Pa11y accessibility issue burden  |    20% |
+| Confidence-adjusted readability   |     5% |
 
 **Score** uses available component subscores with renormalized weights. **FScore** is reported only when all four subscores are available. The current implementation requires all three CrUX dimensions for its CrUX subscore. Missing data remain distinct from a measured zero.
 
@@ -104,11 +104,11 @@ npm run step2
 npm run step3
 ```
 
-| Step | Output in `static/script-data/` |
-| --- | --- |
-| `step1` · retrieve and filter CMS candidates | `medicare-drugs-list.json` |
+| Step                                           | Output in `static/script-data/` |
+| ---------------------------------------------- | ------------------------------- |
+| `step1` · retrieve and filter CMS candidates   | `medicare-drugs-list.json`      |
 | `step2` · validate eligibility against openFDA | `fda-validated-final-list.json` |
-| `step3` · generate candidate website addresses | `working-list-final.json` |
+| `step3` · generate candidate website addresses | `working-list-final.json`       |
 
 **Complete manual homepage verification before continuing.** Record approved brands and their final audited URLs in [`src/lib/manully-validated-338.csv`](src/lib/manully-validated-338.csv). The saved working list already reflects prior curation. Canonical URLs must remain consistent with the saved reports because they connect measurements across tools.
 
@@ -181,15 +181,15 @@ After updating data, run `npm run build` and publish the updated `build/` output
 
 ## Repository guide
 
-| Location | Contents |
-| --- | --- |
-| [`scripts/`](scripts/) | Sampling, collection, accessibility grouping, and readability processing |
-| [`src/lib/calculations/`](src/lib/calculations/) | Component scoring, composite scores, and descriptive summaries |
-| [`src/lib/server/benchmark.js`](src/lib/server/benchmark.js) | Assembly of saved measurements for the table at build time and the Results page |
-| [`src/routes/`](src/routes/) | SvelteKit pages and route handlers |
-| [`static/script-data/`](static/script-data/) | Candidate and verified homepage lists |
-| `static/lighthouse/`, `static/pa11y/`, `static/crux/`, `static/readable/` | Saved audit outputs and analysis inputs |
-| [`static/local-pages/`](static/local-pages/) | Saved HTML used for readability recovery |
+| Location                                                                  | Contents                                                                        |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [`scripts/`](scripts/)                                                    | Sampling, collection, accessibility grouping, and readability processing        |
+| [`src/lib/calculations/`](src/lib/calculations/)                          | Component scoring, composite scores, and descriptive summaries                  |
+| [`src/lib/server/benchmark.js`](src/lib/server/benchmark.js)              | Assembly of saved measurements for the table at build time and the Results page |
+| [`src/routes/`](src/routes/)                                              | SvelteKit pages and route handlers                                              |
+| [`static/script-data/`](static/script-data/)                              | Candidate and verified homepage lists                                           |
+| `static/lighthouse/`, `static/pa11y/`, `static/crux/`, `static/readable/` | Saved audit outputs and analysis inputs                                         |
+| [`static/local-pages/`](static/local-pages/)                              | Saved HTML used for readability recovery                                        |
 
 ## License
 
