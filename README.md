@@ -4,7 +4,7 @@
 
 A research and engineering project examining **338 official U.S. prescription drug brand homepages**. It brings together saved audits, field experience data, content analysis, and a SvelteKit companion website to make the quality of healthcare interfaces easier to inspect and discuss.
 
-**[Explore the benchmark →](https://rxwebbench.pages.dev/)** · [Results and visualizations](https://rxwebbench.pages.dev/results) · [Research](#research) · [Run locally](#run-locally)
+**[View online →](https://rxwebbench.pages.dev/)**
 
 ## Why this matters
 
