@@ -6,8 +6,6 @@ A research and engineering project examining **338 official U.S. prescription dr
 
 **[View online →](https://rxwebbench.pages.dev/)**
 
-## Why this matters
-
 A medication website is often the first step toward prescribing information, safety disclosures, and patient support. Loading delays, shifting layouts, inaccessible controls, and dense text can add friction at that entry point.
 
 This project connects frontend implementation with interface design and health-information access. Designers can use the findings to frame design reviews; developers can trace measurements to saved reports; researchers can inspect the sampling and scoring workflow.
@@ -23,30 +21,10 @@ This project connects frontend implementation with interface design and health-i
 
 Readability is a project pipeline, combining several tools and scoring rules. Automated checks identify signals for review; accessibility findings do not establish WCAG conformance, and readability formulas do not directly measure patient comprehension.
 
-## Selected findings
-
-| Study finding                                                               | Relevance to interface design                                                                                                            |
-| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **56 / 100** median Lighthouse Performance                                  | Performance deserves attention alongside visual presentation and content structure.                                                      |
-| **7** median Level A accessibility findings per homepage; **2.7%** had zero | Accessibility checks need to be part of component design, implementation, and review.                                                    |
-| **20.4%** of homepages with visual-stability data were classified as Poor   | Layout stability is a meaningful part of the reading and interaction experience. The denominator is the **269** homepages with CLS data. |
-
-The composite **Score** had a median of **67.1 / 100** (interquartile range **57.4–75.3**). Individual dimensions provide the detail needed to investigate a homepage; the composite provides a common summary for comparison.
-
-These are observations from the saved study dataset. They describe homepage delivery and do not evaluate clinical accuracy, treatment effectiveness, or the quality of every page on a website.
-
-## Explore the evidence
-
-- **[Home](https://rxwebbench.pages.dev/):** sortable per-homepage measurements, composite scores, and links to saved audit reports.
-- **[Results](https://rxwebbench.pages.dev/results):** aggregate statistics, data coverage, and CrUX and Pa11y visualizations.
-- **This repository:** collection scripts, curated homepage lists, saved outputs, and the implementation behind the companion site.
-
-In the table's **Reports** column, Lighthouse and Pa11y links open saved audit outputs. **Vis** opens the live CrUX visualization: it shows data currently available in that service and does not reproduce the study snapshot. The table itself uses the saved dataset.
-
 ## Research
 
-**Regulated Medication Information, Accessible Web Delivery? A Cross-Sectional Evaluation of United States Prescription Drug Brand Homepages**  
-Max Shestov and Christopher Felix Brewer  
+**Regulated Medication Information, Accessible Web Delivery? A Cross-Sectional Evaluation of United States Prescription Drug Brand Homepages**
+
 [Universal Access in the Information Society · Springer](https://link.springer.com/journal/10209)
 
 The companion code connects four parts of the research workflow:
