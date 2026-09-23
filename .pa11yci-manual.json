@@ -1,0 +1,28 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "standard": "WCAG2AA",
+    "reporters": [
+      [
+        "pa11y-ci-reporter-html",
+        {
+          "destination": "static/pa11y/TEMP",
+          "includeZeroIssues": true
+        }
+      ],
+      [
+        "json",
+        {
+          "fileName": "static/pa11y/TEMP/results.json"
+        }
+      ]
+    ]
+  },
+  "urls": [
+    "https://www.invokana.com/",
+    {
+      "url": "https://www.invokana.com/",
+      "screenCapture": "./static/pa11y/TEMP/invokana.png"
+    }
+  ]
+}

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Pa11y results for "https://www.kuvan.com/"
+	</title>
+	<style>
+		html, body {
+			background-color: #ffffff;
+			color: rgb(51 51 51);
+			font-family: system-ui, sans-serif;
+			font-size: 16px;
+			line-height: 1.3rem;
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			margin-block: 0;
+			margin-inline: auto;
+			max-inline-size: 900px;
+			padding: 1.25rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			margin: 0;
+			margin-block-end: 0.5rem;
+		}
+
+		h2, h3 {
+			font-size: 1.15rem;
+			font-weight: normal;
+			margin: 0;
+			padding-block-end: 0.5rem;
+		}
+
+		h3 { padding-block-end: 0; }
+
+		p { margin: 0; }
+
+		.filter {
+			display: inline-grid;
+			grid-template-columns: 8.5rem 1fr 1fr 1fr;
+			margin-block-start: 1rem;
+		}
+
+		.filter .label {
+			font-size: 1.15rem;
+			padding-block: 0.45rem;
+			padding-inline: 0;
+		}
+
+		.count {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			cursor: pointer;
+			display: inline-grid;
+			font-size: 1.15rem;
+			grid-template-columns: 0.35rem 1fr;
+			margin-inline-end: 0.75rem;
+			min-inline-size: 80px;
+		}
+
+		.count .body {
+			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding-block: 0.35rem;
+			padding-inline: 0.7rem;
+			text-align: center;
+		}
+
+		.count.hidden {
+			background-color: #f4f4f4;
+			color: rgb(51 51 51);
+		}
+
+		.count.hidden .left-bar { background-color: #808080; }
+
+		.count.hidden .body { border-color: #d4d4d4; }
+
+		.issues {
+			list-style: none;
+			margin: 0;
+			margin-block-start: 1.5rem;
+			padding-inline-start: 0;
+		}
+
+		.issue {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			display: grid;
+			grid-template-columns: 0.5rem 1fr;
+			margin: 0;
+			margin-block-end: 1.5rem;
+			padding: 0;
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .left-bar { background-color: #808080; }
+
+		.issue p:not(:last-child) { padding-block-end: 0.1rem; }
+
+		.issue.hidden { display: none; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .body {
+ 			border-color: #bfbfbf;
+ 			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding: 0.5rem;
+			position: relative;
+		}
+
+		.issue .body h3 { padding-block-end: 0.25rem; }
+
+		.context, .selector {
+			font-family: monospace;
+			font-size: 0.95rem;
+			padding-block-start: 0.1rem;
+		}
+
+		.error {
+			background-color: #f8d7da;
+			color: rgb(103 25 31);
+		}
+
+		.warning {
+			background-color: #fff3cd;
+			color: rgb(84 64 3);
+		}
+
+		.notice {
+			background-color: #cfe2ff;
+			color: rgb(6 44 101);
+		}
+
+		.error a { color: #842029; }
+		.warning a { color: #664d03; }
+		.notice a { color: #074197; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .left-bar { background-color: #d53447; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .left-bar { background-color: #c79500; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .left-bar { background-color: #015cda; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .body { border-color: #f2bbc1; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .body { border-color: #ffd761; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .body { border-color: #a9cefe; }
+
+		.clipboard-button {
+			background-color: rgb(51 51 51 / 10%);
+			border: 2px solid;
+			border-color: rgb(51 51 51 / 30%);
+			border-radius: 2px;
+			color: rgb(51 51 51 / 40%);
+			font-size: 0.8rem;
+			inset-block-start: 7px;
+			inset-inline-end: 7px;
+			margin: 0;
+			opacity: 0;
+			padding-block: 5px 4px;
+			padding-inline: 7px;
+			position: absolute;
+			transition: 0.1s;
+			visibility: hidden;
+			z-index: 1;
+		}
+
+		.error .clipboard-button {
+			background-color: rgb(103 25 31 / 10%);
+			border-color: rgb(103 25 31 / 30%);
+			color: rgb(103 25 31 / 40%);
+		}
+
+		.warning .clipboard-button {
+			background-color: rgb(84 64 3 / 10%);
+			border-color: rgb(84 64 3 / 30%);
+			color: rgb(84 64 3 / 40%);
+		}
+
+		.notice .clipboard-button {
+			background-color: rgb(6 44 101 / 10%);
+			border-color: rgb(6 44 101 / 30%);
+			color: rgb(6 44 101 / 40%);
+		}
+
+		.clipboard-button > svg { fill: rgb(51 51 51 / 40%); }
+		.error .clipboard-button > svg { fill: rgb(103 25 31 / 40%); }
+		.warning .clipboard-button > svg { fill: rgb(84 64 3 / 40%); }
+		.notice .clipboard-button > svg { fill: rgb(6 44 101 / 40%); }
+
+		.clipboard-button:focus { outline: 0; }
+
+		.clipboard-button:hover,
+		.clipboard-button:focus {
+			background-color: rgb(51 51 51 / 20%);
+			border-color: rgb(51 51 51 / 70%);
+			color: rgb(51 51 51 / 80%);
+			cursor: pointer;
+		}
+
+		.error .clipboard-button:hover,
+		.error .clipboard-button:focus {
+			background-color: rgb(103 25 31 / 20%);
+			border-color: rgb(103 25 31 / 70%);
+			color: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover,
+		.warning .clipboard-button:focus {
+			background-color: rgb(84 64 3 / 20%);
+			border-color: rgb(84 64 3 / 70%);
+			color: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover,
+		.notice .clipboard-button:focus {
+			background-color: rgb(6 44 101 / 20%);
+			border-color: rgb(6 44 101 / 70%);
+			color: rgb(6 44 101 / 80%);
+		}
+
+		.clipboard-button:hover > svg,
+		.clipboard-button:focus > svg {
+			fill: rgb(51 51 51 / 80%);
+		}
+
+		.error .clipboard-button:hover > svg,
+		.error .clipboard-button:focus > svg {
+			fill: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover > svg,
+		.warning .clipboard-button:focus > svg {
+			fill: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover > svg,
+		.notice .clipboard-button:focus > svg {
+			fill: rgb(6 44 101 / 80%);
+		}
+
+		.issue .body:hover > .clipboard-button,
+		.issue .body:focus-within > .clipboard-button {
+			opacity: 1;
+			transition: 0.2s;
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>Pa11y results for "https://www.kuvan.com/"</h1>
+		<h2>Generated at: Mon Dec 29 2025 21:31:40 GMT-0500 (Eastern Standard Time)</h2>
+		<h2>Runners (with issues): htmlcs</h2>
+
+		<p class="filter">
+			<span class="label">Toggle by type</span>
+			<span class="count error" id="error-count" tabindex="0" role="button" aria-label="Toggle errors">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">82 errors</span>
+			</span>
+			<span class="count warning" id="warning-count" tabindex="0" role="button" aria-label="Toggle warnings">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 warnings</span>
+			</span>
+			<span class="count notice" id="notice-count" tabindex="0" role="button" aria-label="Toggle notices">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 notices</span>
+			</span>
+		</p>
+		<ul class="issues">
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This searchinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputSearch.Name</a></p><p class="context">&lt;input type&#x3D;&quot;search&quot; class&#x3D;&quot;search_inp&quot; placeholder&#x3D;&quot;Search...&quot; value&#x3D;&quot;&quot; id&#x3D;&quot;error404-s&quot; name&#x3D;&quot;s&quot;&gt;</p><p class="selector">(selector "#error404-s")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This buttoninput element does not have a name available to an accessibility API. Valid names are: value undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputButton.Name</a></p><p class="context">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;search_btn&quot;&gt;</p><p class="selector">(selector "#searchform &gt; input:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.05:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.kuvan.com/sign-up-for-email-updates/&quot;&gt;
+						Stay Updated
+					&lt;/a&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; header:nth-child(1) &gt; div:nth-child(2) &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(4) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;searchform&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;form id&#x3D;&quot;searchform&quot; method&#x3D;&quot;get&quot; action&#x3D;&quot;https://www.kuvan.com&quot;&gt;
+                    &lt;input typ...&lt;/form&gt;</p><p class="selector">(selector "#searchform")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;error404-s&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;search&quot; class&#x3D;&quot;search_inp&quot; placeholder&#x3D;&quot;Search...&quot; value&#x3D;&quot;&quot; id&#x3D;&quot;error404-s&quot; name&#x3D;&quot;s&quot;&gt;</p><p class="selector">(selector "#error404-s")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This searchinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputSearch.Name</a></p><p class="context">&lt;input type&#x3D;&quot;search&quot; class&#x3D;&quot;search_inp&quot; placeholder&#x3D;&quot;Search...&quot; value&#x3D;&quot;&quot; id&#x3D;&quot;error404-s&quot; name&#x3D;&quot;s&quot;&gt;</p><p class="selector">(selector "#error404-s")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This buttoninput element does not have a name available to an accessibility API. Valid names are: value undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputButton.Name</a></p><p class="context">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;search_btn&quot;&gt;</p><p class="selector">(selector "#searchform &gt; input:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;#&quot; id&#x3D;&quot;pull&quot;&gt;&amp;nbsp;&lt;/a&gt;</p><p class="selector">(selector "#pull")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;searchform&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;form id&#x3D;&quot;searchform&quot; method&#x3D;&quot;get&quot; action&#x3D;&quot;https://www.kuvan.com&quot;&gt;
+                            &lt;i...&lt;/form&gt;</p><p class="selector">(selector "#searchform")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;error404-s&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;search&quot; class&#x3D;&quot;search_inp&quot; placeholder&#x3D;&quot;Search...&quot; value&#x3D;&quot;&quot; id&#x3D;&quot;error404-s&quot; name&#x3D;&quot;s&quot;&gt;</p><p class="selector">(selector "#error404-s")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This searchinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputSearch.Name</a></p><p class="context">&lt;input type&#x3D;&quot;search&quot; class&#x3D;&quot;search_inp&quot; placeholder&#x3D;&quot;Search...&quot; value&#x3D;&quot;&quot; id&#x3D;&quot;error404-s&quot; name&#x3D;&quot;s&quot;&gt;</p><p class="selector">(selector "#error404-s")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This buttoninput element does not have a name available to an accessibility API. Valid names are: value undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputButton.Name</a></p><p class="context">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;search_btn&quot;&gt;</p><p class="selector">(selector "#searchform &gt; input:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.05:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.kuvan.com/getting-and-taking-kuvan/try-kuvan-free/&quot;&gt;Start Your Free Trial&lt;/a&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(5) &gt; div:nth-child(2) &gt; div &gt; div &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This link points to a named anchor &quot;gotoISI&quot; within the document, but no anchor exists with that name.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID</a></p><p class="context">&lt;a href&#x3D;&quot;#gotoISI&quot;&gt;Please see Important Safety Inf...&lt;/a&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(5) &gt; div:nth-child(3) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.05:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.kuvan.com/support-resources/biomarin-rareconnections/&quot;&gt;Get Connected&lt;/a&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.kuvan.com/about-kuvan/dosing-options/&quot;&gt;&lt;img src&#x3D;&quot;https://www.kuvan.com...&lt;/a&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.05:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.kuvan.com/about-kuvan/dosing-options/&quot;&gt;Learn More&lt;/a&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(6) &gt; div &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; div:nth-child(3) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.09:1. Recommendation:  change text colour to #0e0600.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;callLink&quot; href&#x3D;&quot;https://www.kuvan.com/getting-and-taking-kuvan/&quot;&gt;Learn More About Treatment &lt;br ...&lt;/a&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(6) &gt; div &gt; div:nth-child(2) &gt; div &gt; div &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;div class&#x3D;&quot;homeReference&quot;&gt;* Except those with 2 null muta...&lt;/div&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(6) &gt; div &gt; div:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;em&gt;trans&lt;/em&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(6) &gt; div &gt; div:nth-child(3) &gt; em")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup class&#x3D;&quot;h-superRef&quot;&gt;†&lt;/sup&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; section:nth-child(6) &gt; div &gt; div:nth-child(3) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;h4&gt;What is KUVAN?&lt;/h4&gt;</p><p class="selector">(selector "#ISI &gt; h4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;KUVAN&lt;sup&gt;®&lt;/sup&gt; (sapropterin ...&lt;/p&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(2) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;&lt;strong&gt;What is the most import...&lt;/p&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;What is the most important info...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(3) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;&lt;strong&gt;Severe allergic reactio...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;Severe allergic reactions inclu...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(1) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Wheezing, coughing, or trouble ...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(2) &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Feeling flushed, nauseous, ligh...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(2) &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Rash&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(2) &gt; li:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li style&#x3D;&quot;clear: both;&quot;&gt;&lt;strong&gt;Inflammation of the lin...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;Inflammation of the lining of t...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(3) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Pain in the upper abdomen (stom...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(4) &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Nausea, trouble swallowing, los...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(4) &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Blood in your vomit or stool&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(4) &gt; li:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Black, tarry stools&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(4) &gt; li:nth-child(4)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;&lt;strong&gt;Phe levels that are too...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(5)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;Phe levels that are too low&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(5) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li style&#x3D;&quot;clear: both;&quot;&gt;&lt;strong&gt;Too much or constant ac...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(6)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;Too much or constant activity (...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; li:nth-child(6) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Fidgeting or moving around too ...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(7) &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Talking too much&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(4) &gt; ul:nth-child(7) &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;What should I tell my doctor be...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(5) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Are allergic to sapropterin dih...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(6) &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Have poor nutrition or have a l...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(6) &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Are pregnant or plan to become ...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(6) &gt; li:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Are breastfeeding or plan to br...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(6) &gt; li:nth-child(4)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;&lt;strong&gt;Tell your doctor about ...&lt;/p&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(7)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;Tell your doctor about all the ...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(7) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;A medicine that contains levodo...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(8) &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;An antifolate medicine such as ...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(8) &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Sildenafil (Revatio, Viagra), t...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(8) &gt; li:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;Tell your doctor if you are not...&lt;/p&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(9)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;How should I take KUVAN?&lt;br&gt;See...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(10) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;KUVAN does not work for everyon...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Take KUVAN exactly as your doct...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;You can swallow KUVAN tablets w...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;KUVAN powder for oral solution ...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(4)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;KUVAN should be taken with a PK...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(5)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;Your doctor should continue to ...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(6)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;to make sure that your blood Ph...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(6) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;If you have a fever, or if you ...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(7)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;If you forget to take your dose...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(8)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;li&gt;If you take too much KUVAN, cal...&lt;/li&gt;</p><p class="selector">(selector "#ISI &gt; ul:nth-child(11) &gt; li:nth-child(9)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;&lt;strong&gt;The most common side ef...&lt;/p&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(12)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;The most common side effects of...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(12) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;These are not all the possible ...&lt;/p&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(13)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;You may report side effects to ...&lt;/p&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(14)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.63:1. Recommendation:  change text colour to #c45500.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.fda.gov/medwatch&quot; target&#x3D;&quot;_blank&quot;&gt;www.fda.gov/medwatch&lt;/a&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(14) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.41:1. Recommendation:  change text colour to #757679.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;Please read the full Prescribin...&lt;/strong&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(15) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.63:1. Recommendation:  change text colour to #c45500.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.kuvan.com/patient-information/&quot;&gt;here&lt;/a&gt;</p><p class="selector">(selector "#ISI &gt; p:nth-child(15) &gt; strong &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;http://www.kuvan.com/patient-information/&quot;&gt;Important Safety Information&lt;/a&gt;</p><p class="selector">(selector "#menu-item-16071 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://www.biomarin.com/contact-us/&quot;&gt;Contact Us&lt;/a&gt;</p><p class="selector">(selector "#menu-item-16232 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://www.biomarin.com/terms-of-use/en-us/&quot;&gt;Terms of Use&lt;/a&gt;</p><p class="selector">(selector "#menu-item-16543 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://www.biomarin.com/biomarin-data-privacy-center/&quot;&gt;Privacy Policy&lt;/a&gt;</p><p class="selector">(selector "#menu-item-16485 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.kuvan.com/sign-up-for-email-updates/&quot;&gt;Sign Up for Email Updates&lt;/a&gt;</p><p class="selector">(selector "#menu-item-92 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a&gt;Cookie Preferences&lt;/a&gt;</p><p class="selector">(selector "#menu-item-16456 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;This site is intended for use b...&lt;/p&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; footer &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p class&#x3D;&quot;minuswidth&quot;&gt;KUVAN&lt;sup&gt;®&lt;/sup&gt; is a register...&lt;/p&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; footer &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; footer &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p:nth-child(3) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.65:1. Recommendation:  change background to #767c00.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;© 2025 BioMarin Pharmaceutical ...&lt;/p&gt;</p><p class="selector">(selector "html &gt; body &gt; div:nth-child(1) &gt; footer &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p:nth-child(4)")</p></div>
+			</li>
+		</ul>
+	</main>
+	<script>
+		const toggleIssues = (btn, pageQuery) => {
+			const className = 'hidden';
+			document.getElementById(btn).classList.toggle(className);
+			document.querySelectorAll(pageQuery).forEach((page) => {
+				page.classList.toggle(className);
+			});
+		};
+
+		const errorCountFilter = document.getElementById('error-count');
+		errorCountFilter.addEventListener('click', () =>
+			toggleIssues('error-count', '.issues .issue.error')
+		);
+		errorCountFilter.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('error-count', '.issues .issue.error')
+		);
+
+		const warningCountButton = document.getElementById('warning-count');
+		warningCountButton.addEventListener('click', () =>
+			toggleIssues('warning-count', '.issues .issue.warning')
+		);
+		warningCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('warning-count', '.issues .issue.warning')
+		);
+
+		const noticeCountButton = document.getElementById('notice-count');
+		noticeCountButton.addEventListener('click', () =>
+			toggleIssues('notice-count', '.issues .issue.notice')
+		);
+		noticeCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('notice-count', '.issues .issue.notice')
+		);
+	</script>
+	<script>
+		const svgCopy = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>';
+		const svgCheck = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+
+		if (navigator && navigator.clipboard) {
+			document.querySelectorAll(".issue .body .selector").forEach((selectorNode) => {
+				const selector = selectorNode.innerText
+					.match(/\(selector "(?<selector>.+)"\)/).groups.selector;
+
+				const button = document.createElement("button");
+				button.className = "clipboard-button";
+				button.type = "button";
+				button.title = "Copy selector";
+				button.innerHTML = svgCopy;
+				button.addEventListener("click", (event) => {
+					navigator.clipboard.writeText(selector)
+						.then(() => {
+							// Remove focus if mouse, since hovering and will remain visible.
+							// If keyboard, keep focus until another keyboard action blurs.
+							event.detail && button.blur();
+							button.innerHTML = svgCheck;
+							setTimeout(() => (button.innerHTML = svgCopy), 2000);
+						},
+						(error) => (button.innerHTML = "Error")
+					);
+				});
+
+				selectorNode.parentNode.insertBefore(button, selectorNode);
+			});
+		};
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,1009 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" page-id="{0426C627-271B-42F7-AC76-7A0D8C7F5F4F}">
+<!--<![endif]-->
+<head prefix="">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+<link rel="preconnect" src="https://consent.cookiebot.com/" crossorigin>
+<link rel="dns-prefetch" src="https://consent.cookiebot.com/">
+<link rel="preconnect" src="https://connect.facebook.net/" crossorigin>
+<link rel="dns-prefetch" src="https://connect.facebook.net/">
+<link rel="preconnect" src="https://www.google-analytics.com/" crossorigin>
+<link rel="dns-prefetch" src="https://www.google-analytics.com/">
+<link rel="preconnect" src="https://www.googletagmanager.com/" crossorigin>
+<link rel="dns-prefetch" src="https://www.googletagmanager.com/">
+<link rel="preconnect" src="https://players.brightcove.net/" crossorigin>
+<link rel="dns-prefetch" src="https://players.brightcove.net/">
+<link rel="preconnect" src="https://vjs.zencdn.net/" crossorigin>
+<link rel="dns-prefetch" src="https://vjs.zencdn.net/">
+    
+
+
+
+    
+
+    
+
+
+
+
+<script>let setgeotarge = false; setgeofencing = false</script>
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="3d14d1a3-d863-4a70-b887-75c1d0baaf65"
+            data-culture=""
+            type="text/javascript" data-consentmode="disabled" data-georegions="" async></script>
+
+
+
+
+    <script>setgeofencing = true;</script>
+    <style>
+        .disable-abtn {
+            color: gray !important;
+            pointer-events: none !important;
+        }
+    </style>
+
+<script type="text/javascript">
+
+    function getcountrycode() {
+
+        if (document.getElementById("CybotCookiebotDialog")) {
+            var countryCode = Cookiebot.userCountry.toUpperCase();
+            var countryListEU = ["GB", "AT", "BE", "BG", "CY", "CZ", "DE", "DK", "ES", "EE", "FI", "FR", "GR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "SE"];
+            if (countryListEU.includes(countryCode)) {
+                countryCode = "EU"
+            }
+            var usRegionList = ["US-01", "US-02", "US-04", "US-05", "US-06", "US-08", "US-09", "US-10", "US-11", "US-12", "US-13", "US-15", "US-16", "US-17", "US-18", "US-19", "US-20", "US-21", "US-22", "US-23", "US-24", "US-25", "US-26", "US-27", "US-28", "US-29", "US-30", "US-31", "US-32", "US-33", "US-34", "US-35", "US-36", "US-37", "US-38", "US-39", "US-40", "US-41", "US-42", "US-44", "US-45", "US-46", "US-47", "US-48", "US-49", "US-50", "US-51", "US-53", "US-54", "US-55", "US-56"];
+            if (usRegionList.includes(countryCode)) {
+                countryCode = "US";
+            }
+            if (countryCode != "US" && countryCode != "EU" && countryCode != "CA") {
+                countryCode = "ccpa_default";
+            }
+            document.getElementById("CybotCookiebotDialog").classList.add(countryCode);
+            //console.log("country code class " + countryCode);
+        }
+    }
+
+
+    function ReshowPopup() {
+        if (document.cookie.indexOf('cbrenew') > -1) {
+            if (document.getElementById("CybotCookiebotDialogBodyButtonAccept")) {
+                CheckELMAndApplyCSS("CybotCookiebotDialogBodyButtonAccept", "disable-abtn", "add");
+                document.getElementById("CybotCookiebotDialogBodyButtonAccept").setAttribute('style', 'border:1px solid gray !important;color:gray !important');
+                if (document.getElementById("nvtext")) {
+                    document.getElementById("nvtext").setAttribute('style', 'display:block !important');
+                }
+            }
+        }
+        if (setgeotarge) { getcountrycode(); }
+    }
+
+    function CalllSetTimeOut() {setTimeout(function () {console.log("."); ReshowPopup(); CalllSetTimeOutTwice(); },1500)}
+    function CalllSetTimeOutTwice() { setTimeout(function () {console.log(".."); ReshowPopup(); CalllSetTimeOutThrice(); }, 3000) }
+    function CalllSetTimeOutThrice() { setTimeout(function () {console.log("..."); ReshowPopup();  }, 4500) }
+
+
+    function CookiebotRenewClick() {
+        if (document.getElementsByClassName("cb-renew").length > 0) {
+            let renewCBBtn = document.getElementsByClassName("cb-renew")[0];
+            renewCBBtn.removeAttribute("onclick");
+            renewCBBtn.href = "#";
+
+            renewCBBtn.addEventListener('click', function () {
+               // document.cookie = "CookieConsent" + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                Cookiebot.renew();
+                ReshowPopup();
+                setTimeout(function () { ReshowPopup(); CalllSetTimeOut(); }, 900);
+            });
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+        CookiebotRenewClick();
+    });
+
+
+
+        function setCookieForCountryCode(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            } document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function CheckELMAndApplyCSS(ele, cssname, addorremove) {
+
+            var domELE = document.getElementById(ele);
+            if (domELE && addorremove == "add") {
+                domELE.classList.add(cssname);
+            }
+            if (domELE && addorremove == "rm") {
+                domELE.classList.remove(cssname);
+            }
+
+        }
+
+        async function checkElementExists(element, timeout = Infinity) {
+            let startTime = Date.now();
+            return new Promise((resolve) => {
+                const intervalId = setInterval(() => {
+                    if (document.querySelector(element)) {
+                        clearInterval(intervalId);
+                        resolve(true);
+                    } else if (Date.now() - startTime >= timeout * 1000) {
+                        clearInterval(intervalId);
+                        resolve(false);
+                    }
+                }, 100, (1));
+            });
+        }
+
+
+        function blockPopup()
+        {
+
+            var regionArray = [];
+            var disableCountryCode = Cookiebot.userCountry.toUpperCase();
+            setCookieForCountryCode("RegionCode", disableCountryCode, 365);
+            CheckELMAndApplyCSS("CybotCookiebotDialogBodyButtonAccept", "disable-abtn", "add");
+
+                   regionArray.push("US-53");
+                   regionArray.push("US-32");
+                   regionArray.push("US-24");
+
+                if (regionArray.includes(disableCountryCode))
+                {
+                    if (document.getElementById("CybotCookiebotDialogBodyButtonAccept"))
+                        document.getElementById("CybotCookiebotDialogBodyButtonAccept").setAttribute('style', 'border:1px solid gray !important;color:gray !important');
+
+                    if (document.getElementById("nvtext"))
+                        document.getElementById("nvtext").setAttribute('style', 'display:block !important');
+
+                    setCookieForCountryCode("cbrenew", "1", 365);
+
+                }
+                else
+                    CheckELMAndApplyCSS("CybotCookiebotDialogBodyButtonAccept", "disable-abtn", "rm");
+            }
+
+        checkElementExists("#CybotCookiebotDialog", 120).then((result) => {
+            if (result)
+            {
+                if (setgeofencing) {
+                    blockPopup();
+                }
+                if (setgeotarge) {
+                    getcountrycode();
+                }
+
+            }
+            else
+            {
+                console.log("ncb");
+            }
+        });
+
+
+</script>
+
+
+
+
+
+
+    
+
+
+
+
+
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'pageType':'home','siteSection':'home','contentType':'hcp'});
+            </script>
+		<!-- Google Tag Manager -->
+		<script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window, document, 'script', 'dataLayer', 'GTM-NGP26VD');
+		</script>
+		<!-- End Google Tag Manager -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="/-/media/Feature/Experience-Accelerator/Bootstrap-4/Bootstrap-4/Styles/bootstrap-grid.css" rel="stylesheet"><link href="/-/media/Base-Themes/Specialist-Finder/Styles/specialist-finder.css" rel="stylesheet"><link href="/-/media/Base-Themes/Ccpa-Base-Styles/Styles/ccpa.css" rel="stylesheet"><link href="/-/media/Base-Themes/Alert/Styles/alert.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/lib-bootstrap.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/font.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/lib-indication.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/lib-modal.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/lib-isi5.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/lib-styles64.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/search-procsbi4.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/style42.css" rel="stylesheet"><link href="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Styles/consent2.css" rel="stylesheet">
+    
+    
+
+
+
+
+<!--Header Media Start-->
+            <script src="-/media/Foundation/Amgen/JS/jquery-361min.js"></script>
+            <script src="-/media/Foundation/Amgen/JS/svg4everybodymin-1.js"></script>
+<!--Header Media End-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+<script>      (function(d){         var s = d.createElement("script");         s.setAttribute('data-color', '#053e67');
+s.setAttribute('data-language', 'en-US');
+s.setAttribute('data-position', '3');
+s.setAttribute('data-size', 'small');
+s.setAttribute('data-type', '1');         s.setAttribute("data-account", "1UaO47Hju6");         s.setAttribute("src", "https://cdn.userway.org/widget.js");         (d.body || d.head).appendChild(s);})(document)</script><noscript>Please ensure JavaScript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+
+
+
+    <title>PROCYSBI&#174; (cysteamine bitartrate) Delayed-release Capsules and Oral Granules</title>
+
+
+
+<meta  name="title" content="PROCYSBI&reg; (cysteamine bitartrate) Delayed-release Capsules and Oral Granules"><meta  name="google-site-verification" content="0wBGlikiZwllI3xVA6ZVde6LX07X28FTo9KcRYJsVek">
+    <link href="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/icons/favicon-32x32.png" rel="shortcut icon" />
+
+
+
+
+<meta property="og:description"  content="PROCYSBI is the first and only cysteamine therapy with every 12-hour dosing approved for nephropathic cystinosis in patients 1 year or older."><meta property="og:type"  content="website"><meta property="og:title"  content="PROCYSBI&amp;reg; (cysteamine bitartrate) delayed-release capsules"><meta property="og:url"  content="https://www.procysbi.com/">
+
+
+
+<meta  name="description" content="PROCYSBI is the first and only cysteamine therapy with every 12-hour dosing approved for nephropathic cystinosis in patients 1 year or older."><meta  name="keywords" content="PROCYSBI&reg; (cysteamine bitartrate) Delayed-release Capsules and Oral Granules">
+
+
+
+<meta property="twitter:title"  content="PROCYSBI&reg; (cysteamine bitartrate) Delayed-release Capsules and Oral Granules"><meta property="twitter:card"  content="summary_large_image">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+    
+    
+
+</head>
+<body class="page-home default-device bodyclass">
+    
+    
+    
+
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGP26VD"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <div id="fb-root"></div>
+    <div id="wrapper">
+    </div>
+
+    <header class="header-nav">
+        
+
+
+
+
+    <div class="quantum-top-nav quantum-container--  " id="top-navigation">
+        <div class="quantum-top-nav__inner">
+            <div class="quantum-top-nav__links quantum-drop-down-menu">
+                <ul class="quantum-drop-down-menu__list">
+
+                            <li class="quantum-drop-down-menu__list-item">
+                                    <a href="https://www.pi.amgen.com/united_states/Procysbi/Procysbi_fpi_english.pdf" class=" gtm-topNavCl quantum-top-nav__link  " target="_blank" menu-name="Full Prescribing Information"  menu-type="top header">
+                                        <span class="quantum-top-nav__link-text">Full Prescribing Information</span>
+                                    </a>
+                            </li>
+                            <li class="quantum-drop-down-menu__list-item">
+                                    <a href="https://www.pi.amgen.com/united_states/Procysbi/Procysbi_ifu_english.pdf" class=" gtm-topNavCl quantum-top-nav__link  " target="_blank" menu-name="Instructions for Use"  menu-type="top header">
+                                        <span class="quantum-top-nav__link-text">Instructions for Use</span>
+                                    </a>
+                            </li>
+                            <li class="quantum-drop-down-menu__list-item">
+                                    <a href="https://www.pi.amgen.com/-/media/Project/Amgen/Repository/pi-amgen-com/Procysbi/Procysbi_ppi_english.pdf" class=" gtm-topNavCl quantum-top-nav__link  " target="_blank" menu-name="Patient Package Insert"  menu-type="top header">
+                                        <span class="quantum-top-nav__link-text">Patient Package Insert</span>
+                                    </a>
+                            </li>
+                            <li class="quantum-drop-down-menu__list-item">
+                                    <a href="/Important-Safety-Information" class=" gtm-topNavCl quantum-top-nav__link  " target="" menu-name="Healthcare Professionals"  menu-type="top header">
+                                        <span class="quantum-top-nav__link-text">Important Safety Information</span>
+                                    </a>
+                            </li>
+                            <li class="quantum-drop-down-menu__list-item">
+                                    <a href="https://www.procysbihcp.com/" class=" gtm-topNavCl quantum-top-nav__link  " target="_blank" menu-name="Healthcare Professionals"  menu-type="top header">
+                                        <span class="quantum-top-nav__link-text">Healthcare Professionals</span>
+                                    </a>
+                            </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="quantum-header sticky-header  " id="standard-menu-header">
+        <div class="quantum-header__inner">
+            <div class="quantum-header__left ">
+                        <a class="quantum-header__logo  d-none d-sm-block gtm-header"  href="/">
+            <img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/logos/procysbi_logo.svg?la=en&amp;hash=1D6262EF3BABA5F9F0CBBFAF51896BB2" class="quantum-header__logo" alt="PROCYSBI® (cysteamine bitartrate) delayed-release capsules logo." rel="preload" fetchpriority="high" />
+        </a>
+        <a class="quantum-header__logo d-block d-sm-none gtm-header" href="/" >
+            <img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/logos/procysbi_logo.svg?la=en&amp;hash=1D6262EF3BABA5F9F0CBBFAF51896BB2" class="quantum-header__logo" alt="PROCYSBI® (cysteamine bitartrate) delayed-release capsules logo." rel="preload" fetchpriority="high" />
+        </a>
+
+
+            </div>
+            <div class="quantum-header__right ">
+                <div class="quantum-header__menu">
+                    <nav class="quantum-drop-down-menu">
+
+
+                        <ul class="quantum-drop-down-menu__list">
+                                    <li class="quantum-drop-down-menu__list-item ">
+<a href="/about-nephropathic-cystinosis" class=" quantum-drop-down-menu__link gtm-header" ca1="" menu-name="About Nephropathic Cystinosis"  menu-type="header" data-value="FLItem-1" >                                                        <span class="quantum-drop-down-menu__link-text"> About Nephropathic  Cystinosis </span>
+</a>
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item has-subMenu">
+<a href="##" class=" quantum-drop-down-menu__link gtm-header" ca1="" menu-name="About PROCYSBI"  menu-type="header" data-value="FLItem-2" >                                                        <span class="quantum-drop-down-menu__link-text"> About  PROCYSBI </span>
+                                                                    <svg class="quantum-icon quantum-button__icon desktop-break">
+                                                                        <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#angle-down-regular"></use>
+                                                                    </svg>
+                                                                <svg class="quantum-icon quantum-drop-down-menu__link-icon quantum-drop-down-menu__link-icon--expand-dropdown">
+                                                                    <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#"></use>
+                                                                </svg>
+                                                                <svg class="quantum-icon quantum-drop-down-menu__link-icon quantum-drop-down-menu__link-icon--collapse-dropdown">
+                                                                    <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#"></use>
+                                                                </svg>
+</a>
+                                            <ul class="quantum-drop-down-menu__menu">
+                                                                <li class="quantum-drop-down-menu__menu-list-item">
+                                                                    <a href="/about-procysbi/why-procysbi" class="quantum-drop-down-menu__menu-link  gtm-header " menu-name="Why PROCYSBI"  menu-type="header" data-value="FLItem-2-SLItem-1">
+                                                                        Why PROCYSBI
+                                                                    </a>
+                                                                </li>
+                                                                <li class="quantum-drop-down-menu__menu-list-item">
+                                                                    <a href="/about-procysbi/tear-open-packets" class="quantum-drop-down-menu__menu-link  gtm-header " menu-name="Two Options Same Medicine"  menu-type="header" data-value="FLItem-2-SLItem-2">
+                                                                        Two Options, Same Medicine
+                                                                    </a>
+                                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item ">
+                                            <a class="quantum-drop-down-menu__link   gtm-header" menu-name="Taking PROCYSBI"  menu-type="header" href="/taking-procysbi" target="" data-value="FLItem-3">
+                                                    <span class="quantum-drop-down-menu__link-text">Taking PROCYSBI</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item ">
+                                            <a class="quantum-drop-down-menu__link   gtm-header" menu-name="Cystinosis Care Team"  menu-type="header" href="/cystinosis-care-team" target="" data-value="FLItem-4">
+                                                    <span class="quantum-drop-down-menu__link-text">Cystinosis Care Team</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item ">
+                                            <a class="quantum-drop-down-menu__link   gtm-header" menu-name="Staying on Treatment"  menu-type="header" href="/staying-on-treatment" target="" data-value="FLItem-5">
+                                                    <span class="quantum-drop-down-menu__link-text">Staying on Treatment</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item ">
+                                            <a class="quantum-drop-down-menu__link   gtm-header" menu-name="Support and Resources"  menu-type="header" href="/support-and-resources" target="" data-value="FLItem-6">
+                                                    <span class="quantum-drop-down-menu__link-text">Support and Resources</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item ">
+                                            <a class="quantum-drop-down-menu__link   gtm-header" menu-name="Stay Connected"  menu-type="header" href="/stay-connected" target="" data-value="FLItem-7">
+                                                    <span class="quantum-drop-down-menu__link-text">Stay Connected</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item ">
+                                            <a class="quantum-drop-down-menu__link   gtm-header" menu-name="Find a Specialist"  menu-type="header" href="/Find-a-Specialist" target="" data-value="FLItem-8">
+                                                    <span class="quantum-drop-down-menu__link-text">Find a Specialist</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item search-procsbi">
+                                            <a class="quantum-drop-down-menu__link   "  href="/search" target="" data-value="FLItem-9">
+                                                    <span class="quantum-drop-down-menu__link-text">search</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item header-green-green">
+                                            <a class="quantum-drop-down-menu__link   gtm-topNavCl" menu-name="Prescribing Information"  menu-type="top header" href="-/media/Themes/Horizon/procysbi-com/procysbi-com/Document/PROCYSBI-Prescribing-Information.pdf" target="_blank" data-value="FLItem-10">
+                                                    <span class="quantum-drop-down-menu__link-text">Prescribing Information</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item header-green-green">
+                                            <a class="quantum-drop-down-menu__link   gtm-topNavCl" menu-name="Instructions for Use"  menu-type="top header" href="-/media/Themes/Horizon/procysbi-com/procysbi-com/Document/PROCYSBI-Instructions-for-Use.pdf" target="_blank" data-value="FLItem-11">
+                                                    <span class="quantum-drop-down-menu__link-text">Instructions-for-Use.</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item header-green-green">
+                                            <a class="quantum-drop-down-menu__link   gtm-topNavCl" menu-name="Patient Package Insert"  menu-type="top header" href="-/media/Themes/Horizon/procysbi-com/procysbi-com/Document/PROCYSBI-Patient-Information.pdf" target="_blank" data-value="FLItem-12">
+                                                    <span class="quantum-drop-down-menu__link-text">Patient Package Insert</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item header-green-green">
+                                            <a class="quantum-drop-down-menu__link   gtm-topNavCl" menu-name="Important Safety Information"  menu-type="top header" href="/Important-Safety-Information" target="" data-value="FLItem-13">
+                                                    <span class="quantum-drop-down-menu__link-text">Important Safety Information</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item header-green-green">
+                                            <a class="quantum-drop-down-menu__link   gtm-topNavCl" menu-name="Healthcare Professionals"  menu-type="top header" href="https://www.procysbihcp.com/" target="_blank" data-value="FLItem-14">
+                                                    <span class="quantum-drop-down-menu__link-text">Healthcare Professionals</span>
+                                            </a>
+
+                                    </li>
+                                    <li class="quantum-drop-down-menu__list-item header-share-mail">
+                                            <a class="quantum-drop-down-menu__link   "  href="mailto:?subject=A cysteamine therapy to treat nephropathic cystinosis &amp;amp;body=Hi, %0D%0A%0D%0AI found this website that I think you might be interested in. The website is about a treatment option for adults and children at least one year old with nephropathic cystinosis. %0D%0A%0D%0ATo learn more about how this treatment works, its dosing, the need to take it at the same time every day, and how it allows patients and caregivers to choose times that work for them, click here: https://bit.ly/2J2HIdB %0D%0A%0D%0AMore information about this treatment, plus support for patients and their families, is available. To sign up, click here: https://bit.ly/2Eli0Cm" target="" data-value="FLItem-15">
+                                                    <span class="quantum-drop-down-menu__link-text"></span>
+                                            </a>
+
+                                    </li>
+                        </ul>
+
+                        <ul class="quantum-drop-down-menu__top-nav-list ">
+                        </ul>
+
+                    </nav>
+                </div>
+                <div class="quantum-header__mobile-content ">
+                        <button class="quantum-button quantum-button--tertiary quantum-header__icon-button quantum-button--large quantum-button--icon-only " type="button">
+                            <svg class="quantum-icon quantum-button__icon">
+                                <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#search-regular"></use>
+                            </svg>
+                        </button>
+                        <button class="quantum-button quantum-button--tertiary quantum-header__icon-button quantum-header__menu-trigger quantum-header__menu-trigger--expand-menu quantum-button--large quantum-button--icon-only" type="button">
+                            <svg class="quantum-icon quantum-button__icon">
+                                <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#bars-regular"></use>
+                            </svg>
+                        </button>
+                        <button class="quantum-button quantum-button--tertiary quantum-header__icon-button quantum-header__menu-trigger quantum-header__menu-trigger--collapse-menu quantum-button--large quantum-button--icon-only" type="button">
+                            <svg class="quantum-icon quantum-button__icon">
+                                <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#close-light"></use>
+                            </svg>
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="quantum-search-suggest">
+        <div class="component-content">
+            <label for="textBoxSearch">
+                
+            </label>
+            <input type="search" class="quantum-search-box-input" autocomplete="off" name="textBoxSearch" placeholder="Search" />
+
+
+                <button class="quantum-search-box-button-with-redirect" type="submit" data-searchURL="https://www.procysbi.com/search-results">
+                    
+                </button>
+
+
+            <span class="quantum-search-clear">
+                
+            </span>
+            <button class="quantum-search-btn-close">X</button>
+                <input type="hidden" id="searchtag" name="tag" value="" />
+
+        </div>
+    </div>
+
+    </header>
+
+    <div class="hero-div">
+        
+    </div>
+    <div class="banner-div">
+        
+    </div>
+    
+    
+
+
+
+    <div class="quantum-modal " id="Modal_Site_Leave1" enable-autoplay="False">
+
+
+        <div class="quantum-modal__dialog ">
+            <!-- Modal content-->
+
+
+
+            <p>By selecting the Yes option, leaving Amgen.eu option you understand that you are leaving the corporate page of Amgen Europe and that you will be redirected to another Internet site belonging to third parties, for whose content or opinions Amgen Europe is not responsible and makes no representations regarding such content or its accuracy. By selecting this option and accessing linked third party sites, you understand that you do so at your own risk.</p>
+            <p>The website to which you will be redirected may be designed exclusively for residents of a particular country or countries, as advertised on that website. As a consequence, the website to which you will be directed may contain information on pharmaceutical products or indications that are not approved in Europe. If You reside in a country other than the one to which such website is directed, please contact your local Amgen affiliate for the correct information on products in your country of residence.</p>
+            <div class="modal-actions">
+                <a href="" id="external-site-link" class="quantum-button quantum-button--secondary">
+                    <span class="quantum-button__text">yes, leave amgen.eu</span>
+                </a>
+                <a href="#" class="quantum-button quantum-button--primary  quantum-modal__close">
+                    <span class="quantum-button__text">CANCEL</span>
+                </a>
+            </div>
+
+
+
+            
+           
+                <button class="quantum-button quantum-button--tertiary quantum-modal__close quantum-button--icon-only  small-market-leave-site1 "  type="button">
+
+
+                        <svg class="quantum-icon quantum-button__icon">
+   
+                        <use xlink:href="#close-light121"></use>
+                    </svg>
+
+                </button>
+          
+        </div>
+
+    </div>
+
+
+
+<div class="component container help-reduce-cystine" id="home-banner-wrap">
+    <div class="component-content" >
+
+<div class="row component column-splitter">
+        <div class="col-lg-8">
+            
+    <div class="component promo col-12 why-procysbi">
+        <div class="component-content">
+<div class="promo-text"><div><div class="field-promotext"><p class="">Why PROCYSBI?</p>
+<h1 class="">BECAUSE LIFE IS WHAT <br role="presentation" data-uw-rm-sr="">HAPPENS IN BETWEEN</h1></div><div class="field-promotext2"><p class="carousel-info">PROCYSBI is the <span style="font-size: 16pt; color: #ffffff;"><em><strong>first and only</strong></em></span> cysteamine therapy with twice-daily dosing approved to treat nephropathic cystinosis in adults and children at least one year old.</p></div></div><div class="field-promolink"><a class="cta-btn" data-variantfieldname="PromoLink" href="/about-procysbi/why-procysbi" data-variantitemid="{FC5E73D2-5DFC-49CC-8AF8-A8C2F634D478}">Check out PROCYSBI </a></div></div>        </div>
+    </div>
+
+
+
+<div class="component carousel" id="home-page-carousel" data-properties='{&quot;timeout&quot;:2000,&quot;isPauseEnabled&quot;:true,&quot;transition&quot;:&quot;BasicTransition&quot;}'>
+    <div class="component-content">
+            <div data-id="divCarousel_808c573e-a248-4f53-bb5c-76c8e6400ad1" class="carousel-inner">
+                <div class="background">
+                </div>
+                <ul class="slides">
+                        <li class="slide"  >
+
+
+<div class="component content col-12">
+    <div class="component-content">
+<div class="field-slideimage"><img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/content/adult.gif?h=369&amp;iar=0&amp;w=612&amp;hash=B09C41D4E5E59DA575FBD3123209F0E6" alt="PROCYSBI cystinosis treatment image" width="612" height="369" data-variantitemid="{84A38E5C-4F20-46AA-9E80-C2FDF83DD792}" data-variantfieldname="SlideImage" /></div><div class="slide-info"></div>    </div>
+</div>
+                        </li>
+                        <li class="slide" style="display: none">
+
+
+<div class="component content col-12">
+    <div class="component-content">
+<div class="field-slideimage"><img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/content/child.gif?h=369&amp;iar=0&amp;w=612&amp;hash=611593B04AB4EC2728FC74FCAAB8E694" alt="PROCYSBI cystinosis treatment image" width="612" height="369" data-variantitemid="{5A6EAF9A-7D77-4D58-974E-1B0C0C8008DB}" data-variantfieldname="SlideImage" /></div><div class="slide-info"></div>    </div>
+</div>
+                        </li>
+                </ul>
+
+                    <div class="nav">
+                            <a class="prev-text" href="#"></a>
+                            <div class="nav-items">
+                                    <div tabindex="-1" class="sxa-numbers">1</div>
+                                    <div tabindex="-1" class="sxa-numbers">2</div>
+                            </div>
+                            <a class="next-text" href="#"></a>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+    <div class="component rich-text col-12">
+        <div class="component-content">
+<h2>Helps reduce cystine levels all day and night</h2>
+<p>PROCYSBI is designed to provide continuous cystine control with 12-hour dosing at times that work for you.</p>
+<p>PROCYSBI delayed-release oral granules are available in capsules and convenient tear-open packets.</p>
+<p>Talk to a doctor to see if PROCYSBI is right for you or a family member.</p>        </div>
+    </div>
+
+        </div>
+        <div class="col-lg-4">
+            
+
+
+    <div class="component rich-text col-12 get-personal-pal">
+        <div class="component-content">
+<a href="/support-and-resources#patient-access-managers">
+<div class="component promo col-12 get-personal image-content-side">
+<div class="component-content">
+<div class="field-promoicon"><img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/icons/icon-operator1.svg?iar=0&amp;hash=609E71BBAC39613D517C51A193666865" alt="Support" data-variantitemid="{0D233B99-58A2-45E6-9551-9DE54F8EE42F}" data-variantfieldname="PromoIcon" /></div>
+<div class="promo-text">
+<div>
+<div class="field-promotext">
+<h3>GET PERSONAL WITH A <span>PAL</span> </h3>
+</div>
+<div class="field-promotext2">
+<p><span>Your Patient Access Liaison</span><br role="presentation" />
+can provide support with your<br role="presentation" />
+PROCYSBI treatment</p>
+</div>
+</div>
+</div>
+</div>
+</div></a>        </div>
+    </div>
+
+    <div class="component promo discover-points image-content-side">
+        <div class="component-content">
+<div class="field-promoicon"><img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/icons/icon_three_off_head.svg?iar=0&amp;hash=CEA651128EC8087222CFAC01D5E49722" alt="Help with PROCYSBI cost savings icon" data-variantitemid="{E23652E0-9834-426E-B777-CAA7927D104A}" data-variantfieldname="PromoIcon" /></div><div class="promo-text"><div><div class="field-promotext"><a href="/support-and-resources" class="inpageclick"><h3 class="">DISCOVER PATIENT SERVICES</h3></a></div><div class="field-promotext2"><div class="right-content-split">
+<div class="content-split-left">
+<a href="/support-and-resources" class="inpageclick"><p class="right-carat"><span class="home-carat">The Amgen By Your Side team</span> can help you get started on PROCYSBI, find financial assistance, and more</p></a>
+</div>
+<div class="content-split-right">
+<p class=""></p>
+</div>
+</div></div></div></div>        </div>
+    </div>
+
+    <div class="component promo discover-points image-content-side">
+        <div class="component-content">
+<div class="field-promoicon"><img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/icons/icon_silo_branching.svg?iar=0&amp;hash=AC07B1D8D33AEABE16AA734640C3CAA1" alt="Updates on PROCYSBI and cystinosis icon" data-variantitemid="{214C7562-5BF7-4D13-896C-CAEE7F73E693}" data-variantfieldname="PromoIcon" /></div><div class="promo-text"><div><div class="field-promotext"><a href="/support-and-resources#impact-programs"><h3 class="">FIND IMPACT PROGRAMS</h3></a></div><div class="field-promotext2"><div class="right-content-split">
+<div class="content-split-left">
+<a href="/support-and-resources#impact-programs"><p class="right-carat"><span class="home-carat">Attend</span> a live or virtual educational program about cystinosis and PROCYSBI.</p></a>
+</div>
+<div class="content-split-right">
+<p class=""></p>
+</div>
+</div></div></div></div>        </div>
+    </div>
+
+    <div class="component promo discover-points image-content-side">
+        <div class="component-content">
+<div class="field-promoicon"><img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/icons/icon_magnify_doc.svg?iar=0&amp;hash=6FD0CF76AE0467D5661F4B36C707D3EB" alt="Updates on PROCYSBI and cystinosis icon" data-variantitemid="{2C2F8515-5959-4967-BC94-0EF8AF66AE88}" data-variantfieldname="PromoIcon" /></div><div class="promo-text"><div><div class="field-promotext"><a href="/stay-connected"><h3 class="">STAY CONNECTED</h3></a></div><div class="field-promotext2"><div class="right-content-split">
+<div class="content-split-left">
+<a href="/stay-connected"><p class="right-carat"><span class="home-carat">Get updates</span> on cystinosis<br role="presentation" data-uw-rm-sr=""> and PROCYSBI</p></a>
+</div>
+<div class="content-split-right">
+<p class=""></p>
+</div>
+</div></div></div></div>        </div>
+    </div>
+
+
+
+    <div class="component rich-text col-12">
+        <div class="component-content">
+<a href="mailto:?subject=A cysteamine therapy to treat nephropathic cystinosis &amp;body=Hi, %0D%0A%0D%0AI found this website that I think you might be interested in. The website is about a treatment option for adults and children at least one year old with nephropathic cystinosis. %0D%0A%0D%0ATo learn more about how this treatment works, its dosing, the need to take it at the same time every day, and how it allows patients and caregivers to choose times that work for them, click here: https://bit.ly/2J2HIdB %0D%0A%0D%0AMore information about this treatment, plus support for patients and their families, is available. To sign up, click here: https://bit.ly/2Eli0Cm" class="share-support-resources" target="" aria-label="email" ga-tag="social">email</a>        </div>
+    </div>
+
+        </div>
+</div>    </div>
+</div>
+    
+
+
+    <div id="fullIsi" class="demo-shell ">
+        <div class="demo-shell__takeover">
+            <div class="quantum-isi-tray quantum-isi-tray--open">
+                <div class="quantum-isi-tray__trigger-wrap">
+                    <div class="quantum-isi-tray__trigger-wrap-inner">
+                        <button id="closesFullIsi" class="quantum-button quantum-isi-tray__trigger quantum-isi-tray__trigger--open quantum-button--small" type="button">
+                                <svg class="quantum-icon quantum-button__icon">
+
+                                    <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#close-light"></use>
+                                </svg>
+
+                            <span class="quantum-button__text">
+                                Close
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="quantum-isi-tray__inner">
+                    <div class="quantum-isi-tray__content quantum-long-form-text">
+                        
+                        <h3>
+                        </h3>
+                        <div class="container">
+                            <div class="isi-tray-main-div important-safety-information">
+    <div id="isi-header">
+        <h4>USE and IMPORTANT SAFETY INFORMATION</h4>
+    </div>
+ 
+    <h4 class="heading-isi"><span>What is the most
+            important safety information I should know about PROCYSBI?</span></h4>
+    <h4>PROCYSBI can cause serious side effects, including:</h4>
+    <ul>
+        <li><strong>Skin, bone, and joint problems.</strong> People treated with high doses of cysteamine bitartrate may
+            develop abnormal changes of their skin and bones, such as stretch marks, bone injuries (such as fractures),
+            bone deformities, and joint problems. Check your skin while taking PROCYSBI. Tell your doctor if you notice
+            any skin changes or problems with your bones or joints. Your doctor will check you for these problems.</li>
+        <li><strong>Skin rash.</strong> Skin rash is common with cysteamine bitartrate and may sometimes be severe.
+            <strong>Tell your doctor right away if you get a skin rash.</strong> Your dose of PROCYSBI may need to be
+            decreased until the rash goes away. If the rash is severe, your doctor may tell you to stop taking PROCYSBI.
+        </li>
+        <li><strong>Stomach and bowel (intestinal) problems.</strong> Some people who take other medicines that contain
+            cysteamine bitartrate may develop ulcers and bleeding in their stomach or bowel. People treated with
+            PROCYSBI may also develop abnormal swelling and narrowing of the large bowel which must be treated promptly.
+            <strong>Tell your doctor right away</strong> if you get abdominal pain, bloody or persistent diarrhea,
+            bloating, nausea, vomiting, loss of appetite, vomit blood, poor weight gain or weight loss.</li>
+        <li><strong>Central nervous system symptoms.</strong> Some people who take other medicines that contain
+            cysteamine bitartrate develop seizures, depression, and become very sleepy. The medicine may affect how your
+            brain is working (encephalopathy). <strong>Tell your doctor right away</strong> if you develop any of these
+            symptoms.</li>
+        <li><strong>Low white blood cell count and certain abnormal liver function blood tests.</strong> Your doctor
+            should check you for these problems.</li>
+        <li><strong>Benign intracranial hypertension</strong> (pseudotumor cerebri) has happened in some people who take
+            immediate-release cysteamine bitartrate. This is a condition where there is high pressure in the fluid
+            around the brain. Your doctor should do eye examinations to find and treat this problem early.</li>
+    </ul>
+    <p><strong>Tell your doctor right away if you develop any of the following symptoms while taking PROCYSBI:</strong>
+        headache, buzzing or "whooshing" sound in the ear, dizziness, nausea, double vision, blurry vision, loss of
+        vision, pain behind the eye, or pain with eye movement.</p>
+    <h4><span>What is PROCYSBI?</span></h4>
+    <p>PROCYSBI (cysteamine bitartrate) delayed-release capsules and delayed-release oral granules is a prescription
+        medicine used to treat nephropathic cystinosis in adults and children 1 year of age and older. It is not known
+        if PROCYSBI is safe and effective in children under 1 year of age.</p>
+    <p><strong>Do not</strong> take PROCYSBI if you are allergic to penicillamine or cysteamine.</p>
+    <p><strong>Before taking PROCYSBI, tell your doctor about all your medical conditions, including if you:</strong>
+    </p>
+    <ul>
+        <li>drink alcohol.</li>
+        <li>have a skin rash or bone problems.</li>
+        <li>have or have had stomach or bowel (intestinal) problems including ulcers or bleeding.</li>
+        <li>have a history of seizures, lack of energy, unusual sleepiness, depression, or changes in your ability to
+            think clearly.</li>
+        <li>have liver or blood problems.</li>
+        <li>are pregnant or plan to become pregnant. It is not known if PROCYSBI will harm your unborn baby. Tell your
+            doctor right away if you think that you are pregnant. Talk with your doctor about the benefits and risks of
+            taking PROCYSBI during pregnancy.</li>
+        <li>are breastfeeding or plan to breastfeed. You should not breastfeed during treatment with PROCYSBI. Talk with
+            your doctor about the best way to feed your baby if you take PROCYSBI.</li>
+    </ul>
+    <p><strong>Tell your doctor about all the medicines you take,</strong> including prescription and over the counter
+        medicines, vitamins, dietary and herbal supplements. Know the medicines you take. Keep a list of them to show
+        your doctor and pharmacist when you get a new medicine.</p>
+    <h4><span>What should I avoid while taking PROCYSBI?</span></h4>
+    <ul>
+        <li>Do not drive or operate machinery until you know how PROCYSBI affects you. PROCYSBI can make you sleepy or
+            less alert than normal.</li>
+        <li>Do not drink alcohol if you take PROCYSBI. Drinking alcohol while taking PROCYSBI may change how PROCYSBI
+            works and may cause an increase in the amount of PROCYSBI in your blood that may cause serious side effects.
+        </li>
+    </ul>
+    <h4><span>What are the possible side effects of PROCYSBI?</span></h4>
+    <p><strong>PROCYSBI can cause serious side effects, including:</strong></p>
+    <ul>
+        <li><strong>See “What is the most important information I should know about PROCYSBI?”</strong></li>
+    </ul>
+    <p><strong>The most common side effects of PROCYSBI include:</strong> vomiting, nausea, stomach (abdominal) pain,
+        pink eye, diarrhea, cold, tiredness, flu, headache, problems with body salts or electrolytes, infection of ear,
+        nose or throat, joint pain.</p>
+    <p>These are not all the possible side effects of PROCYSBI. Call your doctor for medical information about side
+        effects. You may report side effects to FDA at 1-800-FDA-1088.</p>
+    <p><strong>For additional important safety information, click here for the <a
+                href="https://www.hzndocs.com/PROCYSBI-Patient-Information.pdf">Patient Package Insert</a> and discuss
+            with your doctor.</strong></p>
+</div>
+						</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="demo-shell__fixed-bottom" id="IsiBottomTray">
+            <div class="quantum-isi-tray quantum-isi-tray--closed">
+                <div class="quantum-isi-tray__trigger-wrap">
+                    <div class="quantum-isi-tray__trigger-wrap-inner">
+                    </div>
+                </div>
+                <div class="quantum-isi-tray__inner">
+                    <div class="quantum-isi-tray__content-preview quantum-long-form-text">
+                        <button id="opensFullIsi" class="quantum-button quantum-isi-tray__trigger quantum-isi-tray__trigger--closed quantum-button--small" type="button">
+                                <svg class="quantum-icon quantum-button__icon">
+                                    <use xlink:href="-/media/Themes/Amgen/Tavneos-com/Tavneos-com/images/images-global/global/quantum.svg#plus-regular"></use>
+                                </svg>
+                            <span class="quantum-button__text">
+                                Open
+                            </span>
+                        </button>
+                        <h5>
+                        </h5>
+                        <div class="isi-desktop important-safety-information ">
+<div id="isi-header">
+        <h4>USE and IMPORTANT SAFETY INFORMATION</h4>
+    </div>
+    <h4 class="heading-isi"><span>What is the most
+            important safety information I should know about PROCYSBI?</span></h4>
+            <h4>PROCYSBI can cause serious side effects, including:</h4>
+            <ul>
+        <li><strong>Skin, bone, and joint problems.</strong> People treated with high doses of cysteamine bitartrate may
+            develop abnormal changes of their skin and bones, such as stretch marks, bone injuries (such as fractures),
+            bone deformities, and joint problems. Check your skin while taking PROCYSBI. Tell your doctor if you notice</li>
+            </ul>
+</div>
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<div class="component container col-12 important-safety-information">
+    <div class="component-content" >
+    </div>
+</div>
+    
+    <footer id="footer">
+        
+
+
+
+
+    <div class=" quantum-back-to-top   " id="">
+        <div class="quantum-back-to-top__inner">
+            <a class="quantum-back-to-top__target " href="#" >
+
+
+                    <span class="quantum-back-to-top__label">
+                        Back to Top
+                        <svg class="quantum-icon quantum-back-to-top__static-icon">
+
+                            <use xlink:href="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/icons/back-to-top.svg#angle-up-regular"></use>
+
+                        </svg>
+                    </span>
+                    <span class="quantum-back-to-top__button quantum-button quantum-button--icon-only" title="Back to Top">
+                        <svg class="quantum-icon quantum-button__icon">
+                            <use xlink:href="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/icons/back-to-top.svg#angle-up-regular"></use>
+
+                        </svg>
+                    </span>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class=" quantum-footer " id="">
+        <div class="quantum-footer__inner">
+
+            
+
+
+    <div class="quantum-footer__logo-social-row">
+
+
+            <a title="Logo" href="http://www.amgen.com/" target="_blank" class=" quantum-footer__logo-link gtm-footerCl gtm-navigation-click" menu-name="amgen logo"  menu-type="footer">
+                <svg class="quantum-icon">
+                    <img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/logos/AMG_LGO_1cRGB-White.png?la=en&amp;h=27&amp;w=103&amp;hash=3EA6839B52563219E0275046DAAEDDD7" class="d-none d-sm-block quantum-footer__quantum-logo lozad" alt="PROCYSBI® (cysteamine bitartrate) delayed-release capsules logo" />
+                    <img src="-/media/Themes/Horizon/procysbi-com/procysbi-com/images/logos/AMG_LGO_1cRGB-White.png?la=en&amp;h=27&amp;w=103&amp;hash=3EA6839B52563219E0275046DAAEDDD7" class="d-block d-sm-none quantum-footer__quantum-logo lozad" alt="PROCYSBI® (cysteamine bitartrate) delayed-release capsules logo" />
+                </svg>
+
+            </a>
+
+
+
+    </div>
+
+
+            
+
+            
+<div class="quantum-footer__links-row">
+
+
+                    <a href="/site-map" class="  gtm-footerCl gtm-navigation-click quantum-link quantum-footer__link" menu-name="Site Map"  menu-type="footer" target="">
+                      Site Map
+                    </a>
+                    <a href="https://www.amgen.com/privacy-statement" class=" model-pop-up-open gtm-footerCl gtm-outbound-link gtm-navigation-click quantum-link quantum-footer__link" menu-name="Privacy Statement"  menu-type="footer"  data-click-type="outbound"  data-click-text="Privacy Statement" target="_blank">
+                      Privacy Statement
+                    </a>
+                    <a href="https://www.amgen.com/terms-of-use/" class=" model-pop-up-open gtm-footerCl gtm-outbound-link gtm-navigation-click  quantum-link quantum-footer__link" menu-name="Terms of Use"  menu-type="footer"  data-click-type="outbound"  data-click-text="Terms of Use" target="_blank">
+                      Terms of Use
+                    </a>
+                    <a href="https://www.amgen.com/healthdataprivacypolicy" class=" model-pop-up-open gtm-footerCl gtm-outbound-link gtm-navigation-click quantum-link quantum-footer__link" menu-name="Consumer Health Data Privacy Policy"  menu-type="footer"  data-click-type="outbound"  data-click-text="Consumer Health Data Privacy Policy" target="_blank">
+                      Consumer Health Data Privacy Policy
+                    </a>
+                    <a href="#" class="cb-renew  gtm-footerCl gtm-navigation-click quantum-link quantum-footer__link" menu-name="Your Cookie Preferences"  menu-type="footer"  data-click-text="Your Cookie Preferences" target="">
+                      Your Cookie Preferences
+                    </a>
+                    <a href="https://wwwext.amgen.com/contact-us" class="  gtm-footerCl gtm-navigation-click quantum-link quantum-footer__link" menu-name="Contact Us"  menu-type="footer"  data-click-text="contact us" target="_blank">
+                      Contact Us
+                    </a>
+</div>
+            
+            <p class="quantum-footer__legal-row">
+                <div class=" quantum-footer__logo-social-icons">
+<p>© 2024 Amgen Inc. All rights reserved. P-PYB-00493-6 06/24
+<p>
+
+</div>
+
+
+
+            </p>
+
+        </div>
+    </div>
+
+
+
+
+            <script>
+                var doPopup = "True";
+            </script>
+    </footer>
+    
+
+<script src="/-/media/Base-Themes/Specialist-Finder/Scripts/specialist-finder.js"></script><script src="/-/media/Base-Themes/Ccpa-Base-Styles/Scripts/readmore.js"></script><script src="/-/media/Base-Themes/Alert/Scripts/alertJS.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/lib-xa.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/lib-xaquery1.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/hammerdmin.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/popper,-d-,min.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/bootstrap,-d-,min.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/bootstrap-select,-d-,min.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/jquery,-d-,validate,-d-,min.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/jquery,-d-,inputmask,-d-,bundle,-d-,min.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/jquery,-d-,validate,-d-,unobtrusive,-d-,min.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/component-carousel.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/lib-accordions4.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/lib-isi8.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/lib-component-tabs.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Standard-Scripts/lib-modal.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/Abasevar1.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/lib-cl-search-results6.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/lib-search1.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/procysbi-custom-script8.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/validations19.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/lib-util8.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/form_processor1.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/link-processor7.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/gtm_processor57.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/consents41.js"></script><script src="/-/media/Themes/Horizon/procysbi-com/procysbi-com/Scripts/Custom-Scripts/Procysbi-markerio1.js"></script>
+    
+    
+</body>
+</html>
+

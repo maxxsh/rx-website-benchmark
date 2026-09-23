@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Pa11y results for "https://www.lorbrena.com/"
+	</title>
+	<style>
+		html, body {
+			background-color: #ffffff;
+			color: rgb(51 51 51);
+			font-family: system-ui, sans-serif;
+			font-size: 16px;
+			line-height: 1.3rem;
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			margin-block: 0;
+			margin-inline: auto;
+			max-inline-size: 900px;
+			padding: 1.25rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			margin: 0;
+			margin-block-end: 0.5rem;
+		}
+
+		h2, h3 {
+			font-size: 1.15rem;
+			font-weight: normal;
+			margin: 0;
+			padding-block-end: 0.5rem;
+		}
+
+		h3 { padding-block-end: 0; }
+
+		p { margin: 0; }
+
+		.filter {
+			display: inline-grid;
+			grid-template-columns: 8.5rem 1fr 1fr 1fr;
+			margin-block-start: 1rem;
+		}
+
+		.filter .label {
+			font-size: 1.15rem;
+			padding-block: 0.45rem;
+			padding-inline: 0;
+		}
+
+		.count {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			cursor: pointer;
+			display: inline-grid;
+			font-size: 1.15rem;
+			grid-template-columns: 0.35rem 1fr;
+			margin-inline-end: 0.75rem;
+			min-inline-size: 80px;
+		}
+
+		.count .body {
+			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding-block: 0.35rem;
+			padding-inline: 0.7rem;
+			text-align: center;
+		}
+
+		.count.hidden {
+			background-color: #f4f4f4;
+			color: rgb(51 51 51);
+		}
+
+		.count.hidden .left-bar { background-color: #808080; }
+
+		.count.hidden .body { border-color: #d4d4d4; }
+
+		.issues {
+			list-style: none;
+			margin: 0;
+			margin-block-start: 1.5rem;
+			padding-inline-start: 0;
+		}
+
+		.issue {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			display: grid;
+			grid-template-columns: 0.5rem 1fr;
+			margin: 0;
+			margin-block-end: 1.5rem;
+			padding: 0;
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .left-bar { background-color: #808080; }
+
+		.issue p:not(:last-child) { padding-block-end: 0.1rem; }
+
+		.issue.hidden { display: none; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .body {
+ 			border-color: #bfbfbf;
+ 			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding: 0.5rem;
+			position: relative;
+		}
+
+		.issue .body h3 { padding-block-end: 0.25rem; }
+
+		.context, .selector {
+			font-family: monospace;
+			font-size: 0.95rem;
+			padding-block-start: 0.1rem;
+		}
+
+		.error {
+			background-color: #f8d7da;
+			color: rgb(103 25 31);
+		}
+
+		.warning {
+			background-color: #fff3cd;
+			color: rgb(84 64 3);
+		}
+
+		.notice {
+			background-color: #cfe2ff;
+			color: rgb(6 44 101);
+		}
+
+		.error a { color: #842029; }
+		.warning a { color: #664d03; }
+		.notice a { color: #074197; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .left-bar { background-color: #d53447; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .left-bar { background-color: #c79500; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .left-bar { background-color: #015cda; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .body { border-color: #f2bbc1; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .body { border-color: #ffd761; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .body { border-color: #a9cefe; }
+
+		.clipboard-button {
+			background-color: rgb(51 51 51 / 10%);
+			border: 2px solid;
+			border-color: rgb(51 51 51 / 30%);
+			border-radius: 2px;
+			color: rgb(51 51 51 / 40%);
+			font-size: 0.8rem;
+			inset-block-start: 7px;
+			inset-inline-end: 7px;
+			margin: 0;
+			opacity: 0;
+			padding-block: 5px 4px;
+			padding-inline: 7px;
+			position: absolute;
+			transition: 0.1s;
+			visibility: hidden;
+			z-index: 1;
+		}
+
+		.error .clipboard-button {
+			background-color: rgb(103 25 31 / 10%);
+			border-color: rgb(103 25 31 / 30%);
+			color: rgb(103 25 31 / 40%);
+		}
+
+		.warning .clipboard-button {
+			background-color: rgb(84 64 3 / 10%);
+			border-color: rgb(84 64 3 / 30%);
+			color: rgb(84 64 3 / 40%);
+		}
+
+		.notice .clipboard-button {
+			background-color: rgb(6 44 101 / 10%);
+			border-color: rgb(6 44 101 / 30%);
+			color: rgb(6 44 101 / 40%);
+		}
+
+		.clipboard-button > svg { fill: rgb(51 51 51 / 40%); }
+		.error .clipboard-button > svg { fill: rgb(103 25 31 / 40%); }
+		.warning .clipboard-button > svg { fill: rgb(84 64 3 / 40%); }
+		.notice .clipboard-button > svg { fill: rgb(6 44 101 / 40%); }
+
+		.clipboard-button:focus { outline: 0; }
+
+		.clipboard-button:hover,
+		.clipboard-button:focus {
+			background-color: rgb(51 51 51 / 20%);
+			border-color: rgb(51 51 51 / 70%);
+			color: rgb(51 51 51 / 80%);
+			cursor: pointer;
+		}
+
+		.error .clipboard-button:hover,
+		.error .clipboard-button:focus {
+			background-color: rgb(103 25 31 / 20%);
+			border-color: rgb(103 25 31 / 70%);
+			color: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover,
+		.warning .clipboard-button:focus {
+			background-color: rgb(84 64 3 / 20%);
+			border-color: rgb(84 64 3 / 70%);
+			color: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover,
+		.notice .clipboard-button:focus {
+			background-color: rgb(6 44 101 / 20%);
+			border-color: rgb(6 44 101 / 70%);
+			color: rgb(6 44 101 / 80%);
+		}
+
+		.clipboard-button:hover > svg,
+		.clipboard-button:focus > svg {
+			fill: rgb(51 51 51 / 80%);
+		}
+
+		.error .clipboard-button:hover > svg,
+		.error .clipboard-button:focus > svg {
+			fill: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover > svg,
+		.warning .clipboard-button:focus > svg {
+			fill: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover > svg,
+		.notice .clipboard-button:focus > svg {
+			fill: rgb(6 44 101 / 80%);
+		}
+
+		.issue .body:hover > .clipboard-button,
+		.issue .body:focus-within > .clipboard-button {
+			opacity: 1;
+			transition: 0.2s;
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>Pa11y results for "https://www.lorbrena.com/"</h1>
+		<h2>Generated at: Mon Dec 29 2025 21:05:04 GMT-0500 (Eastern Standard Time)</h2>
+		<h2>Runners (with issues): htmlcs</h2>
+
+		<p class="filter">
+			<span class="label">Toggle by type</span>
+			<span class="count error" id="error-count" tabindex="0" role="button" aria-label="Toggle errors">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">126 errors</span>
+			</span>
+			<span class="count warning" id="warning-count" tabindex="0" role="button" aria-label="Toggle warnings">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 warnings</span>
+			</span>
+			<span class="count notice" id="notice-count" tabindex="0" role="button" aria-label="Toggle notices">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 notices</span>
+			</span>
+		</p>
+		<ul class="issues">
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This link points to a named anchor &quot;indtootip&quot; within the document, but no anchor exists with that name.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2A.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID</a></p><p class="context">&lt;a href&#x3D;&quot;#indtootip&quot; id&#x3D;&quot;i210i&quot; sc:linkname&#x3D;&quot;global header|navigation|indication&quot; data-pfa-click&#x3D;&quot;&quot;&gt;Indication&lt;/a&gt;</p><p class="selector">(selector "#i210i")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This link points to a named anchor &quot;indtootip&quot; within the document, but no anchor exists with that name.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2A.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID</a></p><p class="context">&lt;a href&#x3D;&quot;#indtootip&quot; id&#x3D;&quot;iksjt&quot; sc:linkname&#x3D;&quot;global header|navigation|indication&quot; data-pfa-click&#x3D;&quot;&quot;&gt;Indication&lt;/a&gt;</p><p class="selector">(selector "#iksjt")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i0fhv&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i0fhv&quot; style&#x3D;&quot;flex: 0 0 100%; max-width: 100%;&quot;&gt;&lt;section id&#x3D;&quot;i8uyg&quot; class&#x3D;&quot;bloc...&lt;/li&gt;</p><p class="selector">(selector "#i0fhv")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i8uyg&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;section id&#x3D;&quot;i8uyg&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider&quot;&gt;&lt;div id&#x3D;&quot;ic32a&quot; class&#x3D;&quot;block-50...&lt;/section&gt;</p><p class="selector">(selector "#i8uyg")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ic32a&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;ic32a&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider-image&quot;&gt;&lt;img src&#x3D;&quot;/geff-banner-d.webp&quot; ...&lt;/div&gt;</p><p class="selector">(selector "#ic32a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iauo8&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;img src&#x3D;&quot;/geff-banner-d.webp&quot; alt&#x3D;&quot;Geff banner&quot; width&#x3D;&quot;2110&quot; height&#x3D;&quot;830&quot; id&#x3D;&quot;iauo8&quot; loading&#x3D;&quot;eager&quot; fetchpriority&#x3D;&quot;high&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid desktop-only&quot;&gt;</p><p class="selector">(selector "#iauo8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;impwo&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;img src&#x3D;&quot;/images/custom/geff-banner-m.webp&quot; alt&#x3D;&quot;Geff banner&quot; width&#x3D;&quot;780&quot; height&#x3D;&quot;833&quot; id&#x3D;&quot;impwo&quot; loading&#x3D;&quot;eager&quot; fetchpriority&#x3D;&quot;high&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid mobile-only&quot;&gt;</p><p class="selector">(selector "#impwo")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i6v5q&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;i6v5q&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider-overlay&quot;&gt;&lt;div id&#x3D;&quot;icbdr&quot; class&#x3D;&quot;block-50...&lt;/div&gt;</p><p class="selector">(selector "#i6v5q")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;icbdr&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;icbdr&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid container&quot;&gt;&lt;div id&#x3D;&quot;i7b67-2&quot; class&#x3D;&quot;block-...&lt;/div&gt;</p><p class="selector">(selector "#icbdr")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i7b67-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;i7b67-2&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid pagecontent slide2&quot;&gt;&lt;div id&#x3D;&quot;in678&quot; class&#x3D;&quot;block-50...&lt;/div&gt;</p><p class="selector">(selector "#i7b67-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;in678&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;in678&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider2-content&quot;&gt;&lt;p id&#x3D;&quot;idldb&quot; class&#x3D;&quot;block-5020...&lt;/div&gt;</p><p class="selector">(selector "#in678")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;idldb&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;idldb&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid home-banner-content-title&quot;&gt;Living longer without your ALK+...&lt;/p&gt;</p><p class="selector">(selector "#idldb")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iihe5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;iihe5&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid home-banner-content-desc&quot;&gt;In a clinical trial involving L...&lt;/p&gt;</p><p class="selector">(selector "#iihe5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ikg0z&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ikg0z&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid home-banner-footnote&quot;&gt;*A statistical term. The median...&lt;/p&gt;</p><p class="selector">(selector "#ikg0z")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iyz8g&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;/about-lorbrena&quot; id&#x3D;&quot;iyz8g&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid btnlink&quot; sc:linkname&#x3D;&quot;home|content|learn about lorbrena
+                    &quot; data-pfa-click&#x3D;&quot;&quot;&gt;&lt;p id&#x3D;&quot;i8tog&quot;&gt;Learn about LORBR...&lt;/a&gt;</p><p class="selector">(selector "#iyz8g")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i8tog&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;i8tog&quot;&gt;Learn about LORBRENA
+          ...&lt;/p&gt;</p><p class="selector">(selector "#i8tog")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ixcp5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ixcp5&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid sliderpatientname&quot;&gt;Not an actual patient.
+        ...&lt;/p&gt;</p><p class="selector">(selector "#ixcp5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ih5rh&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;ih5rh&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slidercontentbtm&quot;&gt;&lt;div id&#x3D;&quot;i5t6q&quot; class&#x3D;&quot;block-50...&lt;/div&gt;</p><p class="selector">(selector "#ih5rh")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i5t6q&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;i5t6q&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid container&quot;&gt;&lt;aside id&#x3D;&quot;ilqnj&quot; class&#x3D;&quot;block-...&lt;/div&gt;</p><p class="selector">(selector "#i5t6q")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ilqnj&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;aside id&#x3D;&quot;ilqnj&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid pagecontent&quot;&gt;&lt;p id&#x3D;&quot;idmuf&quot;&gt;LORBRENA is a pre...&lt;/aside&gt;</p><p class="selector">(selector "#ilqnj")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;idmuf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;idmuf&quot;&gt;LORBRENA is a prescription medi...&lt;/p&gt;</p><p class="selector">(selector "#idmuf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;irvi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;irvi&quot; style&#x3D;&quot;flex: 0 0 100%; max-width: 100%;&quot; class&#x3D;&quot;carousel-clone&quot;&gt;&lt;section id&#x3D;&quot;isl9&quot; class&#x3D;&quot;block...&lt;/li&gt;</p><p class="selector">(selector "#irvi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;isl9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;section id&#x3D;&quot;isl9&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider&quot;&gt;&lt;div id&#x3D;&quot;iodr&quot; class&#x3D;&quot;block-502...&lt;/section&gt;</p><p class="selector">(selector "#isl9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iodr&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;iodr&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider-image&quot;&gt;&lt;img src&#x3D;&quot;/images/custom/grace-...&lt;/div&gt;</p><p class="selector">(selector "#iodr")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iq4u&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;img src&#x3D;&quot;/images/custom/grace-home-hero-img-d.webp&quot; alt&#x3D;&quot;Meet Grace&quot; width&#x3D;&quot;3200&quot; height&#x3D;&quot;1060&quot; id&#x3D;&quot;iq4u&quot; loading&#x3D;&quot;eager&quot; fetchpriority&#x3D;&quot;high&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid desktop-only&quot;&gt;</p><p class="selector">(selector "#iq4u")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iuhl&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;img src&#x3D;&quot;/images/custom/grace-home-hero-img-m.webp&quot; alt&#x3D;&quot;Meet Grace&quot; width&#x3D;&quot;780&quot; height&#x3D;&quot;840&quot; id&#x3D;&quot;iuhl&quot; loading&#x3D;&quot;eager&quot; fetchpriority&#x3D;&quot;high&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid mobile-only&quot;&gt;</p><p class="selector">(selector "#iuhl")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;idxj&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;idxj&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider-overlay&quot;&gt;&lt;div id&#x3D;&quot;ikxj&quot; class&#x3D;&quot;block-502...&lt;/div&gt;</p><p class="selector">(selector "#idxj")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ikxj&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;ikxj&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid container&quot;&gt;&lt;div id&#x3D;&quot;i7b67&quot; class&#x3D;&quot;block-50...&lt;/div&gt;</p><p class="selector">(selector "#ikxj")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i7b67&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;i7b67&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid pagecontent slide1&quot;&gt;&lt;div id&#x3D;&quot;in9n&quot; class&#x3D;&quot;block-502...&lt;/div&gt;</p><p class="selector">(selector "#i7b67")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;in9n&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;in9n&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slider1-content&quot;&gt;&lt;p id&#x3D;&quot;iqfqx&quot; class&#x3D;&quot;block-5020...&lt;/div&gt;</p><p class="selector">(selector "#in9n")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iqfqx&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;iqfqx&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid home-banner-content-meet-title&quot;&gt;Meet 
+                    &lt;stro...&lt;/p&gt;</p><p class="selector">(selector "#iqfqx")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;irvji&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;irvji&quot;&gt;GRACE&lt;/strong&gt;</p><p class="selector">(selector "#irvji")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ix0lz&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ix0lz&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid home-banner-content-meet-desc&quot;&gt;A real LORBRENA patient on trea...&lt;/p&gt;</p><p class="selector">(selector "#ix0lz")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i6srh&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;/real-stories&quot; id&#x3D;&quot;i6srh&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid btnlink&quot; sc:linkname&#x3D;&quot;home|content|watch her story
+                    &quot; data-pfa-click&#x3D;&quot;&quot;&gt;&lt;p id&#x3D;&quot;ixgcj&quot;&gt;Watch her story
+ ...&lt;/a&gt;</p><p class="selector">(selector "#i6srh")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ixgcj&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ixgcj&quot;&gt;Watch her story
+               ...&lt;/p&gt;</p><p class="selector">(selector "#ixgcj")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ivh1z&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ivh1z&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid sliderpatientname&quot;&gt;Patient was compensated for her...&lt;/p&gt;</p><p class="selector">(selector "#ivh1z")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iladd&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;iladd&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid slidercontentbtm&quot;&gt;&lt;div id&#x3D;&quot;ix4n2&quot; class&#x3D;&quot;block-50...&lt;/div&gt;</p><p class="selector">(selector "#iladd")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ix4n2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;ix4n2&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid container&quot;&gt;&lt;aside id&#x3D;&quot;inwfn&quot; class&#x3D;&quot;block-...&lt;/div&gt;</p><p class="selector">(selector "#ix4n2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;inwfn&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;aside id&#x3D;&quot;inwfn&quot; class&#x3D;&quot;block-5020727-cid block-4969705-cid pagecontent&quot;&gt;&lt;p id&#x3D;&quot;iridf&quot;&gt;LORBRENA is a pre...&lt;/aside&gt;</p><p class="selector">(selector "#inwfn")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iridf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;iridf&quot;&gt;LORBRENA is a prescription medi...&lt;/p&gt;</p><p class="selector">(selector "#iridf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i0koo&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;sup id&#x3D;&quot;i0koo&quot;&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#i0koo")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;io41&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;io41&quot; class&#x3D;&quot;block-5020711-cid isicontent isisticky&quot; style&#x3D;&quot;top: 387.953px;&quot;&gt;&lt;section id&#x3D;&quot;iiuek&quot; class&#x3D;&quot;bloc...&lt;/div&gt;</p><p class="selector">(selector "#io41")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iiuek&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;section id&#x3D;&quot;iiuek&quot; class&#x3D;&quot;block-5020711-cid isiheadersticky&quot;&gt;&lt;p id&#x3D;&quot;i1h1&quot; class&#x3D;&quot;block-50207...&lt;/section&gt;</p><p class="selector">(selector "#iiuek")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i1h1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;i1h1&quot; class&#x3D;&quot;block-5020711-cid isititle-1&quot;&gt;Important Safety Information an...&lt;/p&gt;</p><p class="selector">(selector "#i1h1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ij8p&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;#isi&quot; id&#x3D;&quot;ij8p&quot; class&#x3D;&quot;block-5020711-cid isitoggle&quot; data-pfa-click&#x3D;&quot;&quot;&gt;&lt;p id&#x3D;&quot;i8lu&quot;&gt;View More
+        ...&lt;/a&gt;</p><p class="selector">(selector "#ij8p")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i8lu&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;i8lu&quot;&gt;View More
+              &lt;/p&gt;</p><p class="selector">(selector "#i8lu")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iq8da&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;section id&#x3D;&quot;iq8da&quot; class&#x3D;&quot;block-5020711-cid isicontentscroll&quot;&gt;&lt;p id&#x3D;&quot;il7jh&quot; class&#x3D;&quot;block-5020...&lt;/section&gt;</p><p class="selector">(selector "#iq8da")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;il7jh&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;il7jh&quot; class&#x3D;&quot;block-5020711-cid isititle-2 isinormalcontent&quot;&gt;Important&amp;nbsp;Safety&amp;nbsp;Info...&lt;/p&gt;</p><p class="selector">(selector "#il7jh")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iy80l&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;iy80l&quot; class&#x3D;&quot;block-5020711-cid isititle-3&quot;&gt;LORBRENA&lt;sup id&#x3D;&quot;i0koo&quot;&gt;®&lt;/sup&gt;...&lt;/p&gt;</p><p class="selector">(selector "#iy80l")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i0koo&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;sup id&#x3D;&quot;i0koo&quot;&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#i0koo")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ins1l&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;ins1l&quot;&gt;&lt;li id&#x3D;&quot;iaeui&quot;&gt;&lt;strong id&#x3D;&quot;i5ra...&lt;/ul&gt;</p><p class="selector">(selector "#ins1l")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iaeui&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;iaeui&quot;&gt;&lt;strong id&#x3D;&quot;i5rav&quot;&gt;Liver proble...&lt;/li&gt;</p><p class="selector">(selector "#iaeui")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i5rav&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;i5rav&quot;&gt;Liver problems due to interacti...&lt;/strong&gt;</p><p class="selector">(selector "#i5rav")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;igv0y&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;igv0y&quot;&gt;&lt;strong id&#x3D;&quot;ia86f&quot;&gt;Central nerv...&lt;/li&gt;</p><p class="selector">(selector "#igv0y")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ia86f&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;ia86f&quot;&gt;Central nervous system (CNS) ef...&lt;/strong&gt;</p><p class="selector">(selector "#ia86f")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iin2o&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;iin2o&quot;&gt;&lt;strong id&#x3D;&quot;i3vxf&quot;&gt;Increases in...&lt;/li&gt;</p><p class="selector">(selector "#iin2o")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i3vxf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;i3vxf&quot;&gt;Increases in the cholesterol an...&lt;/strong&gt;</p><p class="selector">(selector "#i3vxf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i6u5g&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;i6u5g&quot;&gt;&lt;li id&#x3D;&quot;iqqd6&quot;&gt;If you have incr...&lt;/ul&gt;</p><p class="selector">(selector "#i6u5g")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iqqd6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;iqqd6&quot;&gt;If you have increases in the li...&lt;/li&gt;</p><p class="selector">(selector "#iqqd6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ik8p6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ik8p6&quot;&gt;Your healthcare provider should...&lt;/li&gt;</p><p class="selector">(selector "#ik8p6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ikpgc&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ikpgc&quot;&gt;&lt;strong id&#x3D;&quot;ir0wl&quot;&gt;Heart proble...&lt;/li&gt;</p><p class="selector">(selector "#ikpgc")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ir0wl&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;ir0wl&quot;&gt;Heart problems.&lt;/strong&gt;</p><p class="selector">(selector "#ir0wl")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ikpgc-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ikpgc-2&quot;&gt;&lt;strong id&#x3D;&quot;ir0wl-2&quot;&gt;Lung probl...&lt;/li&gt;</p><p class="selector">(selector "#ikpgc-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ir0wl-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;ir0wl-2&quot;&gt;Lung problems.&lt;/strong&gt;</p><p class="selector">(selector "#ir0wl-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ircvi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ircvi&quot;&gt;&lt;strong id&#x3D;&quot;imfuj&quot;&gt;High blood p...&lt;/li&gt;</p><p class="selector">(selector "#ircvi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;imfuj&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;imfuj&quot;&gt;High blood pressure (hypertensi...&lt;/strong&gt;</p><p class="selector">(selector "#imfuj")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iuejm&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;iuejm&quot;&gt;&lt;strong id&#x3D;&quot;i7clt&quot;&gt;High blood s...&lt;/li&gt;</p><p class="selector">(selector "#iuejm")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i7clt&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;i7clt&quot;&gt;High blood sugar (hyperglycemia...&lt;/strong&gt;</p><p class="selector">(selector "#i7clt")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ip9in&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ip9in&quot; class&#x3D;&quot;block-5020711-cid paragraph&quot;&gt;If you have serious side effect...&lt;/p&gt;</p><p class="selector">(selector "#ip9in")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;idk0d&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;idk0d&quot; class&#x3D;&quot;block-5020711-cid paragraph&quot;&gt;&lt;strong id&#x3D;&quot;ickg3&quot;&gt;Before takin...&lt;/p&gt;</p><p class="selector">(selector "#idk0d")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ickg3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;ickg3&quot;&gt;Before taking LORBRENA, tell yo...&lt;/strong&gt;</p><p class="selector">(selector "#ickg3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i7mz6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;i7mz6&quot; class&#x3D;&quot;block-5020711-cid basic-text basic-text-i7mz6&quot;&gt;&lt;ul id&#x3D;&quot;ix8o5&quot;&gt;&lt;li id&#x3D;&quot;i4e8g&quot;&gt;h...&lt;/div&gt;</p><p class="selector">(selector "#i7mz6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ix8o5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;ix8o5&quot;&gt;&lt;li id&#x3D;&quot;i4e8g&quot;&gt;have kidney prob...&lt;/ul&gt;</p><p class="selector">(selector "#ix8o5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i4e8g&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i4e8g&quot;&gt;have kidney problems
+          ...&lt;/li&gt;</p><p class="selector">(selector "#i4e8g")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ie2nv&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ie2nv&quot;&gt;have had episodes of depression...&lt;/li&gt;</p><p class="selector">(selector "#ie2nv")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iazah&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;iazah&quot;&gt;have high levels of cholesterol...&lt;/li&gt;</p><p class="selector">(selector "#iazah")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;itcb7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;itcb7&quot;&gt;have problems with your heartbe...&lt;/li&gt;</p><p class="selector">(selector "#itcb7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ir5uf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ir5uf&quot;&gt;have lung or breathing problems...&lt;/li&gt;</p><p class="selector">(selector "#ir5uf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i0jog&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i0jog&quot;&gt;have high blood pressure
+      ...&lt;/li&gt;</p><p class="selector">(selector "#i0jog")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;is8gg&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;is8gg&quot;&gt;have diabetes or high blood sug...&lt;/li&gt;</p><p class="selector">(selector "#is8gg")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i4gy7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i4gy7&quot;&gt;are pregnant or plan to become ...&lt;/li&gt;</p><p class="selector">(selector "#i4gy7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;idlql&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;idlql&quot;&gt;&lt;li id&#x3D;&quot;ipd7i&quot;&gt;Your healthcare ...&lt;/ul&gt;</p><p class="selector">(selector "#idlql")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ipd7i&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ipd7i&quot;&gt;Your healthcare provider will d...&lt;/li&gt;</p><p class="selector">(selector "#ipd7i")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i4bsf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i4bsf&quot;&gt;Tell your healthcare provider r...&lt;/li&gt;</p><p class="selector">(selector "#i4bsf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ifhuw&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;ifhuw&quot;&gt;&lt;li id&#x3D;&quot;i6sxf&quot;&gt;&lt;strong id&#x3D;&quot;i7gp...&lt;/ul&gt;</p><p class="selector">(selector "#ifhuw")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i6sxf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i6sxf&quot;&gt;&lt;strong id&#x3D;&quot;i7gpy&quot;&gt;— Females&lt;/s...&lt;/li&gt;</p><p class="selector">(selector "#i6sxf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i7gpy&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;i7gpy&quot;&gt;— Females&lt;/strong&gt;</p><p class="selector">(selector "#i7gpy")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i59mk&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i59mk&quot;&gt;&lt;strong id&#x3D;&quot;is69k&quot;&gt;— Males&lt;/str...&lt;/li&gt;</p><p class="selector">(selector "#i59mk")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;is69k&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;is69k&quot;&gt;— Males&lt;/strong&gt;</p><p class="selector">(selector "#is69k")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i6krp&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i6krp&quot;&gt;are breastfeeding or plan to br...&lt;/li&gt;</p><p class="selector">(selector "#i6krp")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ixqt7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ixqt7&quot;&gt;&lt;strong id&#x3D;&quot;iz2sl&quot;&gt;Tell your he...&lt;/p&gt;</p><p class="selector">(selector "#ixqt7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iz2sl&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;iz2sl&quot;&gt;Tell your healthcare provider a...&lt;/strong&gt;</p><p class="selector">(selector "#iz2sl")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i0tj9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;i0tj9&quot;&gt;Know the medicines you take. Ke...&lt;/p&gt;</p><p class="selector">(selector "#i0tj9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;inoui&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;inoui&quot;&gt;&lt;strong id&#x3D;&quot;irecf&quot;&gt;Do not take ...&lt;/p&gt;</p><p class="selector">(selector "#inoui")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;irecf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;irecf&quot;&gt;Do not take LORBRENA if you&lt;/strong&gt;</p><p class="selector">(selector "#irecf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;imqaq&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;imqaq&quot;&gt;&lt;strong id&#x3D;&quot;idynh&quot;&gt;The most com...&lt;/p&gt;</p><p class="selector">(selector "#imqaq")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;idynh&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;idynh&quot;&gt;The most common side effects of...&lt;/strong&gt;</p><p class="selector">(selector "#idynh")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i038k&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;i038k&quot;&gt;&lt;li id&#x3D;&quot;ijngk&quot;&gt;swelling in your...&lt;/ul&gt;</p><p class="selector">(selector "#i038k")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ijngk&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ijngk&quot;&gt;swelling in your arms, legs, ha...&lt;/li&gt;</p><p class="selector">(selector "#ijngk")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iw5li&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;iw5li&quot;&gt;numbness and tingling feeling i...&lt;/li&gt;</p><p class="selector">(selector "#iw5li")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ih10z&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ih10z&quot;&gt;weight gain
+              &lt;/li&gt;</p><p class="selector">(selector "#ih10z")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;irxtj&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;irxtj&quot;&gt;problems with thinking, such as...&lt;/li&gt;</p><p class="selector">(selector "#irxtj")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i9ij1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i9ij1&quot;&gt;tiredness (fatigue)
+           ...&lt;/li&gt;</p><p class="selector">(selector "#i9ij1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ihj47&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;ihj47&quot;&gt;difficulty breathing
+          ...&lt;/li&gt;</p><p class="selector">(selector "#ihj47")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i3ls2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;i3ls2&quot;&gt;pain in your joints
+           ...&lt;/li&gt;</p><p class="selector">(selector "#i3ls2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;imy6g&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;imy6g&quot;&gt;diarrhea
+              &lt;/li&gt;</p><p class="selector">(selector "#imy6g")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;inf46&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;inf46&quot;&gt;changes in mood, such as depres...&lt;/li&gt;</p><p class="selector">(selector "#inf46")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iv3i8&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;iv3i8&quot;&gt;high cholesterol and triglyceri...&lt;/li&gt;</p><p class="selector">(selector "#iv3i8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;io3bh&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;li id&#x3D;&quot;io3bh&quot;&gt;cough
+              &lt;/li&gt;</p><p class="selector">(selector "#io3bh")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iu61a&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;iu61a&quot;&gt;LORBRENA may cause decreased fe...&lt;/p&gt;</p><p class="selector">(selector "#iu61a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ivr4e&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ivr4e&quot;&gt;These are not all of the possib...&lt;/p&gt;</p><p class="selector">(selector "#ivr4e")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;inveu&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;inveu&quot;&gt;Call your doctor for medical ad...&lt;/p&gt;</p><p class="selector">(selector "#inveu")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im9rng&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;im9rng&quot; class&#x3D;&quot;block-5020711-cid isititle-3 pb-5&quot;&gt;INDICATION
+            &lt;/p&gt;</p><p class="selector">(selector "#im9rng")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;i0i7h&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;i0i7h&quot;&gt;LORBRENA is a prescription medi...&lt;/p&gt;</p><p class="selector">(selector "#i0i7h")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;isxxs&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;isxxs&quot;&gt;Your healthcare provider will p...&lt;/p&gt;</p><p class="selector">(selector "#isxxs")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iwvob&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;iwvob&quot;&gt;It is not known if LORBRENA is ...&lt;/p&gt;</p><p class="selector">(selector "#iwvob")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ih5tx&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;p id&#x3D;&quot;ih5tx&quot; class&#x3D;&quot;block-5020711-cid block-4424178-cid pilink&quot;&gt;&lt;strong id&#x3D;&quot;iuuyvh&quot;&gt;Please see ...&lt;/p&gt;</p><p class="selector">(selector "#ih5tx")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iuuyvh&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;strong id&#x3D;&quot;iuuyvh&quot;&gt;Please see &lt;a href&#x3D;&quot;http://labe...&lt;/strong&gt;</p><p class="selector">(selector "#iuuyvh")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iqr4ae&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;http://labeling.pfizer.com/ShowLabeling.aspx?id&#x3D;11140&quot; target&#x3D;&quot;_blank&quot; id&#x3D;&quot;iqr4ae&quot; sc:linkname&#x3D;&quot;important safety information and indication|full prescribing information&quot; data-pfa-click&#x3D;&quot;&quot;&gt;Full Prescribing Information&lt;/a&gt;</p><p class="selector">(selector "#iqr4ae")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iyny1h&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;http://labeling.pfizer.com/ShowLabeling.aspx?id&#x3D;11140&amp;amp;Section&#x3D;PPI&quot; target&#x3D;&quot;_blank&quot; id&#x3D;&quot;iyny1h&quot; sc:linkname&#x3D;&quot;important safety information and indication|patient information&quot; data-pfa-click&#x3D;&quot;&quot;&gt;Patient Information&lt;/a&gt;</p><p class="selector">(selector "#iyny1h")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;is93zm&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;span id&#x3D;&quot;is93zm&quot;&gt;.&lt;/span&gt;</p><p class="selector">(selector "#is93zm")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;iokp4q&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.pfizeroncologytogether.com/&quot; target&#x3D;&quot;_blank&quot; id&#x3D;&quot;iokp4q&quot; class&#x3D;&quot;block-5020711-cid isinormalcontent isipotblock&quot; sc:linkname&#x3D;&quot;home|cta|pfizer oncology together&quot; data-pfa-click&#x3D;&quot;&quot;&gt;&lt;img src&#x3D;&quot;/images/custom/pfizer...&lt;/a&gt;</p><p class="selector">(selector "#iokp4q")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;it7b3i&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;img src&#x3D;&quot;/images/custom/pfizer-oncology-together-isi-footer.svg&quot; loading&#x3D;&quot;lazy&quot; fetchpriority&#x3D;&quot;high&quot; width&#x3D;&quot;1000&quot; height&#x3D;&quot;172&quot; alt&#x3D;&quot;Turn to Pfizer Oncology Together™ to learn about financial assistance resources and get personalized support from one...</p><p class="selector">(selector "#it7b3i")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Iframe element requires a non-empty title attribute that identifies the frame.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2A.Principle2.Guideline2_4.2_4_1.H64.1</a></p><p class="context">&lt;iframe height&#x3D;&quot;0&quot; width&#x3D;&quot;0&quot; src&#x3D;&quot;https://13396029.fls.doubleclick.net/activityi;src&#x3D;13396029;type&#x3D;glopgv;cat&#x3D;lorbren1;ord&#x3D;1;num&#x3D;5151433206619;npa&#x3D;0;auiddc&#x3D;1224695630.1767059781;u1&#x3D;www.lorbrena.com%2Fhome;frm&#x3D;0;_tu&#x3D;IJA;gtm&#x3D;45fe5ca1v9181797342za200zd9...</p><p class="selector">(selector "#wb-body &gt; iframe:nth-child(29)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Iframe element requires a non-empty title attribute that identifies the frame.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2A.Principle2.Guideline2_4.2_4_1.H64.1</a></p><p class="context">&lt;iframe height&#x3D;&quot;0&quot; width&#x3D;&quot;0&quot; src&#x3D;&quot;https://13396029.fls.doubleclick.net/activityi;src&#x3D;13396029;type&#x3D;glopgv;cat&#x3D;lorbr000;ord&#x3D;5542538426191;npa&#x3D;0;auiddc&#x3D;1224695630.1767059781;u1&#x3D;www.lorbrena.com%2Fhome;frm&#x3D;0;_tu&#x3D;IFA;gtm&#x3D;45fe5ca1v9181797342za200zd9181797...</p><p class="selector">(selector "#wb-body &gt; iframe:nth-child(30)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Iframe element requires a non-empty title attribute that identifies the frame.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2A.Principle2.Guideline2_4.2_4_1.H64.1</a></p><p class="context">&lt;iframe height&#x3D;&quot;0&quot; width&#x3D;&quot;0&quot; src&#x3D;&quot;https://13396029.fls.doubleclick.net/activityi;src&#x3D;13396029;type&#x3D;glopgv;cat&#x3D;lorbrena;ord&#x3D;5587538253768;npa&#x3D;0;auiddc&#x3D;1224695630.1767059781;u1&#x3D;www.lorbrena.com%2Fhome;gdid&#x3D;dYWJhMj;frm&#x3D;0;_tu&#x3D;IFA;gtm&#x3D;45fe5ca1v9181797342z...</p><p class="selector">(selector "#wb-body &gt; iframe:nth-child(31)")</p></div>
+			</li>
+		</ul>
+	</main>
+	<script>
+		const toggleIssues = (btn, pageQuery) => {
+			const className = 'hidden';
+			document.getElementById(btn).classList.toggle(className);
+			document.querySelectorAll(pageQuery).forEach((page) => {
+				page.classList.toggle(className);
+			});
+		};
+
+		const errorCountFilter = document.getElementById('error-count');
+		errorCountFilter.addEventListener('click', () =>
+			toggleIssues('error-count', '.issues .issue.error')
+		);
+		errorCountFilter.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('error-count', '.issues .issue.error')
+		);
+
+		const warningCountButton = document.getElementById('warning-count');
+		warningCountButton.addEventListener('click', () =>
+			toggleIssues('warning-count', '.issues .issue.warning')
+		);
+		warningCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('warning-count', '.issues .issue.warning')
+		);
+
+		const noticeCountButton = document.getElementById('notice-count');
+		noticeCountButton.addEventListener('click', () =>
+			toggleIssues('notice-count', '.issues .issue.notice')
+		);
+		noticeCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('notice-count', '.issues .issue.notice')
+		);
+	</script>
+	<script>
+		const svgCopy = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>';
+		const svgCheck = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+
+		if (navigator && navigator.clipboard) {
+			document.querySelectorAll(".issue .body .selector").forEach((selectorNode) => {
+				const selector = selectorNode.innerText
+					.match(/\(selector "(?<selector>.+)"\)/).groups.selector;
+
+				const button = document.createElement("button");
+				button.className = "clipboard-button";
+				button.type = "button";
+				button.title = "Copy selector";
+				button.innerHTML = svgCopy;
+				button.addEventListener("click", (event) => {
+					navigator.clipboard.writeText(selector)
+						.then(() => {
+							// Remove focus if mouse, since hovering and will remain visible.
+							// If keyboard, keep focus until another keyboard action blurs.
+							event.detail && button.blur();
+							button.innerHTML = svgCheck;
+							setTimeout(() => (button.innerHTML = svgCopy), 2000);
+						},
+						(error) => (button.innerHTML = "Error")
+					);
+				});
+
+				selectorNode.parentNode.insertBefore(button, selectorNode);
+			});
+		};
+	</script>
+</body>
+
+</html>

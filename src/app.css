@@ -1,0 +1,290 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "HostGrotesk";
+  font-style: normal;
+  font-weight: 100–900;
+  font-display: swap;
+  src: url("/assets/fonts/HostGrotesk-VariableFont_wght.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Reset defaults */
+  --color-*: initial;
+  --text-*: initial;
+  --container-*: initial;
+  --max-width-*: initial;
+  --container-block-padding: 40px;
+
+  /* Base colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: transparent;
+
+  /* Brand colors */
+  --color-primary: #541291;
+  --color-primary-dark: color-mix(in srgb, #cea18b, black 20%);
+  --color-secondary: #fdf5e2;
+  --color-secondary2: #d68571;
+  --color-secondary3: #733906;
+  --color-body-dark: #0d0d0d;
+  --color-red-50: oklch(0.971 0.013 17.38);
+  --color-green-600: oklch(0.627 0.194 149.214);
+  --color-green-500: #22c55e;
+  --color-blue-500: #3b82f6;
+  --color-red-500: #ef4444;
+  --color-yellow-500: #eab308;
+  --color-gray-300: #d1d5db;
+  --color-gray-600: #6b7280;
+  --color-gray-800: #1f2937;
+
+  /* Text sizes */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 2rem; /* 32px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 2.5rem; /* 40px */
+  --text-6xl: 3rem; /* 48px */
+
+  /* Max widths */
+  --max-width-xs: 20rem;
+  --max-width-sm: 24rem;
+  --max-width-md: 28rem;
+  --max-width-xl: 36rem;
+  --max-width-2xl: 42rem;
+  --max-width-3xl: 48rem;
+  --max-width-4xl: 56rem;
+  --max-width-5xl: 64rem;
+  --max-width-6xl: 72rem;
+  --max-width-7xl: 80rem;
+  --max-width-none: none;
+  --max-width-screen-lg: 1024px;
+  --max-width-screen-xl: 1280px;
+
+  /* Container */
+  --container-padding: 1rem;
+}
+
+:root {
+  text-wrap: pretty;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+.dark {
+  --aw-color-bg-page: rgb(3 6 32);
+}
+
+@layer base {
+  :root {
+    --body-text: 16px;
+    --body-large-text: 18px;
+    scrollbar-gutter: stable;
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --body-text: 18px;
+      --body-large-text: 20px;
+    }
+  }
+
+  body {
+    font-size: var(--body-large-text);
+    line-height: 1.5;
+    font-family: "HostGrotesk", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #1f184c;
+    --container-block-padding: 40px;
+
+    &.modal-open {
+      overflow: hidden;
+    }
+  }
+  @media (min-width: 768px) {
+    body {
+      --container-block-padding: 48px;
+    }
+  }
+  @media (min-width: 1024px) {
+    body {
+      --container-block-padding: 80px;
+    }
+  }
+
+  /* Headings */
+  :where(h1, h2, h3, h4, h5) {
+    font-size: 1em;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    text-wrap: balance;
+    margin-block: 0.75em 0.5em;
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  h2,
+  .h2 {
+    font-size: var(--text-xl);
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  h3,
+  .h3 {
+    font-size: var(--text-2xl);
+    line-height: 1.25;
+    font-weight: 400;
+  }
+  h4,
+  .h4 {
+    font-size: var(--text-xl);
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1024px) {
+    h1,
+    .h1 {
+      font-size: var(--text-6xl);
+    }
+    h2,
+    .h2 {
+      font-size: var(--text-2xl);
+    }
+
+    h3,
+    .h3 {
+      font-size: var(--text-xl);
+    }
+  }
+
+  /* Layout utilities */
+  .site-width {
+    width: 100%;
+    max-width: 1660px;
+  }
+  .content-width {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: var(--container-block-padding);
+  }
+
+  .container-pad,
+  section,
+  footer {
+    width: 100%;
+    @apply px-4 md:px-6;
+  }
+
+  /* Button base */
+  button {
+    cursor: pointer;
+  }
+
+  .btn {
+    font-size: 1rem;
+    line-height: 1.1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: max-content;
+    border-radius: 99px;
+    min-height: 48px;
+    padding: 8px 24px;
+    cursor: pointer;
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+  }
+  .btn:has(.arrow) {
+    padding-right: 8px;
+  }
+  .btn:has(.arrow):hover {
+    .arrow {
+      transform: rotate(45deg);
+    }
+  }
+
+  /* Primary button */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 9999px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.375;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (min-width: 768px) {
+    .btn-primary {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .btn-primary:hover {
+    border-color: color-mix(in srgb, var(--color-primary), black 20%);
+    background-color: color-mix(in srgb, var(--color-primary), black 20%);
+  }
+
+  .btn-primary:focus {
+    box-shadow:
+      0 0 0 2px #bfdbfe,
+      0 0 0 calc(2px + 2px) rgb(59 130 246);
+    outline: none;
+  }
+
+  /* Button with icon */
+  .button:after {
+    content: "";
+    width: 37px;
+    height: 37px;
+    margin-left: 12px;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none"><circle cx="18" cy="18.3154" r="18" fill="white"/><path d="M10.5 24.3154L25 24.3154M25 24.3154L24 19.8154M25 24.3154L19 24.3154" stroke="%23541291" stroke-linecap="round" stroke-linejoin="bevel"/></svg>');
+    background-repeat: no-repeat;
+    transform: rotate(0);
+    transition: transform 0.3s ease;
+  }
+
+  .button:hover:after {
+    transform: rotate(39deg);
+  }
+}
+.crux-full-data::after {
+  content: "*";
+}
+.content-manual-data::after {
+  content: "†";
+  font-size: 50%;
+  vertical-align: top;
+}

@@ -1,0 +1,3307 @@
+[
+  {
+    "brand": "Eliquis",
+    "spending": 18273451967,
+    "beneficiaries": 3927848
+  },
+  {
+    "brand": "Jardiance",
+    "spending": 8839935063.3,
+    "beneficiaries": 1882768
+  },
+  {
+    "brand": "Xarelto",
+    "spending": 6309246822.6,
+    "beneficiaries": 1324165
+  },
+  {
+    "brand": "Erythromycin",
+    "spending": 32875651.54,
+    "beneficiaries": 931761
+  },
+  {
+    "brand": "Januvia",
+    "spending": 4090836820.7,
+    "beneficiaries": 843391
+  },
+  {
+    "brand": "Myrbetriq",
+    "spending": 2510288599.9,
+    "beneficiaries": 769978
+  },
+  {
+    "brand": "Entresto",
+    "spending": 3430441590.4,
+    "beneficiaries": 663587
+  },
+  {
+    "brand": "Linzess",
+    "spending": 1825245843.2,
+    "beneficiaries": 565088
+  },
+  {
+    "brand": "Nitrofurantoin",
+    "spending": 24626890.73,
+    "beneficiaries": 313690
+  },
+  {
+    "brand": "Tradjenta",
+    "spending": 1293567778.3,
+    "beneficiaries": 286808
+  },
+  {
+    "brand": "Rybelsus",
+    "spending": 1665906943.3,
+    "beneficiaries": 285693
+  },
+  {
+    "brand": "Vascepa",
+    "spending": 763988446.53,
+    "beneficiaries": 279946
+  },
+  {
+    "brand": "Premarin",
+    "spending": 279329987.49,
+    "beneficiaries": 241518
+  },
+  {
+    "brand": "Spiriva Handihaler",
+    "spending": 782927124.78,
+    "beneficiaries": 236984
+  },
+  {
+    "brand": "Brilinta",
+    "spending": 691725954.38,
+    "beneficiaries": 234770
+  },
+  {
+    "brand": "Incruse Ellipta",
+    "spending": 456391929.41,
+    "beneficiaries": 201618
+  },
+  {
+    "brand": "Gemtesa",
+    "spending": 508474527.15,
+    "beneficiaries": 187161
+  },
+  {
+    "brand": "Sutab",
+    "spending": 29113136.93,
+    "beneficiaries": 168691
+  },
+  {
+    "brand": "Janumet",
+    "spending": 798865848.51,
+    "beneficiaries": 168527
+  },
+  {
+    "brand": "Pradaxa",
+    "spending": 176220136.53,
+    "beneficiaries": 144821
+  },
+  {
+    "brand": "Suprep",
+    "spending": 12764189.04,
+    "beneficiaries": 108083
+  },
+  {
+    "brand": "Trintellix",
+    "spending": 389714301.5,
+    "beneficiaries": 98771
+  },
+  {
+    "brand": "Xifaxan",
+    "spending": 1090110101.4,
+    "beneficiaries": 96011
+  },
+  {
+    "brand": "Lokelma",
+    "spending": 205055771.11,
+    "beneficiaries": 94774
+  },
+  {
+    "brand": "Janumet XR",
+    "spending": 392139531.05,
+    "beneficiaries": 89316
+  },
+  {
+    "brand": "Belsomra",
+    "spending": 161202977.63,
+    "beneficiaries": 86387
+  },
+  {
+    "brand": "Biktarvy",
+    "spending": 3152256268.6,
+    "beneficiaries": 83843
+  },
+  {
+    "brand": "Nurtec ODT",
+    "spending": 478240311.94,
+    "beneficiaries": 83811
+  },
+  {
+    "brand": "Latuda",
+    "spending": 455172741.82,
+    "beneficiaries": 76110
+  },
+  {
+    "brand": "Multaq",
+    "spending": 409348467.91,
+    "beneficiaries": 71895
+  },
+  {
+    "brand": "Invokana",
+    "spending": 357419494.24,
+    "beneficiaries": 69576
+  },
+  {
+    "brand": "Rexulti",
+    "spending": 630013840.43,
+    "beneficiaries": 66421
+  },
+  {
+    "brand": "Oxycontin",
+    "spending": 390573654.37,
+    "beneficiaries": 65061
+  },
+  {
+    "brand": "Kerendia",
+    "spending": 269681549.35,
+    "beneficiaries": 63625
+  },
+  {
+    "brand": "Synjardy XR",
+    "spending": 278415268.5,
+    "beneficiaries": 58868
+  },
+  {
+    "brand": "Ubrelvy",
+    "spending": 314663942.65,
+    "beneficiaries": 58410
+  },
+  {
+    "brand": "Vyvanse",
+    "spending": 138990767.79,
+    "beneficiaries": 57529
+  },
+  {
+    "brand": "Xtampza ER",
+    "spending": 250042794.66,
+    "beneficiaries": 52082
+  },
+  {
+    "brand": "Dexilant",
+    "spending": 87349224.27,
+    "beneficiaries": 47796
+  },
+  {
+    "brand": "Veltassa",
+    "spending": 153775938.67,
+    "beneficiaries": 43162
+  },
+  {
+    "brand": "Xigduo XR",
+    "spending": 198894543.3,
+    "beneficiaries": 43054
+  },
+  {
+    "brand": "Trulance",
+    "spending": 119272260.13,
+    "beneficiaries": 41836
+  },
+  {
+    "brand": "Levoxyl",
+    "spending": 4773666.78,
+    "beneficiaries": 37814
+  },
+  {
+    "brand": "Revlimid",
+    "spending": 3859804788.6,
+    "beneficiaries": 36967
+  },
+  {
+    "brand": "Velphoro",
+    "spending": 465812435.29,
+    "beneficiaries": 36082
+  },
+  {
+    "brand": "Synjardy",
+    "spending": 163646663.37,
+    "beneficiaries": 35768
+  },
+  {
+    "brand": "Rytary",
+    "spending": 266869488.2,
+    "beneficiaries": 32157
+  },
+  {
+    "brand": "Tivicay",
+    "spending": 657133269,
+    "beneficiaries": 30088
+  },
+  {
+    "brand": "Descovy",
+    "spending": 589840789.31,
+    "beneficiaries": 29514
+  },
+  {
+    "brand": "Ingrezza",
+    "spending": 1705132722.7,
+    "beneficiaries": 29191
+  },
+  {
+    "brand": "Xtandi",
+    "spending": 2601510278.2,
+    "beneficiaries": 28658
+  },
+  {
+    "brand": "Mitigare",
+    "spending": 24983907.97,
+    "beneficiaries": 27237
+  },
+  {
+    "brand": "Glyxambi",
+    "spending": 136590647.79,
+    "beneficiaries": 27116
+  },
+  {
+    "brand": "Otezla",
+    "spending": 876955029.97,
+    "beneficiaries": 26816
+  },
+  {
+    "brand": "Qulipta",
+    "spending": 137880798.01,
+    "beneficiaries": 25190
+  },
+  {
+    "brand": "Ec-Naproxen",
+    "spending": 5932294.65,
+    "beneficiaries": 25049
+  },
+  {
+    "brand": "Klor-Con",
+    "spending": 10901487.93,
+    "beneficiaries": 24541
+  },
+  {
+    "brand": "Unithroid",
+    "spending": 2758840.43,
+    "beneficiaries": 21946
+  },
+  {
+    "brand": "Caplyta",
+    "spending": 194921427.14,
+    "beneficiaries": 21724
+  },
+  {
+    "brand": "Dificid",
+    "spending": 127162102.64,
+    "beneficiaries": 21562
+  },
+  {
+    "brand": "Rinvoq",
+    "spending": 976330770.88,
+    "beneficiaries": 21424
+  },
+  {
+    "brand": "Auryxia",
+    "spending": 182627698.71,
+    "beneficiaries": 21122
+  },
+  {
+    "brand": "Jentadueto",
+    "spending": 93638308.74,
+    "beneficiaries": 20684
+  },
+  {
+    "brand": "Ofev",
+    "spending": 1837061150.2,
+    "beneficiaries": 20444
+  },
+  {
+    "brand": "Dilantin",
+    "spending": 30192150.48,
+    "beneficiaries": 19752
+  },
+  {
+    "brand": "Motegrity",
+    "spending": 61916752.25,
+    "beneficiaries": 19413
+  },
+  {
+    "brand": "Prempro",
+    "spending": 39672698.93,
+    "beneficiaries": 19244
+  },
+  {
+    "brand": "Nexletol",
+    "spending": 45523813.53,
+    "beneficiaries": 18619
+  },
+  {
+    "brand": "Austedo",
+    "spending": 1123439045.1,
+    "beneficiaries": 18283
+  },
+  {
+    "brand": "Triumeq",
+    "spending": 631607443.23,
+    "beneficiaries": 18047
+  },
+  {
+    "brand": "Serevent Diskus",
+    "spending": 43286998.62,
+    "beneficiaries": 17314
+  },
+  {
+    "brand": "Edarbi",
+    "spending": 36819212.29,
+    "beneficiaries": 17111
+  },
+  {
+    "brand": "Nuedexta",
+    "spending": 180648014.55,
+    "beneficiaries": 17107
+  },
+  {
+    "brand": "Imbruvica",
+    "spending": 2371893291.7,
+    "beneficiaries": 17100
+  },
+  {
+    "brand": "Trijardy XR",
+    "spending": 76136040.44,
+    "beneficiaries": 16941
+  },
+  {
+    "brand": "Nexlizet",
+    "spending": 46922023.49,
+    "beneficiaries": 16678
+  },
+  {
+    "brand": "Renvela",
+    "spending": 114323301.29,
+    "beneficiaries": 16562
+  },
+  {
+    "brand": "Savella",
+    "spending": 61126083.31,
+    "beneficiaries": 16373
+  },
+  {
+    "brand": "Genvoya",
+    "spending": 626148344.33,
+    "beneficiaries": 16335
+  },
+  {
+    "brand": "Ibrance",
+    "spending": 2020903604.2,
+    "beneficiaries": 16015
+  },
+  {
+    "brand": "Nuplazid",
+    "spending": 595675169.97,
+    "beneficiaries": 15984
+  },
+  {
+    "brand": "Orgovyx",
+    "spending": 276597251.91,
+    "beneficiaries": 15958
+  },
+  {
+    "brand": "Dovato",
+    "spending": 433449386.47,
+    "beneficiaries": 15932
+  },
+  {
+    "brand": "Relistor",
+    "spending": 132882335.1,
+    "beneficiaries": 15141
+  },
+  {
+    "brand": "Erythromycin",
+    "spending": 1122233.51,
+    "beneficiaries": 15092
+  },
+  {
+    "brand": "Adderall XR",
+    "spending": 17043346.47,
+    "beneficiaries": 14292
+  },
+  {
+    "brand": "Jakafi",
+    "spending": 1940765068.5,
+    "beneficiaries": 14041
+  },
+  {
+    "brand": "Vemlidy",
+    "spending": 187858704.4,
+    "beneficiaries": 13612
+  },
+  {
+    "brand": "Edarbyclor",
+    "spending": 26993766.59,
+    "beneficiaries": 13422
+  },
+  {
+    "brand": "Lyrica",
+    "spending": 71720874.91,
+    "beneficiaries": 13275
+  },
+  {
+    "brand": "Epclusa",
+    "spending": 877398114.7,
+    "beneficiaries": 13024
+  },
+  {
+    "brand": "Briviact",
+    "spending": 184375921.85,
+    "beneficiaries": 12831
+  },
+  {
+    "brand": "Pomalyst",
+    "spending": 1709288465.2,
+    "beneficiaries": 12739
+  },
+  {
+    "brand": "Tirosint",
+    "spending": 15388462.91,
+    "beneficiaries": 12698
+  },
+  {
+    "brand": "Xeljanz XR",
+    "spending": 585772571.52,
+    "beneficiaries": 12497
+  },
+  {
+    "brand": "Corlanor",
+    "spending": 47305472.09,
+    "beneficiaries": 12415
+  },
+  {
+    "brand": "Calquence",
+    "spending": 1286819830.1,
+    "beneficiaries": 12390
+  },
+  {
+    "brand": "Prezcobix",
+    "spending": 271838024.49,
+    "beneficiaries": 11710
+  },
+  {
+    "brand": "Steglatro",
+    "spending": 18207799.43,
+    "beneficiaries": 11552
+  },
+  {
+    "brand": "Dayvigo",
+    "spending": 16516063.17,
+    "beneficiaries": 11530
+  },
+  {
+    "brand": "Juluca",
+    "spending": 392257065.21,
+    "beneficiaries": 11501
+  },
+  {
+    "brand": "Erleada",
+    "spending": 1057789083.3,
+    "beneficiaries": 11077
+  },
+  {
+    "brand": "Symtuza",
+    "spending": 468770365.37,
+    "beneficiaries": 10884
+  },
+  {
+    "brand": "Vimpat",
+    "spending": 95150780.57,
+    "beneficiaries": 10829
+  },
+  {
+    "brand": "Odefsey",
+    "spending": 383667795.21,
+    "beneficiaries": 10542
+  },
+  {
+    "brand": "Golytely",
+    "spending": 261460.7,
+    "beneficiaries": 10172
+  },
+  {
+    "brand": "Toprol XL",
+    "spending": 5726667.82,
+    "beneficiaries": 10147
+  },
+  {
+    "brand": "Nucynta",
+    "spending": 58810956.93,
+    "beneficiaries": 10048
+  },
+  {
+    "brand": "Xcopri",
+    "spending": 113076801.64,
+    "beneficiaries": 9630
+  },
+  {
+    "brand": "Brukinsa",
+    "spending": 801426530.79,
+    "beneficiaries": 9470
+  },
+  {
+    "brand": "Elmiron",
+    "spending": 55269822.28,
+    "beneficiaries": 9394
+  },
+  {
+    "brand": "Tagrisso",
+    "spending": 1231962204,
+    "beneficiaries": 9387
+  },
+  {
+    "brand": "Auvelity",
+    "spending": 34396888.12,
+    "beneficiaries": 9268
+  },
+  {
+    "brand": "Lybalvi",
+    "spending": 89971771.28,
+    "beneficiaries": 9246
+  },
+  {
+    "brand": "Opsumit",
+    "spending": 1018837122.8,
+    "beneficiaries": 9031
+  },
+  {
+    "brand": "Mavyret",
+    "spending": 232993526.3,
+    "beneficiaries": 8771
+  },
+  {
+    "brand": "Aptiom",
+    "spending": 142014028.46,
+    "beneficiaries": 8348
+  },
+  {
+    "brand": "Verquvo",
+    "spending": 34422268.61,
+    "beneficiaries": 8218
+  },
+  {
+    "brand": "Verzenio",
+    "spending": 756850867.48,
+    "beneficiaries": 8217
+  },
+  {
+    "brand": "Cabometyx",
+    "spending": 1109315042,
+    "beneficiaries": 8210
+  },
+  {
+    "brand": "Prezista",
+    "spending": 133001203.2,
+    "beneficiaries": 8166
+  },
+  {
+    "brand": "Lenvima",
+    "spending": 778834823.88,
+    "beneficiaries": 7904
+  },
+  {
+    "brand": "Lipitor",
+    "spending": 32942704.71,
+    "beneficiaries": 7792
+  },
+  {
+    "brand": "Vyndamax",
+    "spending": 1349659508.2,
+    "beneficiaries": 7589
+  },
+  {
+    "brand": "Isentress",
+    "spending": 130537594.63,
+    "beneficiaries": 7475
+  },
+  {
+    "brand": "Jentadueto XR",
+    "spending": 29897203.17,
+    "beneficiaries": 7327
+  },
+  {
+    "brand": "Toviaz",
+    "spending": 8530725.68,
+    "beneficiaries": 7230
+  },
+  {
+    "brand": "Nubeqa",
+    "spending": 576350298.79,
+    "beneficiaries": 7174
+  },
+  {
+    "brand": "Viberzi",
+    "spending": 59717509.09,
+    "beneficiaries": 7023
+  },
+  {
+    "brand": "Xeljanz",
+    "spending": 279993120.77,
+    "beneficiaries": 6936
+  },
+  {
+    "brand": "Aubagio",
+    "spending": 353934132.63,
+    "beneficiaries": 6565
+  },
+  {
+    "brand": "Nucynta ER",
+    "spending": 53178879.31,
+    "beneficiaries": 6559
+  },
+  {
+    "brand": "Diovan",
+    "spending": 23819425.61,
+    "beneficiaries": 6468
+  },
+  {
+    "brand": "Fycompa",
+    "spending": 72036496.02,
+    "beneficiaries": 6343
+  },
+  {
+    "brand": "Fetzima",
+    "spending": 29339819.15,
+    "beneficiaries": 6280
+  },
+  {
+    "brand": "Horizant",
+    "spending": 32997342.24,
+    "beneficiaries": 6276
+  },
+  {
+    "brand": "Concerta",
+    "spending": 14681764.18,
+    "beneficiaries": 6062
+  },
+  {
+    "brand": "Lynparza",
+    "spending": 487431792.82,
+    "beneficiaries": 5974
+  },
+  {
+    "brand": "Xofluza",
+    "spending": 1027971.55,
+    "beneficiaries": 5900
+  },
+  {
+    "brand": "Pentasa",
+    "spending": 34395078.5,
+    "beneficiaries": 5815
+  },
+  {
+    "brand": "Lialda",
+    "spending": 14380281.1,
+    "beneficiaries": 5744
+  },
+  {
+    "brand": "Amitiza",
+    "spending": 8420704.79,
+    "beneficiaries": 5736
+  },
+  {
+    "brand": "Lamictal",
+    "spending": 111836410.52,
+    "beneficiaries": 5721
+  },
+  {
+    "brand": "Promacta",
+    "spending": 557676106.25,
+    "beneficiaries": 5708
+  },
+  {
+    "brand": "Norvasc",
+    "spending": 16337514.3,
+    "beneficiaries": 5684
+  },
+  {
+    "brand": "Keppra",
+    "spending": 76290254.39,
+    "beneficiaries": 5459
+  },
+  {
+    "brand": "Hysingla ER",
+    "spending": 22960013.82,
+    "beneficiaries": 5184
+  },
+  {
+    "brand": "Meloxicam",
+    "spending": 15164099.91,
+    "beneficiaries": 5179
+  },
+  {
+    "brand": "Sprycel",
+    "spending": 510233994.6,
+    "beneficiaries": 5120
+  },
+  {
+    "brand": "Symproic",
+    "spending": 11899468.47,
+    "beneficiaries": 5113
+  },
+  {
+    "brand": "Xopenex HFA",
+    "spending": 1437542.86,
+    "beneficiaries": 5049
+  },
+  {
+    "brand": "Ibsrela",
+    "spending": 33839560.68,
+    "beneficiaries": 5036
+  },
+  {
+    "brand": "Adempas",
+    "spending": 598223220.35,
+    "beneficiaries": 4980
+  },
+  {
+    "brand": "Rayaldee",
+    "spending": 41491958.47,
+    "beneficiaries": 4889
+  },
+  {
+    "brand": "Inlyta",
+    "spending": 466771313.72,
+    "beneficiaries": 4739
+  },
+  {
+    "brand": "Invokamet",
+    "spending": 22206494.87,
+    "beneficiaries": 4565
+  },
+  {
+    "brand": "Kisqali",
+    "spending": 370771679.06,
+    "beneficiaries": 4543
+  },
+  {
+    "brand": "Osphena",
+    "spending": 8451358.94,
+    "beneficiaries": 4511
+  },
+  {
+    "brand": "Benicar",
+    "spending": 15710811.53,
+    "beneficiaries": 4500
+  },
+  {
+    "brand": "Gocovri",
+    "spending": 91875721.08,
+    "beneficiaries": 4464
+  },
+  {
+    "brand": "Pifeltro",
+    "spending": 70629257.18,
+    "beneficiaries": 4371
+  },
+  {
+    "brand": "Gralise",
+    "spending": 23071806.78,
+    "beneficiaries": 4265
+  },
+  {
+    "brand": "Epidiolex",
+    "spending": 197357912.19,
+    "beneficiaries": 4236
+  },
+  {
+    "brand": "Fanapt",
+    "spending": 92779041.24,
+    "beneficiaries": 4164
+  },
+  {
+    "brand": "Tegretol XR",
+    "spending": 17280708.03,
+    "beneficiaries": 4124
+  },
+  {
+    "brand": "Talicia",
+    "spending": 3328152.48,
+    "beneficiaries": 4049
+  },
+  {
+    "brand": "Adderall",
+    "spending": 9672998.4,
+    "beneficiaries": 4019
+  },
+  {
+    "brand": "Desmopressin Acetate",
+    "spending": 4639045.99,
+    "beneficiaries": 3913
+  },
+  {
+    "brand": "Uptravi",
+    "spending": 758070464.16,
+    "beneficiaries": 3727
+  },
+  {
+    "brand": "Cardizem La",
+    "spending": 2461644.68,
+    "beneficiaries": 3718
+  },
+  {
+    "brand": "Nuzyra",
+    "spending": 73196529.46,
+    "beneficiaries": 3687
+  },
+  {
+    "brand": "Tegretol",
+    "spending": 13119142.78,
+    "beneficiaries": 3667
+  },
+  {
+    "brand": "Protonix",
+    "spending": 15379422.58,
+    "beneficiaries": 3654
+  },
+  {
+    "brand": "Celebrex",
+    "spending": 16190429.26,
+    "beneficiaries": 3642
+  },
+  {
+    "brand": "Cresemba",
+    "spending": 95684253.21,
+    "beneficiaries": 3570
+  },
+  {
+    "brand": "Nourianz",
+    "spending": 49718992.27,
+    "beneficiaries": 3546
+  },
+  {
+    "brand": "Trokendi XR",
+    "spending": 32622808.49,
+    "beneficiaries": 3454
+  },
+  {
+    "brand": "Xanax",
+    "spending": 14077881.55,
+    "beneficiaries": 3445
+  },
+  {
+    "brand": "Ninlaro",
+    "spending": 311982549.45,
+    "beneficiaries": 3384
+  },
+  {
+    "brand": "Plavix",
+    "spending": 7228748.62,
+    "beneficiaries": 3289
+  },
+  {
+    "brand": "Ongentys",
+    "spending": 15941379.67,
+    "beneficiaries": 3270
+  },
+  {
+    "brand": "Topamax",
+    "spending": 47505377.64,
+    "beneficiaries": 3265
+  },
+  {
+    "brand": "Wellbutrin XL",
+    "spending": 77459752.91,
+    "beneficiaries": 3251
+  },
+  {
+    "brand": "Lonsurf",
+    "spending": 176155837.26,
+    "beneficiaries": 3222
+  },
+  {
+    "brand": "Tecfidera",
+    "spending": 234518995.77,
+    "beneficiaries": 3154
+  },
+  {
+    "brand": "Cozaar",
+    "spending": 4844418.02,
+    "beneficiaries": 3141
+  },
+  {
+    "brand": "Depakote ER",
+    "spending": 11067971.33,
+    "beneficiaries": 3106
+  },
+  {
+    "brand": "Austedo XR",
+    "spending": 90977519.38,
+    "beneficiaries": 3085
+  },
+  {
+    "brand": "Invokamet XR",
+    "spending": 13108386.98,
+    "beneficiaries": 3060
+  },
+  {
+    "brand": "Tyvaso Dpi",
+    "spending": 436921533.43,
+    "beneficiaries": 3017
+  },
+  {
+    "brand": "Effexor XR",
+    "spending": 26196303.92,
+    "beneficiaries": 2967
+  },
+  {
+    "brand": "Invega",
+    "spending": 5169575.76,
+    "beneficiaries": 2964
+  },
+  {
+    "brand": "Tasigna",
+    "spending": 394675625.23,
+    "beneficiaries": 2961
+  },
+  {
+    "brand": "Oxtellar XR",
+    "spending": 31434532.26,
+    "beneficiaries": 2887
+  },
+  {
+    "brand": "Veozah",
+    "spending": 4494558.26,
+    "beneficiaries": 2837
+  },
+  {
+    "brand": "Singulair",
+    "spending": 6621305.61,
+    "beneficiaries": 2783
+  },
+  {
+    "brand": "Zoloft",
+    "spending": 13954039.31,
+    "beneficiaries": 2751
+  },
+  {
+    "brand": "Calquence",
+    "spending": 59763179.81,
+    "beneficiaries": 2590
+  },
+  {
+    "brand": "Depakote",
+    "spending": 12924238.05,
+    "beneficiaries": 2580
+  },
+  {
+    "brand": "Neurontin",
+    "spending": 20190369.33,
+    "beneficiaries": 2533
+  },
+  {
+    "brand": "Klonopin",
+    "spending": 3683535.27,
+    "beneficiaries": 2481
+  },
+  {
+    "brand": "Ambien",
+    "spending": 12138036.35,
+    "beneficiaries": 2421
+  },
+  {
+    "brand": "Prevymis",
+    "spending": 73949061.88,
+    "beneficiaries": 2391
+  },
+  {
+    "brand": "Envarsus XR",
+    "spending": 13046574.57,
+    "beneficiaries": 2385
+  },
+  {
+    "brand": "Lasix",
+    "spending": 610014.82,
+    "beneficiaries": 2384
+  },
+  {
+    "brand": "Vumerity",
+    "spending": 152400688.76,
+    "beneficiaries": 2304
+  },
+  {
+    "brand": "Cytomel",
+    "spending": 2005765.44,
+    "beneficiaries": 2302
+  },
+  {
+    "brand": "Mekinist",
+    "spending": 173398802.16,
+    "beneficiaries": 2289
+  },
+  {
+    "brand": "Inqovi",
+    "spending": 77261468.98,
+    "beneficiaries": 2272
+  },
+  {
+    "brand": "Zypitamag",
+    "spending": 3812449.77,
+    "beneficiaries": 2268
+  },
+  {
+    "brand": "Qelbree",
+    "spending": 4086858.19,
+    "beneficiaries": 2252
+  },
+  {
+    "brand": "Prevacid",
+    "spending": 11088457.03,
+    "beneficiaries": 2224
+  },
+  {
+    "brand": "Tirosint-Sol",
+    "spending": 1876819.94,
+    "beneficiaries": 2138
+  },
+  {
+    "brand": "Tafinlar",
+    "spending": 146891649.98,
+    "beneficiaries": 2120
+  },
+  {
+    "brand": "Edurant",
+    "spending": 25756492.06,
+    "beneficiaries": 2114
+  },
+  {
+    "brand": "Pylera",
+    "spending": 1990221.16,
+    "beneficiaries": 2056
+  },
+  {
+    "brand": "Keppra XR",
+    "spending": 26668750.32,
+    "beneficiaries": 2054
+  },
+  {
+    "brand": "Camzyos",
+    "spending": 105090143.55,
+    "beneficiaries": 2006
+  },
+  {
+    "brand": "Stivarga",
+    "spending": 111001740.26,
+    "beneficiaries": 2004
+  },
+  {
+    "brand": "Diovan HCT",
+    "spending": 7652064.14,
+    "beneficiaries": 1990
+  },
+  {
+    "brand": "Zetia",
+    "spending": 6702955.1,
+    "beneficiaries": 1960
+  },
+  {
+    "brand": "Seroquel",
+    "spending": 9868367.73,
+    "beneficiaries": 1943
+  },
+  {
+    "brand": "Lamictal XR",
+    "spending": 52699057.18,
+    "beneficiaries": 1940
+  },
+  {
+    "brand": "Zejula",
+    "spending": 161500238.87,
+    "beneficiaries": 1886
+  },
+  {
+    "brand": "Esbriet",
+    "spending": 93415755.53,
+    "beneficiaries": 1834
+  },
+  {
+    "brand": "Carafate",
+    "spending": 2290697.65,
+    "beneficiaries": 1828
+  },
+  {
+    "brand": "Vesicare",
+    "spending": 5708786.91,
+    "beneficiaries": 1826
+  },
+  {
+    "brand": "Aciphex",
+    "spending": 16133400.63,
+    "beneficiaries": 1820
+  },
+  {
+    "brand": "Cipro",
+    "spending": 396416.32,
+    "beneficiaries": 1810
+  },
+  {
+    "brand": "Abilify",
+    "spending": 11882943.19,
+    "beneficiaries": 1736
+  },
+  {
+    "brand": "Bosulif",
+    "spending": 199137491.12,
+    "beneficiaries": 1732
+  },
+  {
+    "brand": "Apriso",
+    "spending": 6835480.87,
+    "beneficiaries": 1717
+  },
+  {
+    "brand": "Carbatrol",
+    "spending": 3558086.01,
+    "beneficiaries": 1707
+  },
+  {
+    "brand": "Piqray",
+    "spending": 138440780.52,
+    "beneficiaries": 1673
+  },
+  {
+    "brand": "Orserdu",
+    "spending": 127626022.26,
+    "beneficiaries": 1640
+  },
+  {
+    "brand": "Trileptal",
+    "spending": 20960476.71,
+    "beneficiaries": 1611
+  },
+  {
+    "brand": "Savaysa",
+    "spending": 5343976.28,
+    "beneficiaries": 1610
+  },
+  {
+    "brand": "Doptelet",
+    "spending": 96044174.66,
+    "beneficiaries": 1609
+  },
+  {
+    "brand": "Gilenya",
+    "spending": 125490482.7,
+    "beneficiaries": 1583
+  },
+  {
+    "brand": "Pristiq",
+    "spending": 6611882.18,
+    "beneficiaries": 1555
+  },
+  {
+    "brand": "Votrient",
+    "spending": 97957714.84,
+    "beneficiaries": 1555
+  },
+  {
+    "brand": "Lumakras",
+    "spending": 140234715.5,
+    "beneficiaries": 1527
+  },
+  {
+    "brand": "Oxbryta",
+    "spending": 101345753.63,
+    "beneficiaries": 1521
+  },
+  {
+    "brand": "Alecensa",
+    "spending": 185955638.31,
+    "beneficiaries": 1459
+  },
+  {
+    "brand": "Coreg Cr",
+    "spending": 9529111.73,
+    "beneficiaries": 1434
+  },
+  {
+    "brand": "Vytorin",
+    "spending": 5039586.45,
+    "beneficiaries": 1407
+  },
+  {
+    "brand": "Cyclobenzaprine HCl ER",
+    "spending": 3316182.75,
+    "beneficiaries": 1385
+  },
+  {
+    "brand": "Zyprexa",
+    "spending": 15496873.87,
+    "beneficiaries": 1383
+  },
+  {
+    "brand": "Wellbutrin SR",
+    "spending": 5740636.52,
+    "beneficiaries": 1370
+  },
+  {
+    "brand": "Dilantin",
+    "spending": 1543306.24,
+    "beneficiaries": 1348
+  },
+  {
+    "brand": "Plaquenil",
+    "spending": 5999786.97,
+    "beneficiaries": 1340
+  },
+  {
+    "brand": "Sf",
+    "spending": 30078.08,
+    "beneficiaries": 1338
+  },
+  {
+    "brand": "Xywav",
+    "spending": 168733996.27,
+    "beneficiaries": 1332
+  },
+  {
+    "brand": "Braftovi",
+    "spending": 87193015.83,
+    "beneficiaries": 1328
+  },
+  {
+    "brand": "Micardis",
+    "spending": 1974181.53,
+    "beneficiaries": 1322
+  },
+  {
+    "brand": "Ativan",
+    "spending": 24289924.9,
+    "beneficiaries": 1309
+  },
+  {
+    "brand": "Priftin",
+    "spending": 420148.44,
+    "beneficiaries": 1302
+  },
+  {
+    "brand": "Thalitone",
+    "spending": 538436.24,
+    "beneficiaries": 1250
+  },
+  {
+    "brand": "Wakix",
+    "spending": 101374312.73,
+    "beneficiaries": 1235
+  },
+  {
+    "brand": "Avapro",
+    "spending": 3264701.38,
+    "beneficiaries": 1228
+  },
+  {
+    "brand": "Rukobia",
+    "spending": 91208742.28,
+    "beneficiaries": 1227
+  },
+  {
+    "brand": "Ritalin",
+    "spending": 756187.4,
+    "beneficiaries": 1216
+  },
+  {
+    "brand": "Valtrex",
+    "spending": 4857101.94,
+    "beneficiaries": 1195
+  },
+  {
+    "brand": "Onfi",
+    "spending": 31539755.04,
+    "beneficiaries": 1181
+  },
+  {
+    "brand": "Lunesta",
+    "spending": 5915290.25,
+    "beneficiaries": 1180
+  },
+  {
+    "brand": "Ampyra",
+    "spending": 44351231.76,
+    "beneficiaries": 1179
+  },
+  {
+    "brand": "Mydayis",
+    "spending": 2533863,
+    "beneficiaries": 1164
+  },
+  {
+    "brand": "Arestin",
+    "spending": 5814307.73,
+    "beneficiaries": 1157
+  },
+  {
+    "brand": "Sotyktu",
+    "spending": 34323076.61,
+    "beneficiaries": 1148
+  },
+  {
+    "brand": "Mavenclad",
+    "spending": 156344543.88,
+    "beneficiaries": 1130
+  },
+  {
+    "brand": "Xpovio",
+    "spending": 85562245.68,
+    "beneficiaries": 1117
+  },
+  {
+    "brand": "Ambien Cr",
+    "spending": 5862427.17,
+    "beneficiaries": 1089
+  },
+  {
+    "brand": "Jatenzo",
+    "spending": 4591544.4,
+    "beneficiaries": 1079
+  },
+  {
+    "brand": "Seroquel XR",
+    "spending": 9338117.67,
+    "beneficiaries": 1074
+  },
+  {
+    "brand": "Bidil",
+    "spending": 1632501.13,
+    "beneficiaries": 1068
+  },
+  {
+    "brand": "Korlym",
+    "spending": 228814733.76,
+    "beneficiaries": 1059
+  },
+  {
+    "brand": "Glumetza",
+    "spending": 37772977.99,
+    "beneficiaries": 1048
+  },
+  {
+    "brand": "Zeposia",
+    "spending": 62945499.48,
+    "beneficiaries": 1034
+  },
+  {
+    "brand": "Colcrys",
+    "spending": 1044074.85,
+    "beneficiaries": 1022
+  },
+  {
+    "brand": "Fosrenol",
+    "spending": 5765883.85,
+    "beneficiaries": 1007
+  },
+  {
+    "brand": "Hyzaar",
+    "spending": 1745228.95,
+    "beneficiaries": 995
+  },
+  {
+    "brand": "Rezurock",
+    "spending": 146107629.87,
+    "beneficiaries": 978
+  },
+  {
+    "brand": "Tabrecta",
+    "spending": 93104406.99,
+    "beneficiaries": 978
+  },
+  {
+    "brand": "Prograf",
+    "spending": 4911767.9,
+    "beneficiaries": 964
+  },
+  {
+    "brand": "Azstarys",
+    "spending": 1362148.88,
+    "beneficiaries": 958
+  },
+  {
+    "brand": "Risperdal",
+    "spending": 4170925.7,
+    "beneficiaries": 957
+  },
+  {
+    "brand": "Zestril",
+    "spending": 4012064.68,
+    "beneficiaries": 956
+  },
+  {
+    "brand": "Vonjo",
+    "spending": 92544883.16,
+    "beneficiaries": 950
+  },
+  {
+    "brand": "Selzentry",
+    "spending": 8700940.23,
+    "beneficiaries": 947
+  },
+  {
+    "brand": "Avodart",
+    "spending": 4176992.42,
+    "beneficiaries": 946
+  },
+  {
+    "brand": "Tukysa",
+    "spending": 102384647.14,
+    "beneficiaries": 936
+  },
+  {
+    "brand": "Mayzent",
+    "spending": 79550293.92,
+    "beneficiaries": 928
+  },
+  {
+    "brand": "Xospata",
+    "spending": 89759418.98,
+    "beneficiaries": 924
+  },
+  {
+    "brand": "Fotivda",
+    "spending": 102301659.09,
+    "beneficiaries": 923
+  },
+  {
+    "brand": "Oracea",
+    "spending": 3911292.3,
+    "beneficiaries": 905
+  },
+  {
+    "brand": "Xadago",
+    "spending": 9872594.96,
+    "beneficiaries": 896
+  },
+  {
+    "brand": "Droxia",
+    "spending": 173562.79,
+    "beneficiaries": 875
+  },
+  {
+    "brand": "Mektovi",
+    "spending": 56654058.66,
+    "beneficiaries": 875
+  },
+  {
+    "brand": "Gleevec",
+    "spending": 73272881.26,
+    "beneficiaries": 865
+  },
+  {
+    "brand": "Xyrem",
+    "spending": 98471849.32,
+    "beneficiaries": 855
+  },
+  {
+    "brand": "Iclusig",
+    "spending": 123338680.46,
+    "beneficiaries": 841
+  },
+  {
+    "brand": "Gilotrif",
+    "spending": 51441559.3,
+    "beneficiaries": 816
+  },
+  {
+    "brand": "Idhifa",
+    "spending": 118905343.2,
+    "beneficiaries": 813
+  },
+  {
+    "brand": "Evotaz",
+    "spending": 12452839.6,
+    "beneficiaries": 805
+  },
+  {
+    "brand": "Adcirca",
+    "spending": 29259353.46,
+    "beneficiaries": 802
+  },
+  {
+    "brand": "Focalin XR",
+    "spending": 1884657.7,
+    "beneficiaries": 801
+  },
+  {
+    "brand": "Complera",
+    "spending": 25685851.23,
+    "beneficiaries": 782
+  },
+  {
+    "brand": "Imitrex",
+    "spending": 5133445.95,
+    "beneficiaries": 771
+  },
+  {
+    "brand": "Zocor",
+    "spending": 1786185.11,
+    "beneficiaries": 769
+  },
+  {
+    "brand": "Stribild",
+    "spending": 27932985.64,
+    "beneficiaries": 757
+  },
+  {
+    "brand": "Zonegran",
+    "spending": 23044502.75,
+    "beneficiaries": 745
+  },
+  {
+    "brand": "Letairis",
+    "spending": 88566585.84,
+    "beneficiaries": 743
+  },
+  {
+    "brand": "Aplenzin",
+    "spending": 20280825.25,
+    "beneficiaries": 741
+  },
+  {
+    "brand": "Paxil",
+    "spending": 1903998.68,
+    "beneficiaries": 738
+  },
+  {
+    "brand": "Delstrigo",
+    "spending": 16119606.91,
+    "beneficiaries": 722
+  },
+  {
+    "brand": "Segluromet",
+    "spending": 1266290.62,
+    "beneficiaries": 722
+  },
+  {
+    "brand": "Zithromax",
+    "spending": 25422.66,
+    "beneficiaries": 707
+  },
+  {
+    "brand": "Scemblix",
+    "spending": 114488116.94,
+    "beneficiaries": 704
+  },
+  {
+    "brand": "Harvoni",
+    "spending": 54963199.47,
+    "beneficiaries": 691
+  },
+  {
+    "brand": "Paxil Cr",
+    "spending": 2545719.97,
+    "beneficiaries": 680
+  },
+  {
+    "brand": "Tenormin",
+    "spending": 3536521.75,
+    "beneficiaries": 678
+  },
+  {
+    "brand": "Cardura XL",
+    "spending": 804453.59,
+    "beneficiaries": 674
+  },
+  {
+    "brand": "Micardis HCT",
+    "spending": 947481.12,
+    "beneficiaries": 674
+  },
+  {
+    "brand": "Vosevi",
+    "spending": 46336417.02,
+    "beneficiaries": 674
+  },
+  {
+    "brand": "Cortef",
+    "spending": 682964.44,
+    "beneficiaries": 669
+  },
+  {
+    "brand": "Gleostine",
+    "spending": 2702188.62,
+    "beneficiaries": 662
+  },
+  {
+    "brand": "Loreev XR",
+    "spending": 1474140.24,
+    "beneficiaries": 660
+  },
+  {
+    "brand": "Vyndaqel",
+    "spending": 118169380.58,
+    "beneficiaries": 660
+  },
+  {
+    "brand": "Procardia XL",
+    "spending": 2006050.89,
+    "beneficiaries": 652
+  },
+  {
+    "brand": "Exforge",
+    "spending": 2393677.13,
+    "beneficiaries": 648
+  },
+  {
+    "brand": "Jaypirca",
+    "spending": 49251882.85,
+    "beneficiaries": 647
+  },
+  {
+    "brand": "Fosamax Plus D",
+    "spending": 603529.88,
+    "beneficiaries": 642
+  },
+  {
+    "brand": "Contrave",
+    "spending": 1583918.31,
+    "beneficiaries": 635
+  },
+  {
+    "brand": "Evista",
+    "spending": 1164040.52,
+    "beneficiaries": 625
+  },
+  {
+    "brand": "Clozaril",
+    "spending": 12675375.63,
+    "beneficiaries": 616
+  },
+  {
+    "brand": "Lorbrena",
+    "spending": 75625414.96,
+    "beneficiaries": 605
+  },
+  {
+    "brand": "Rozerem",
+    "spending": 1012351.12,
+    "beneficiaries": 591
+  },
+  {
+    "brand": "Intelence",
+    "spending": 4717540.71,
+    "beneficiaries": 590
+  },
+  {
+    "brand": "Onureg",
+    "spending": 68778094.38,
+    "beneficiaries": 589
+  },
+  {
+    "brand": "Medrol",
+    "spending": 10820.54,
+    "beneficiaries": 588
+  },
+  {
+    "brand": "Truvada",
+    "spending": 5529868.39,
+    "beneficiaries": 588
+  },
+  {
+    "brand": "Ery",
+    "spending": 103729.05,
+    "beneficiaries": 586
+  },
+  {
+    "brand": "Uceris",
+    "spending": 1890840.87,
+    "beneficiaries": 577
+  },
+  {
+    "brand": "Zytiga",
+    "spending": 33242471.65,
+    "beneficiaries": 562
+  },
+  {
+    "brand": "Tricor",
+    "spending": 136199.21,
+    "beneficiaries": 561
+  },
+  {
+    "brand": "Endari",
+    "spending": 8272576.95,
+    "beneficiaries": 557
+  },
+  {
+    "brand": "Rubraca",
+    "spending": 43036981.72,
+    "beneficiaries": 556
+  },
+  {
+    "brand": "Banzel",
+    "spending": 21938164.42,
+    "beneficiaries": 542
+  },
+  {
+    "brand": "Cambia",
+    "spending": 2474537.21,
+    "beneficiaries": 522
+  },
+  {
+    "brand": "Aldactone",
+    "spending": 545667.93,
+    "beneficiaries": 510
+  },
+  {
+    "brand": "Ezallor Sprinkle",
+    "spending": 114298.94,
+    "beneficiaries": 509
+  },
+  {
+    "brand": "Provigil",
+    "spending": 13163336.82,
+    "beneficiaries": 509
+  },
+  {
+    "brand": "Thalomid",
+    "spending": 19395778.16,
+    "beneficiaries": 500
+  },
+  {
+    "brand": "Hetlioz",
+    "spending": 95952401.13,
+    "beneficiaries": 499
+  },
+  {
+    "brand": "Odomzo",
+    "spending": 29330355.05,
+    "beneficiaries": 495
+  },
+  {
+    "brand": "Sivextro",
+    "spending": 11498830.97,
+    "beneficiaries": 489
+  },
+  {
+    "brand": "Jynarque",
+    "spending": 76164443.59,
+    "beneficiaries": 486
+  },
+  {
+    "brand": "Ojjaara",
+    "spending": 27017097.61,
+    "beneficiaries": 486
+  },
+  {
+    "brand": "Tavalisse",
+    "spending": 39505314.27,
+    "beneficiaries": 486
+  },
+  {
+    "brand": "Relpax",
+    "spending": 3092247.41,
+    "beneficiaries": 480
+  },
+  {
+    "brand": "Retevmo",
+    "spending": 57651229.95,
+    "beneficiaries": 479
+  },
+  {
+    "brand": "Remeron",
+    "spending": 790626.28,
+    "beneficiaries": 475
+  },
+  {
+    "brand": "Coreg",
+    "spending": 613039.37,
+    "beneficiaries": 470
+  },
+  {
+    "brand": "Adzenys XR-ODT",
+    "spending": 1168345.71,
+    "beneficiaries": 466
+  },
+  {
+    "brand": "Carnitor",
+    "spending": 442820.71,
+    "beneficiaries": 465
+  },
+  {
+    "brand": "Cleocin",
+    "spending": 166113.44,
+    "beneficiaries": 455
+  },
+  {
+    "brand": "Welireg",
+    "spending": 59823809.58,
+    "beneficiaries": 453
+  },
+  {
+    "brand": "Nerlynx",
+    "spending": 36541269.41,
+    "beneficiaries": 452
+  },
+  {
+    "brand": "Nuvigil",
+    "spending": 3760950.89,
+    "beneficiaries": 448
+  },
+  {
+    "brand": "Krazati",
+    "spending": 22747939.36,
+    "beneficiaries": 443
+  },
+  {
+    "brand": "Colestid",
+    "spending": 199073.35,
+    "beneficiaries": 438
+  },
+  {
+    "brand": "Equetro",
+    "spending": 1205613.54,
+    "beneficiaries": 435
+  },
+  {
+    "brand": "Livtencity",
+    "spending": 37459523.35,
+    "beneficiaries": 433
+  },
+  {
+    "brand": "Evrysdi",
+    "spending": 132416369.36,
+    "beneficiaries": 424
+  },
+  {
+    "brand": "Fosamax",
+    "spending": 449342.49,
+    "beneficiaries": 424
+  },
+  {
+    "brand": "Bijuva",
+    "spending": 620761.55,
+    "beneficiaries": 421
+  },
+  {
+    "brand": "Inrebic",
+    "spending": 50007887.99,
+    "beneficiaries": 421
+  },
+  {
+    "brand": "Tavneos",
+    "spending": 33951024.79,
+    "beneficiaries": 420
+  },
+  {
+    "brand": "Jornay PM",
+    "spending": 1005317.1,
+    "beneficiaries": 419
+  },
+  {
+    "brand": "Maxalt Mlt",
+    "spending": 1108908.75,
+    "beneficiaries": 410
+  },
+  {
+    "brand": "Glucotrol XL",
+    "spending": 91077.21,
+    "beneficiaries": 401
+  },
+  {
+    "brand": "Aricept",
+    "spending": 1589637.86,
+    "beneficiaries": 400
+  },
+  {
+    "brand": "Cellcept",
+    "spending": 5317386.3,
+    "beneficiaries": 393
+  },
+  {
+    "brand": "Norvir",
+    "spending": 753471.65,
+    "beneficiaries": 393
+  },
+  {
+    "brand": "Nesina",
+    "spending": 399671.93,
+    "beneficiaries": 389
+  },
+  {
+    "brand": "Xalkori",
+    "spending": 52137022.84,
+    "beneficiaries": 387
+  },
+  {
+    "brand": "Clarinex-D 12 Hour",
+    "spending": 764352.92,
+    "beneficiaries": 380
+  },
+  {
+    "brand": "Duavee",
+    "spending": 334060.99,
+    "beneficiaries": 375
+  },
+  {
+    "brand": "Katerzia",
+    "spending": 1460851.06,
+    "beneficiaries": 374
+  },
+  {
+    "brand": "Steglujan",
+    "spending": 1376725.43,
+    "beneficiaries": 372
+  },
+  {
+    "brand": "Afinitor",
+    "spending": 29755094.75,
+    "beneficiaries": 368
+  },
+  {
+    "brand": "Xermelo",
+    "spending": 18340851.41,
+    "beneficiaries": 367
+  },
+  {
+    "brand": "Macrobid",
+    "spending": 63980.76,
+    "beneficiaries": 365
+  },
+  {
+    "brand": "Avalide",
+    "spending": 1080180.37,
+    "beneficiaries": 361
+  },
+  {
+    "brand": "Geodon",
+    "spending": 6284898.84,
+    "beneficiaries": 359
+  },
+  {
+    "brand": "Firdapse",
+    "spending": 146333211.56,
+    "beneficiaries": 356
+  },
+  {
+    "brand": "Proscar",
+    "spending": 458547.68,
+    "beneficiaries": 351
+  },
+  {
+    "brand": "Spritam",
+    "spending": 1356319.3,
+    "beneficiaries": 349
+  },
+  {
+    "brand": "Viread",
+    "spending": 3626217.01,
+    "beneficiaries": 348
+  },
+  {
+    "brand": "Cibinqo",
+    "spending": 9784289.66,
+    "beneficiaries": 347
+  },
+  {
+    "brand": "Rydapt",
+    "spending": 30688892.15,
+    "beneficiaries": 347
+  },
+  {
+    "brand": "Baxdela",
+    "spending": 1142193.52,
+    "beneficiaries": 343
+  },
+  {
+    "brand": "Tekturna",
+    "spending": 1055688.61,
+    "beneficiaries": 343
+  },
+  {
+    "brand": "Norpace Cr",
+    "spending": 812957.89,
+    "beneficiaries": 338
+  },
+  {
+    "brand": "Maxalt",
+    "spending": 1329529.65,
+    "beneficiaries": 335
+  },
+  {
+    "brand": "Myfembree",
+    "spending": 1714892.97,
+    "beneficiaries": 330
+  },
+  {
+    "brand": "Felbatol",
+    "spending": 7319135.21,
+    "beneficiaries": 327
+  },
+  {
+    "brand": "Dyanavel XR",
+    "spending": 482763.72,
+    "beneficiaries": 326
+  },
+  {
+    "brand": "Neoral",
+    "spending": 1154941.32,
+    "beneficiaries": 326
+  },
+  {
+    "brand": "Oxaydo",
+    "spending": 694799.47,
+    "beneficiaries": 322
+  },
+  {
+    "brand": "Skyclarys",
+    "spending": 44995926.98,
+    "beneficiaries": 321
+  },
+  {
+    "brand": "Sunlenca",
+    "spending": 9723618.4,
+    "beneficiaries": 320
+  },
+  {
+    "brand": "Xphozah",
+    "spending": 1338817.25,
+    "beneficiaries": 318
+  },
+  {
+    "brand": "Librax",
+    "spending": 3034242.26,
+    "beneficiaries": 317
+  },
+  {
+    "brand": "Mysoline",
+    "spending": 13882536.18,
+    "beneficiaries": 317
+  },
+  {
+    "brand": "Exforge HCT",
+    "spending": 988025.06,
+    "beneficiaries": 316
+  },
+  {
+    "brand": "Tobi Podhaler",
+    "spending": 11125293.88,
+    "beneficiaries": 315
+  },
+  {
+    "brand": "Arimidex",
+    "spending": 3989944.41,
+    "beneficiaries": 311
+  },
+  {
+    "brand": "Zonisade",
+    "spending": 2053223.94,
+    "beneficiaries": 307
+  },
+  {
+    "brand": "Mestinon",
+    "spending": 7488212.31,
+    "beneficiaries": 304
+  },
+  {
+    "brand": "Primaquine",
+    "spending": 26191.33,
+    "beneficiaries": 300
+  },
+  {
+    "brand": "Binosto",
+    "spending": 539469.92,
+    "beneficiaries": 299
+  },
+  {
+    "brand": "Lupkynis",
+    "spending": 20169854.6,
+    "beneficiaries": 299
+  },
+  {
+    "brand": "Lyvispah",
+    "spending": 143986.24,
+    "beneficiaries": 299
+  },
+  {
+    "brand": "Silenor",
+    "spending": 906535.36,
+    "beneficiaries": 299
+  },
+  {
+    "brand": "Zelboraf",
+    "spending": 12983917.61,
+    "beneficiaries": 298
+  },
+  {
+    "brand": "Cardizem CD",
+    "spending": 3265293,
+    "beneficiaries": 295
+  },
+  {
+    "brand": "Lopressor",
+    "spending": 369969.05,
+    "beneficiaries": 294
+  },
+  {
+    "brand": "Zegerid",
+    "spending": 8514993.07,
+    "beneficiaries": 290
+  },
+  {
+    "brand": "Mesnex",
+    "spending": 707837.67,
+    "beneficiaries": 284
+  },
+  {
+    "brand": "Diflucan",
+    "spending": 229457.48,
+    "beneficiaries": 279
+  },
+  {
+    "brand": "Northera",
+    "spending": 27885154.93,
+    "beneficiaries": 277
+  },
+  {
+    "brand": "Vasotec",
+    "spending": 3361198.79,
+    "beneficiaries": 276
+  },
+  {
+    "brand": "Angeliq",
+    "spending": 426668.74,
+    "beneficiaries": 275
+  },
+  {
+    "brand": "Balversa",
+    "spending": 17690616.55,
+    "beneficiaries": 275
+  },
+  {
+    "brand": "Uroxatral",
+    "spending": 1932242.99,
+    "beneficiaries": 274
+  },
+  {
+    "brand": "Prometrium",
+    "spending": 662253.02,
+    "beneficiaries": 270
+  },
+  {
+    "brand": "Leukeran",
+    "spending": 14311940.37,
+    "beneficiaries": 268
+  },
+  {
+    "brand": "Ayvakit",
+    "spending": 55171737.04,
+    "beneficiaries": 267
+  },
+  {
+    "brand": "Lanoxin",
+    "spending": 1214352.45,
+    "beneficiaries": 265
+  },
+  {
+    "brand": "Lamictal ODT",
+    "spending": 3482453.79,
+    "beneficiaries": 264
+  },
+  {
+    "brand": "Thiola EC",
+    "spending": 23230085.46,
+    "beneficiaries": 261
+  },
+  {
+    "brand": "Subvenite",
+    "spending": 22139.11,
+    "beneficiaries": 260
+  },
+  {
+    "brand": "Zyprexa Zydis",
+    "spending": 3475505.18,
+    "beneficiaries": 259
+  },
+  {
+    "brand": "Soma",
+    "spending": 1547299.39,
+    "beneficiaries": 258
+  },
+  {
+    "brand": "Qinlock",
+    "spending": 52132976.81,
+    "beneficiaries": 255
+  },
+  {
+    "brand": "Tepmetko",
+    "spending": 22472803.62,
+    "beneficiaries": 249
+  },
+  {
+    "brand": "Alunbrig",
+    "spending": 33349882.06,
+    "beneficiaries": 237
+  },
+  {
+    "brand": "Roxicodone",
+    "spending": 1952761.47,
+    "beneficiaries": 237
+  },
+  {
+    "brand": "Edluar",
+    "spending": 749452.22,
+    "beneficiaries": 234
+  },
+  {
+    "brand": "Talzenna",
+    "spending": 14816664.08,
+    "beneficiaries": 234
+  },
+  {
+    "brand": "Cardura",
+    "spending": 465073.92,
+    "beneficiaries": 232
+  },
+  {
+    "brand": "Effient",
+    "spending": 1072473.88,
+    "beneficiaries": 231
+  },
+  {
+    "brand": "Zanaflex",
+    "spending": 503081.15,
+    "beneficiaries": 231
+  },
+  {
+    "brand": "Yonsa",
+    "spending": 14025107.49,
+    "beneficiaries": 228
+  },
+  {
+    "brand": "Tlando",
+    "spending": 771581.59,
+    "beneficiaries": 226
+  },
+  {
+    "brand": "Actos",
+    "spending": 947844.25,
+    "beneficiaries": 224
+  },
+  {
+    "brand": "Magnesium Sulfate",
+    "spending": 20086.12,
+    "beneficiaries": 222
+  },
+  {
+    "brand": "Zestoretic",
+    "spending": 882756.12,
+    "beneficiaries": 219
+  },
+  {
+    "brand": "Celontin",
+    "spending": 695875.38,
+    "beneficiaries": 217
+  },
+  {
+    "brand": "Lescol XL",
+    "spending": 722048.22,
+    "beneficiaries": 217
+  },
+  {
+    "brand": "Dipentum",
+    "spending": 2854711.54,
+    "beneficiaries": 215
+  },
+  {
+    "brand": "Myfortic",
+    "spending": 1330716.2,
+    "beneficiaries": 215
+  },
+  {
+    "brand": "Matulane",
+    "spending": 1679770.61,
+    "beneficiaries": 213
+  },
+  {
+    "brand": "Femara",
+    "spending": 1465126.08,
+    "beneficiaries": 209
+  },
+  {
+    "brand": "Pemazyre",
+    "spending": 26255017.56,
+    "beneficiaries": 207
+  },
+  {
+    "brand": "Tazverik",
+    "spending": 18985929.06,
+    "beneficiaries": 207
+  },
+  {
+    "brand": "Vancomycin",
+    "spending": 30390.84,
+    "beneficiaries": 207
+  },
+  {
+    "brand": "Lomotil",
+    "spending": 217708.85,
+    "beneficiaries": 205
+  },
+  {
+    "brand": "Rozlytrek",
+    "spending": 15596859.47,
+    "beneficiaries": 205
+  },
+  {
+    "brand": "Azulfidine",
+    "spending": 272280.71,
+    "beneficiaries": 204
+  },
+  {
+    "brand": "Qbrelis",
+    "spending": 1488687.75,
+    "beneficiaries": 204
+  },
+  {
+    "brand": "Thyquidity",
+    "spending": 221616.93,
+    "beneficiaries": 204
+  },
+  {
+    "brand": "Eprontia",
+    "spending": 522146.18,
+    "beneficiaries": 203
+  },
+  {
+    "brand": "Isturisa",
+    "spending": 34621980.07,
+    "beneficiaries": 202
+  },
+  {
+    "brand": "Viagra",
+    "spending": 333639.84,
+    "beneficiaries": 202
+  },
+  {
+    "brand": "Azilect",
+    "spending": 1922416.13,
+    "beneficiaries": 201
+  },
+  {
+    "brand": "Cipro",
+    "spending": 28559.97,
+    "beneficiaries": 199
+  },
+  {
+    "brand": "Cotellic",
+    "spending": 6345615.78,
+    "beneficiaries": 199
+  },
+  {
+    "brand": "Seysara",
+    "spending": 657586.04,
+    "beneficiaries": 190
+  },
+  {
+    "brand": "Varubi",
+    "spending": 497575.28,
+    "beneficiaries": 187
+  },
+  {
+    "brand": "Tikosyn",
+    "spending": 789599.1,
+    "beneficiaries": 186
+  },
+  {
+    "brand": "Clarinex",
+    "spending": 289141.95,
+    "beneficiaries": 184
+  },
+  {
+    "brand": "Dilaudid",
+    "spending": 905514.22,
+    "beneficiaries": 183
+  },
+  {
+    "brand": "Focalin",
+    "spending": 93336.63,
+    "beneficiaries": 183
+  },
+  {
+    "brand": "Sympazan",
+    "spending": 2541058.78,
+    "beneficiaries": 183
+  },
+  {
+    "brand": "Aspruzyo Sprinkle",
+    "spending": 138947.36,
+    "beneficiaries": 181
+  },
+  {
+    "brand": "Tiglutik",
+    "spending": 3051835.49,
+    "beneficiaries": 181
+  },
+  {
+    "brand": "Nexavar",
+    "spending": 8471541.68,
+    "beneficiaries": 176
+  },
+  {
+    "brand": "Lysodren",
+    "spending": 2295519.04,
+    "beneficiaries": 173
+  },
+  {
+    "brand": "Noxafil",
+    "spending": 2509594.79,
+    "beneficiaries": 167
+  },
+  {
+    "brand": "Solosec",
+    "spending": 70233.62,
+    "beneficiaries": 167
+  },
+  {
+    "brand": "Samsca",
+    "spending": 12363435.24,
+    "beneficiaries": 165
+  },
+  {
+    "brand": "Sandimmune",
+    "spending": 973184.06,
+    "beneficiaries": 165
+  },
+  {
+    "brand": "Dexedrine",
+    "spending": 2315274.03,
+    "beneficiaries": 160
+  },
+  {
+    "brand": "Fintepla",
+    "spending": 17962601.18,
+    "beneficiaries": 160
+  },
+  {
+    "brand": "Ms Contin",
+    "spending": 1079067.7,
+    "beneficiaries": 160
+  },
+  {
+    "brand": "Orladeyo",
+    "spending": 52329472.59,
+    "beneficiaries": 158
+  },
+  {
+    "brand": "Bactrim Ds",
+    "spending": 18547.78,
+    "beneficiaries": 150
+  },
+  {
+    "brand": "Forfivo XL",
+    "spending": 413553.28,
+    "beneficiaries": 150
+  },
+  {
+    "brand": "Tybost",
+    "spending": 266479.55,
+    "beneficiaries": 149
+  },
+  {
+    "brand": "Fruzaqla",
+    "spending": 4562633.53,
+    "beneficiaries": 147
+  },
+  {
+    "brand": "Siklos",
+    "spending": 741886.93,
+    "beneficiaries": 146
+  },
+  {
+    "brand": "Vitrakvi",
+    "spending": 29548698.96,
+    "beneficiaries": 144
+  },
+  {
+    "brand": "Coartem",
+    "spending": 95091.7,
+    "beneficiaries": 141
+  },
+  {
+    "brand": "Qudexy XR",
+    "spending": 1378500.68,
+    "beneficiaries": 141
+  },
+  {
+    "brand": "Chantix",
+    "spending": 88399.1,
+    "beneficiaries": 136
+  },
+  {
+    "brand": "Methadose",
+    "spending": 7567.36,
+    "beneficiaries": 134
+  },
+  {
+    "brand": "Cuvposa",
+    "spending": 266777.87,
+    "beneficiaries": 131
+  },
+  {
+    "brand": "Tracleer",
+    "spending": 15070481.97,
+    "beneficiaries": 128
+  },
+  {
+    "brand": "Aromasin",
+    "spending": 1352023.54,
+    "beneficiaries": 126
+  },
+  {
+    "brand": "Bafiertam",
+    "spending": 4951676.03,
+    "beneficiaries": 126
+  },
+  {
+    "brand": "Sutent",
+    "spending": 7397129.05,
+    "beneficiaries": 124
+  },
+  {
+    "brand": "Emtriva",
+    "spending": 311935.98,
+    "beneficiaries": 123
+  },
+  {
+    "brand": "Restoril",
+    "spending": 983604.76,
+    "beneficiaries": 123
+  },
+  {
+    "brand": "Cerdelga",
+    "spending": 37570024.98,
+    "beneficiaries": 119
+  },
+  {
+    "brand": "Jadenu",
+    "spending": 8881639.84,
+    "beneficiaries": 117
+  },
+  {
+    "brand": "Galafold",
+    "spending": 34842424.79,
+    "beneficiaries": 114
+  },
+  {
+    "brand": "Revatio",
+    "spending": 7734035.64,
+    "beneficiaries": 114
+  },
+  {
+    "brand": "Tiazac",
+    "spending": 107625.65,
+    "beneficiaries": 114
+  },
+  {
+    "brand": "Filspari",
+    "spending": 4777835.97,
+    "beneficiaries": 112
+  },
+  {
+    "brand": "Symfi",
+    "spending": 1243780.78,
+    "beneficiaries": 110
+  },
+  {
+    "brand": "Zortress",
+    "spending": 1994087.95,
+    "beneficiaries": 110
+  },
+  {
+    "brand": "Treximet",
+    "spending": 1160490.69,
+    "beneficiaries": 109
+  },
+  {
+    "brand": "Sirturo",
+    "spending": 3019486.26,
+    "beneficiaries": 105
+  },
+  {
+    "brand": "Diuril",
+    "spending": 17639.12,
+    "beneficiaries": 101
+  },
+  {
+    "brand": "Doryx Mpc",
+    "spending": 145512.12,
+    "beneficiaries": 101
+  },
+  {
+    "brand": "Hydrea",
+    "spending": 40412.04,
+    "beneficiaries": 101
+  },
+  {
+    "brand": "Emflaza",
+    "spending": 15369330.29,
+    "beneficiaries": 99
+  },
+  {
+    "brand": "Imitrex",
+    "spending": 232297.38,
+    "beneficiaries": 99
+  },
+  {
+    "brand": "Ponvory",
+    "spending": 8307093.5,
+    "beneficiaries": 99
+  },
+  {
+    "brand": "Keveyis",
+    "spending": 20667742.85,
+    "beneficiaries": 98
+  },
+  {
+    "brand": "Lipofen",
+    "spending": 205112.39,
+    "beneficiaries": 98
+  },
+  {
+    "brand": "Zipsor",
+    "spending": 796636.19,
+    "beneficiaries": 98
+  },
+  {
+    "brand": "Zydelig",
+    "spending": 8060774.82,
+    "beneficiaries": 97
+  },
+  {
+    "brand": "Daybue",
+    "spending": 19168239.75,
+    "beneficiaries": 94
+  },
+  {
+    "brand": "Lytgobi",
+    "spending": 7249603.19,
+    "beneficiaries": 94
+  },
+  {
+    "brand": "Koselugo",
+    "spending": 14917272.72,
+    "beneficiaries": 93
+  },
+  {
+    "brand": "Fleqsuvy",
+    "spending": 830841.15,
+    "beneficiaries": 92
+  },
+  {
+    "brand": "Indocin",
+    "spending": 1458672.43,
+    "beneficiaries": 91
+  },
+  {
+    "brand": "Kalydeco",
+    "spending": 25099035.9,
+    "beneficiaries": 91
+  },
+  {
+    "brand": "Lyrica Cr",
+    "spending": 402332.98,
+    "beneficiaries": 91
+  },
+  {
+    "brand": "Iressa",
+    "spending": 3529858.32,
+    "beneficiaries": 90
+  },
+  {
+    "brand": "Kazano",
+    "spending": 111509.93,
+    "beneficiaries": 90
+  },
+  {
+    "brand": "Cystadane",
+    "spending": 2900641.92,
+    "beneficiaries": 89
+  },
+  {
+    "brand": "Versacloz",
+    "spending": 1268675.82,
+    "beneficiaries": 89
+  },
+  {
+    "brand": "Arava",
+    "spending": 1045335.1,
+    "beneficiaries": 88
+  },
+  {
+    "brand": "Quillichew ER",
+    "spending": 260315.5,
+    "beneficiaries": 88
+  },
+  {
+    "brand": "Ravicti",
+    "spending": 73454459.02,
+    "beneficiaries": 87
+  },
+  {
+    "brand": "Urocit-K",
+    "spending": 112862.14,
+    "beneficiaries": 86
+  },
+  {
+    "brand": "Caduet",
+    "spending": 385568.41,
+    "beneficiaries": 85
+  },
+  {
+    "brand": "Recorlev",
+    "spending": 9811452.66,
+    "beneficiaries": 85
+  },
+  {
+    "brand": "Xatmep",
+    "spending": 248445.37,
+    "beneficiaries": 84
+  },
+  {
+    "brand": "Zarontin",
+    "spending": 216704.13,
+    "beneficiaries": 83
+  },
+  {
+    "brand": "Viracept",
+    "spending": 909064.32,
+    "beneficiaries": 81
+  },
+  {
+    "brand": "Geodon",
+    "spending": 20855.25,
+    "beneficiaries": 79
+  },
+  {
+    "brand": "Inspra",
+    "spending": 369294.08,
+    "beneficiaries": 79
+  },
+  {
+    "brand": "Mycapssa",
+    "spending": 5083471.42,
+    "beneficiaries": 79
+  },
+  {
+    "brand": "Reyataz",
+    "spending": 958843.8,
+    "beneficiaries": 76
+  },
+  {
+    "brand": "Intuniv",
+    "spending": 228106.98,
+    "beneficiaries": 75
+  },
+  {
+    "brand": "Tykerb",
+    "spending": 2235760.99,
+    "beneficiaries": 74
+  },
+  {
+    "brand": "Dilantin-125",
+    "spending": 186395.6,
+    "beneficiaries": 73
+  },
+  {
+    "brand": "Soltamox",
+    "spending": 469195.92,
+    "beneficiaries": 72
+  },
+  {
+    "brand": "Urso Forte",
+    "spending": 391796.88,
+    "beneficiaries": 72
+  },
+  {
+    "brand": "Potassium Chloride",
+    "spending": 2120.57,
+    "beneficiaries": 71
+  },
+  {
+    "brand": "Rezlidhia",
+    "spending": 7155399.91,
+    "beneficiaries": 71
+  },
+  {
+    "brand": "Halcion",
+    "spending": 41807.92,
+    "beneficiaries": 70
+  },
+  {
+    "brand": "Oseni",
+    "spending": 256634.13,
+    "beneficiaries": 69
+  },
+  {
+    "brand": "Aptivus",
+    "spending": 1283060.4,
+    "beneficiaries": 65
+  },
+  {
+    "brand": "Xanax XR",
+    "spending": 294924.1,
+    "beneficiaries": 65
+  },
+  {
+    "brand": "Lumryz",
+    "spending": 2175379.15,
+    "beneficiaries": 64
+  },
+  {
+    "brand": "Quillivant XR",
+    "spending": 196312.94,
+    "beneficiaries": 64
+  },
+  {
+    "brand": "Augmentin",
+    "spending": 142771.49,
+    "beneficiaries": 62
+  },
+  {
+    "brand": "Daurismo",
+    "spending": 2942885.43,
+    "beneficiaries": 62
+  },
+  {
+    "brand": "Zolinza",
+    "spending": 3402207.74,
+    "beneficiaries": 61
+  },
+  {
+    "brand": "Sabril",
+    "spending": 18489553.86,
+    "beneficiaries": 59
+  },
+  {
+    "brand": "Edecrin",
+    "spending": 517003.88,
+    "beneficiaries": 58
+  },
+  {
+    "brand": "Ddavp",
+    "spending": 420012.28,
+    "beneficiaries": 57
+  },
+  {
+    "brand": "Procysbi",
+    "spending": 39331260.8,
+    "beneficiaries": 57
+  },
+  {
+    "brand": "Nardil",
+    "spending": 116312.69,
+    "beneficiaries": 56
+  },
+  {
+    "brand": "Truqap",
+    "spending": 1501469.74,
+    "beneficiaries": 56
+  },
+  {
+    "brand": "Zykadia",
+    "spending": 4498923.51,
+    "beneficiaries": 56
+  },
+  {
+    "brand": "Activella",
+    "spending": 124689.52,
+    "beneficiaries": 55
+  },
+  {
+    "brand": "Cotempla XR-ODT",
+    "spending": 237330.42,
+    "beneficiaries": 55
+  },
+  {
+    "brand": "Exjade",
+    "spending": 2925424.28,
+    "beneficiaries": 55
+  },
+  {
+    "brand": "Targretin",
+    "spending": 5943141.89,
+    "beneficiaries": 55
+  },
+  {
+    "brand": "Provera",
+    "spending": 34224.86,
+    "beneficiaries": 54
+  },
+  {
+    "brand": "Verelan PM",
+    "spending": 120053.81,
+    "beneficiaries": 54
+  },
+  {
+    "brand": "Frova",
+    "spending": 357157.72,
+    "beneficiaries": 53
+  },
+  {
+    "brand": "Thiola",
+    "spending": 3477681.31,
+    "beneficiaries": 52
+  },
+  {
+    "brand": "Tolsura",
+    "spending": 769424.8,
+    "beneficiaries": 50
+  },
+  {
+    "brand": "Voquezna",
+    "spending": 46257.9,
+    "beneficiaries": 48
+  },
+  {
+    "brand": "Gastrocrom",
+    "spending": 663437.1,
+    "beneficiaries": 47
+  },
+  {
+    "brand": "Nitrolingual",
+    "spending": 36118.65,
+    "beneficiaries": 47
+  },
+  {
+    "brand": "Agrylin",
+    "spending": 232259.78,
+    "beneficiaries": 45
+  },
+  {
+    "brand": "Cardizem",
+    "spending": 224141.37,
+    "beneficiaries": 44
+  },
+  {
+    "brand": "Anafranil",
+    "spending": 1057491.7,
+    "beneficiaries": 43
+  },
+  {
+    "brand": "Cometriq",
+    "spending": 3456786.94,
+    "beneficiaries": 43
+  },
+  {
+    "brand": "Macrodantin",
+    "spending": 25130.15,
+    "beneficiaries": 42
+  },
+  {
+    "brand": "Kuvan",
+    "spending": 6802219.79,
+    "beneficiaries": 41
+  },
+  {
+    "brand": "Ferriprox",
+    "spending": 3680026.47,
+    "beneficiaries": 40
+  },
+  {
+    "brand": "Epivir",
+    "spending": 102524.38,
+    "beneficiaries": 39
+  },
+  {
+    "brand": "Amrix",
+    "spending": 577359.9,
+    "beneficiaries": 38
+  },
+  {
+    "brand": "Bonjesta",
+    "spending": 39236.16,
+    "beneficiaries": 38
+  },
+  {
+    "brand": "Parnate",
+    "spending": 508230.01,
+    "beneficiaries": 38
+  },
+  {
+    "brand": "Xenazine",
+    "spending": 9064543.09,
+    "beneficiaries": 37
+  },
+  {
+    "brand": "Aptensio XR",
+    "spending": 43594.72,
+    "beneficiaries": 36
+  },
+  {
+    "brand": "Vizimpro",
+    "spending": 2774625.94,
+    "beneficiaries": 35
+  },
+  {
+    "brand": "Diclegis",
+    "spending": 17080.43,
+    "beneficiaries": 34
+  },
+  {
+    "brand": "Mepron",
+    "spending": 322205.77,
+    "beneficiaries": 34
+  },
+  {
+    "brand": "Valcyte",
+    "spending": 317770.96,
+    "beneficiaries": 33
+  },
+  {
+    "brand": "Caprelsa",
+    "spending": 3136063.71,
+    "beneficiaries": 32
+  },
+  {
+    "brand": "Metopirone",
+    "spending": 1090494.16,
+    "beneficiaries": 32
+  },
+  {
+    "brand": "Vesicare Ls",
+    "spending": 31693.15,
+    "beneficiaries": 32
+  },
+  {
+    "brand": "Zyvox",
+    "spending": 29011.27,
+    "beneficiaries": 32
+  },
+  {
+    "brand": "Stromectol",
+    "spending": 1633.82,
+    "beneficiaries": 31
+  },
+  {
+    "brand": "Vijoice",
+    "spending": 5958633.34,
+    "beneficiaries": 31
+  },
+  {
+    "brand": "Ziagen",
+    "spending": 111586.29,
+    "beneficiaries": 31
+  },
+  {
+    "brand": "Drizalma Sprinkle",
+    "spending": 9375.02,
+    "beneficiaries": 30
+  },
+  {
+    "brand": "Vaseretic",
+    "spending": 80586.24,
+    "beneficiaries": 30
+  },
+  {
+    "brand": "Mulpleta",
+    "spending": 277673.47,
+    "beneficiaries": 28
+  },
+  {
+    "brand": "Actoplus Met",
+    "spending": 131484.67,
+    "beneficiaries": 27
+  },
+  {
+    "brand": "Cimduo",
+    "spending": 274438.85,
+    "beneficiaries": 27
+  },
+  {
+    "brand": "Litfulo",
+    "spending": 223742.48,
+    "beneficiaries": 26
+  },
+  {
+    "brand": "Proglycem",
+    "spending": 205884.44,
+    "beneficiaries": 26
+  },
+  {
+    "brand": "Pyrukynd",
+    "spending": 4466375.49,
+    "beneficiaries": 26
+  },
+  {
+    "brand": "Urso",
+    "spending": 157114.8,
+    "beneficiaries": 26
+  },
+  {
+    "brand": "Zyvox",
+    "spending": 50085.86,
+    "beneficiaries": 26
+  },
+  {
+    "brand": "Sporanox",
+    "spending": 196501.83,
+    "beneficiaries": 25
+  },
+  {
+    "brand": "Carnitor",
+    "spending": 55962.48,
+    "beneficiaries": 24
+  },
+  {
+    "brand": "Chemet",
+    "spending": 152629.98,
+    "beneficiaries": 24
+  },
+  {
+    "brand": "Impavido",
+    "spending": 1649351.96,
+    "beneficiaries": 24
+  },
+  {
+    "brand": "Vanflyta",
+    "spending": 1145286.06,
+    "beneficiaries": 24
+  },
+  {
+    "brand": "Zepatier",
+    "spending": 467651.28,
+    "beneficiaries": 23
+  },
+  {
+    "brand": "Absorica",
+    "spending": 76072.07,
+    "beneficiaries": 22
+  },
+  {
+    "brand": "Cytotec",
+    "spending": 33330.27,
+    "beneficiaries": 22
+  },
+  {
+    "brand": "Emend",
+    "spending": 61587.81,
+    "beneficiaries": 22
+  },
+  {
+    "brand": "Zelapar",
+    "spending": 625901.8,
+    "beneficiaries": 22
+  },
+  {
+    "brand": "Dojolvi",
+    "spending": 2635754.28,
+    "beneficiaries": 21
+  },
+  {
+    "brand": "Epaned",
+    "spending": 159538.96,
+    "beneficiaries": 21
+  },
+  {
+    "brand": "Lopid",
+    "spending": 7632.9,
+    "beneficiaries": 21
+  },
+  {
+    "brand": "Tabloid",
+    "spending": 634343.2,
+    "beneficiaries": 21
+  },
+  {
+    "brand": "Cystagon",
+    "spending": 75219.15,
+    "beneficiaries": 20
+  },
+  {
+    "brand": "Krintafel",
+    "spending": 2874.49,
+    "beneficiaries": 20
+  },
+  {
+    "brand": "Afinitor Disperz",
+    "spending": 5349230.05,
+    "beneficiaries": 19
+  },
+  {
+    "brand": "Turalio",
+    "spending": 1798155.77,
+    "beneficiaries": 19
+  },
+  {
+    "brand": "Vfend",
+    "spending": 10101.97,
+    "beneficiaries": 19
+  },
+  {
+    "brand": "Isordil",
+    "spending": 68413.8,
+    "beneficiaries": 18
+  },
+  {
+    "brand": "Malarone",
+    "spending": 3408.88,
+    "beneficiaries": 18
+  },
+  {
+    "brand": "Sovaldi",
+    "spending": 1955322.31,
+    "beneficiaries": 18
+  },
+  {
+    "brand": "Buphenyl",
+    "spending": 3406839.08,
+    "beneficiaries": 17
+  },
+  {
+    "brand": "Akeega",
+    "spending": 566563.09,
+    "beneficiaries": 16
+  },
+  {
+    "brand": "Bactrim",
+    "spending": 1593.15,
+    "beneficiaries": 15
+  },
+  {
+    "brand": "Absorica Ld",
+    "spending": 62964.21,
+    "beneficiaries": 14
+  },
+  {
+    "brand": "Juxtapid",
+    "spending": 8682999.81,
+    "beneficiaries": 14
+  },
+  {
+    "brand": "Ogsiveo",
+    "spending": 428915.95,
+    "beneficiaries": 14
+  },
+  {
+    "brand": "Accolate",
+    "spending": 8114.96,
+    "beneficiaries": 13
+  },
+  {
+    "brand": "Ella",
+    "spending": 741.27,
+    "beneficiaries": 13
+  },
+  {
+    "brand": "Methylin",
+    "spending": 3949.5,
+    "beneficiaries": 12
+  },
+  {
+    "brand": "Lotensin HCT",
+    "spending": 9783.12,
+    "beneficiaries": 11
+  },
+  {
+    "brand": "Norpace",
+    "spending": 32330.55,
+    "beneficiaries": 11
+  }
+]

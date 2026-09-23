@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Pa11y results for "https://rhodespharma.com/catalog/#!aptensio-xr-capsules-cii"
+	</title>
+	<style>
+		html, body {
+			background-color: #ffffff;
+			color: rgb(51 51 51);
+			font-family: system-ui, sans-serif;
+			font-size: 16px;
+			line-height: 1.3rem;
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			margin-block: 0;
+			margin-inline: auto;
+			max-inline-size: 900px;
+			padding: 1.25rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			margin: 0;
+			margin-block-end: 0.5rem;
+		}
+
+		h2, h3 {
+			font-size: 1.15rem;
+			font-weight: normal;
+			margin: 0;
+			padding-block-end: 0.5rem;
+		}
+
+		h3 { padding-block-end: 0; }
+
+		p { margin: 0; }
+
+		.filter {
+			display: inline-grid;
+			grid-template-columns: 8.5rem 1fr 1fr 1fr;
+			margin-block-start: 1rem;
+		}
+
+		.filter .label {
+			font-size: 1.15rem;
+			padding-block: 0.45rem;
+			padding-inline: 0;
+		}
+
+		.count {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			cursor: pointer;
+			display: inline-grid;
+			font-size: 1.15rem;
+			grid-template-columns: 0.35rem 1fr;
+			margin-inline-end: 0.75rem;
+			min-inline-size: 80px;
+		}
+
+		.count .body {
+			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding-block: 0.35rem;
+			padding-inline: 0.7rem;
+			text-align: center;
+		}
+
+		.count.hidden {
+			background-color: #f4f4f4;
+			color: rgb(51 51 51);
+		}
+
+		.count.hidden .left-bar { background-color: #808080; }
+
+		.count.hidden .body { border-color: #d4d4d4; }
+
+		.issues {
+			list-style: none;
+			margin: 0;
+			margin-block-start: 1.5rem;
+			padding-inline-start: 0;
+		}
+
+		.issue {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			display: grid;
+			grid-template-columns: 0.5rem 1fr;
+			margin: 0;
+			margin-block-end: 1.5rem;
+			padding: 0;
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .left-bar { background-color: #808080; }
+
+		.issue p:not(:last-child) { padding-block-end: 0.1rem; }
+
+		.issue.hidden { display: none; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .body {
+ 			border-color: #bfbfbf;
+ 			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding: 0.5rem;
+			position: relative;
+		}
+
+		.issue .body h3 { padding-block-end: 0.25rem; }
+
+		.context, .selector {
+			font-family: monospace;
+			font-size: 0.95rem;
+			padding-block-start: 0.1rem;
+		}
+
+		.error {
+			background-color: #f8d7da;
+			color: rgb(103 25 31);
+		}
+
+		.warning {
+			background-color: #fff3cd;
+			color: rgb(84 64 3);
+		}
+
+		.notice {
+			background-color: #cfe2ff;
+			color: rgb(6 44 101);
+		}
+
+		.error a { color: #842029; }
+		.warning a { color: #664d03; }
+		.notice a { color: #074197; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .left-bar { background-color: #d53447; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .left-bar { background-color: #c79500; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .left-bar { background-color: #015cda; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .body { border-color: #f2bbc1; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .body { border-color: #ffd761; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .body { border-color: #a9cefe; }
+
+		.clipboard-button {
+			background-color: rgb(51 51 51 / 10%);
+			border: 2px solid;
+			border-color: rgb(51 51 51 / 30%);
+			border-radius: 2px;
+			color: rgb(51 51 51 / 40%);
+			font-size: 0.8rem;
+			inset-block-start: 7px;
+			inset-inline-end: 7px;
+			margin: 0;
+			opacity: 0;
+			padding-block: 5px 4px;
+			padding-inline: 7px;
+			position: absolute;
+			transition: 0.1s;
+			visibility: hidden;
+			z-index: 1;
+		}
+
+		.error .clipboard-button {
+			background-color: rgb(103 25 31 / 10%);
+			border-color: rgb(103 25 31 / 30%);
+			color: rgb(103 25 31 / 40%);
+		}
+
+		.warning .clipboard-button {
+			background-color: rgb(84 64 3 / 10%);
+			border-color: rgb(84 64 3 / 30%);
+			color: rgb(84 64 3 / 40%);
+		}
+
+		.notice .clipboard-button {
+			background-color: rgb(6 44 101 / 10%);
+			border-color: rgb(6 44 101 / 30%);
+			color: rgb(6 44 101 / 40%);
+		}
+
+		.clipboard-button > svg { fill: rgb(51 51 51 / 40%); }
+		.error .clipboard-button > svg { fill: rgb(103 25 31 / 40%); }
+		.warning .clipboard-button > svg { fill: rgb(84 64 3 / 40%); }
+		.notice .clipboard-button > svg { fill: rgb(6 44 101 / 40%); }
+
+		.clipboard-button:focus { outline: 0; }
+
+		.clipboard-button:hover,
+		.clipboard-button:focus {
+			background-color: rgb(51 51 51 / 20%);
+			border-color: rgb(51 51 51 / 70%);
+			color: rgb(51 51 51 / 80%);
+			cursor: pointer;
+		}
+
+		.error .clipboard-button:hover,
+		.error .clipboard-button:focus {
+			background-color: rgb(103 25 31 / 20%);
+			border-color: rgb(103 25 31 / 70%);
+			color: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover,
+		.warning .clipboard-button:focus {
+			background-color: rgb(84 64 3 / 20%);
+			border-color: rgb(84 64 3 / 70%);
+			color: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover,
+		.notice .clipboard-button:focus {
+			background-color: rgb(6 44 101 / 20%);
+			border-color: rgb(6 44 101 / 70%);
+			color: rgb(6 44 101 / 80%);
+		}
+
+		.clipboard-button:hover > svg,
+		.clipboard-button:focus > svg {
+			fill: rgb(51 51 51 / 80%);
+		}
+
+		.error .clipboard-button:hover > svg,
+		.error .clipboard-button:focus > svg {
+			fill: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover > svg,
+		.warning .clipboard-button:focus > svg {
+			fill: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover > svg,
+		.notice .clipboard-button:focus > svg {
+			fill: rgb(6 44 101 / 80%);
+		}
+
+		.issue .body:hover > .clipboard-button,
+		.issue .body:focus-within > .clipboard-button {
+			opacity: 1;
+			transition: 0.2s;
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>Pa11y results for "https://rhodespharma.com/catalog/#!aptensio-xr-capsules-cii"</h1>
+		<h2>Generated at: Mon Dec 29 2025 21:31:40 GMT-0500 (Eastern Standard Time)</h2>
+		<h2>Runners (with issues): htmlcs</h2>
+
+		<p class="filter">
+			<span class="label">Toggle by type</span>
+			<span class="count error" id="error-count" tabindex="0" role="button" aria-label="Toggle errors">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">141 errors</span>
+			</span>
+			<span class="count warning" id="warning-count" tabindex="0" role="button" aria-label="Toggle warnings">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 warnings</span>
+			</span>
+			<span class="count notice" id="notice-count" tabindex="0" role="button" aria-label="Toggle notices">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 notices</span>
+			</span>
+		</p>
+		<ul class="issues">
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a title&#x3D;&quot;Home&quot; href&#x3D;&quot;https://rhodespharma.com/&quot; class&#x3D;&quot;nav-link&quot;&gt;Home&lt;/a&gt;</p><p class="selector">(selector "#menu-item-546 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a title&#x3D;&quot;Ask Rhodes Medical&quot; href&#x3D;&quot;https://rhodespharma.com/ask-rhodes-medical/&quot; class&#x3D;&quot;nav-link&quot;&gt;Ask Rhodes Medical&lt;/a&gt;</p><p class="selector">(selector "#menu-item-450 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a title&#x3D;&quot;Contact&quot; href&#x3D;&quot;https://rhodespharma.com/contact/&quot; class&#x3D;&quot;nav-link&quot;&gt;Contact&lt;/a&gt;</p><p class="selector">(selector "#menu-item-449 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a title&#x3D;&quot;Partner With Us&quot; href&#x3D;&quot;/contact#partner&quot; class&#x3D;&quot;nav-link&quot;&gt;Partner With Us&lt;/a&gt;</p><p class="selector">(selector "#menu-item-451 &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;btn-label&quot;&gt;Responsible Use of Opioid Medic...&lt;/span&gt;</p><p class="selector">(selector "#main &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; ul &gt; li:nth-child(2) &gt; a &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;btn-label&quot;&gt;Information for Colorado Prescr...&lt;/span&gt;</p><p class="selector">(selector "#main &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; ul &gt; li:nth-child(3) &gt; a &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;a&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;b&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;buprenorphine-and-naloxone-sublingual-tablets-ciii-tab&quot; href&#x3D;&quot;#buprenorphine-and-naloxone-sublingual-tablets-ciii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;buprenorphine-and-naloxone-sublingual-tablets-ciii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+          ...</p><p class="selector">(selector "#buprenorphine-and-naloxone-sublingual-tablets-ciii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;buprenorphine-sublingual-tablets-ciii-tab&quot; href&#x3D;&quot;#buprenorphine-sublingual-tablets-ciii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;buprenorphine-sublingual-tablets-ciii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Bupren...&lt;/a&gt;</p><p class="selector">(selector "#buprenorphine-sublingual-tablets-ciii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;buprenorphine-transdermal-system-ciii-tab&quot; href&#x3D;&quot;#buprenorphine-transdermal-system-ciii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;buprenorphine-transdermal-system-ciii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Bupren...&lt;/a&gt;</p><p class="selector">(selector "#buprenorphine-transdermal-system-ciii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;d&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(7)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate-extended-release-cii-tab&quot; href&#x3D;&quot;#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine...</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate-extended-release-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate-tab&quot; href&#x3D;&quot;#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetam...</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;dilaudid-hydromorphone-hcl-oral-solution-usp-cii-2-tab&quot; href&#x3D;&quot;#dilaudid-hydromorphone-hcl-oral-solution-usp-cii-2&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;dilaudid-hydromorphone-hcl-oral-solution-usp-cii-2&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+          ...</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii-2-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;dilaudid-hydromorphone-hcl-oral-solution-usp-cii-tab&quot; href&#x3D;&quot;#dilaudid-hydromorphone-hcl-oral-solution-usp-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;dilaudid-hydromorphone-hcl-oral-solution-usp-cii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                ...</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;dronabinol-capsules-usp-ciii-tab&quot; href&#x3D;&quot;#dronabinol-capsules-usp-ciii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;dronabinol-capsules-usp-ciii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Dronab...&lt;/a&gt;</p><p class="selector">(selector "#dronabinol-capsules-usp-ciii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;f&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(13)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;fenofibrate-capsules-micronized-tab&quot; href&#x3D;&quot;#fenofibrate-capsules-micronized&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;fenofibrate-capsules-micronized&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Fenofi...&lt;/a&gt;</p><p class="selector">(selector "#fenofibrate-capsules-micronized-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;fenofibrate-tablets-usp-tab&quot; href&#x3D;&quot;#fenofibrate-tablets-usp&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;fenofibrate-tablets-usp&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Fenofi...&lt;/a&gt;</p><p class="selector">(selector "#fenofibrate-tablets-usp-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;formoterol-fumarate-dihydrate-solution-tab&quot; href&#x3D;&quot;#formoterol-fumarate-dihydrate-solution&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;formoterol-fumarate-dihydrate-solution&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Formot...&lt;/a&gt;</p><p class="selector">(selector "#formoterol-fumarate-dihydrate-solution-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;h&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(17)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;hydrocodone-bitartrate-and-acetaminophen-tablets-325mg-usp-cii-tab&quot; href&#x3D;&quot;#hydrocodone-bitartrate-and-acetaminophen-tablets-325mg-usp-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;hydrocodone-bitartrate-and-acetaminophen-tablets-325mg-usp-ci...</p><p class="selector">(selector "#hydrocodone-bitartrate-and-acetaminophen-tablets-325mg-usp-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;hydromorphone-hydrochloride-oral-solution-usp-cii-tab&quot; href&#x3D;&quot;#hydromorphone-hydrochloride-oral-solution-usp-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;hydromorphone-hydrochloride-oral-solution-usp-cii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+             ...</p><p class="selector">(selector "#hydromorphone-hydrochloride-oral-solution-usp-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;hydromorphone-hydrochloride-tablets-usp-cii-tab&quot; href&#x3D;&quot;#hydromorphone-hydrochloride-tablets-usp-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;hydromorphone-hydrochloride-tablets-usp-cii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Hydrom....</p><p class="selector">(selector "#hydromorphone-hydrochloride-tablets-usp-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;l&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(21)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;lisdexamfetamine-dimesylate-capsules-cii-tab&quot; href&#x3D;&quot;#lisdexamfetamine-dimesylate-capsules-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;lisdexamfetamine-dimesylate-capsules-cii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Lisdex...&lt;/a&gt;</p><p class="selector">(selector "#lisdexamfetamine-dimesylate-capsules-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;m&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(23)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;methylphenidate-hydrochloride-extended-release-capsules-cii-tab&quot; href&#x3D;&quot;#methylphenidate-hydrochloride-extended-release-capsules-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;methylphenidate-hydrochloride-extended-release-capsules-cii&quot; aria-s...</p><p class="selector">(selector "#methylphenidate-hydrochloride-extended-release-capsules-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;morphine-sulfate-extended-release-tablets-usp-cii-tab&quot; href&#x3D;&quot;#morphine-sulfate-extended-release-tablets-usp-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;morphine-sulfate-extended-release-tablets-usp-cii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+             ...</p><p class="selector">(selector "#morphine-sulfate-extended-release-tablets-usp-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;ms-contin-morphine-sulfate-extended-release-tablets-cii-tab&quot; href&#x3D;&quot;#ms-contin-morphine-sulfate-extended-release-tablets-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;ms-contin-morphine-sulfate-extended-release-tablets-cii&quot; aria-selected&#x3D;&quot;fal...</p><p class="selector">(selector "#ms-contin-morphine-sulfate-extended-release-tablets-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;o&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(27)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;oxycodone-and-acetaminophen-tablets-usp-cii-tab&quot; href&#x3D;&quot;#oxycodone-and-acetaminophen-tablets-usp-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;oxycodone-and-acetaminophen-tablets-usp-cii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Oxycod....</p><p class="selector">(selector "#oxycodone-and-acetaminophen-tablets-usp-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;oxycodone-hydrochloride-tablets-usp-cii-tab&quot; href&#x3D;&quot;#oxycodone-hydrochloride-tablets-usp-cii&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;oxycodone-hydrochloride-tablets-usp-cii&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Oxycod...&lt;/a&gt;</p><p class="selector">(selector "#oxycodone-hydrochloride-tablets-usp-cii-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;p&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(30)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;paroxetine-extended-release-tablets-usp-tab&quot; href&#x3D;&quot;#paroxetine-extended-release-tablets-usp&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;paroxetine-extended-release-tablets-usp&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Paroxe...&lt;/a&gt;</p><p class="selector">(selector "#paroxetine-extended-release-tablets-usp-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;s&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(32)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;scopolamine-transdermal-system-tab&quot; href&#x3D;&quot;#scopolamine-transdermal-system&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;scopolamine-transdermal-system&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                        Scopol...&lt;/a&gt;</p><p class="selector">(selector "#scopolamine-transdermal-system-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.66:1. Recommendation:  change text colour to #736f6f.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;letter-separator&quot;&gt;t&lt;/span&gt;</p><p class="selector">(selector "#productList &gt; span:nth-child(34)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #cb3a3a.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;theophylline-anhydrous-extended-release-tablets-tab&quot; href&#x3D;&quot;#theophylline-anhydrous-extended-release-tablets&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;theophylline-anhydrous-extended-release-tablets&quot; aria-selected&#x3D;&quot;false&quot;&gt;
+                   ...</p><p class="selector">(selector "#theophylline-anhydrous-extended-release-tablets-tab")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot; src&#x3D;&quot;https://rhodespharma.com/wp-content/uploads/2020/10/Aptensio-XR-ER-10mg-Capsules-90s_342858401456_container.jpg&quot;&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot; src&#x3D;&quot;https://rhodespharma.com/wp-content/uploads/2020/10/Aptensio-XR-ER-10mg-Capsules-90s_342858401456_front.jpg&quot;&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.93:1. Recommendation:  change text colour to #797575.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;list-column-title w-50&quot;&gt;STRENGTH&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(1) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.93:1. Recommendation:  change text colour to #797575.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;list-column-title w-50&quot;&gt;PACK&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(1) &gt; div &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;strength w-50&quot;&gt;15 mg&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(3) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;pack w-50&quot;&gt;90                             ...&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(3) &gt; div &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;strength w-50&quot;&gt;20 mg&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(4) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;pack w-50&quot;&gt;90                             ...&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(4) &gt; div &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;strength w-50&quot;&gt;30 mg&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(5) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;pack w-50&quot;&gt;90                             ...&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(5) &gt; div &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;strength w-50&quot;&gt;40 mg&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(6) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;pack w-50&quot;&gt;90                             ...&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(6) &gt; div &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;strength w-50&quot;&gt;50 mg&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(7) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;pack w-50&quot;&gt;90                             ...&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(7) &gt; div &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;strength w-50&quot;&gt;60 mg&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(8) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;pack w-50&quot;&gt;90                             ...&lt;/span&gt;</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div &gt; a:nth-child(8) &gt; div &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://dailymed.nlm.nih.gov/dailymed/medguide.cfm?setid&#x3D;5adedc01-ebf0-11e3-ac10-0800200c9a66&quot; class&#x3D;&quot;tooltips external-link-modal&quot; target&#x3D;&quot;_blank&quot; title&#x3D;&quot;By clicking this link, you are leaving this site and entering a site that is neither t...</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(1) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid&#x3D;5adedc01-ebf0-11e3-ac10-0800200c9a66&amp;amp;type&#x3D;display&quot; class&#x3D;&quot;tooltips external-link-modal&quot; target&#x3D;&quot;_blank&quot; title&#x3D;&quot;By clicking this link, you are leaving this site and entering a...</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(2) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid&#x3D;5adedc01-ebf0-11e3-ac10-0800200c9a66&amp;amp;type&#x3D;display#section-10&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;tooltips external-link-modal&quot; title&#x3D;&quot;By clicking this link, you are leaving this site and...</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(4) &gt; div &gt; p:nth-child(3) &gt; i &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid&#x3D;5adedc01-ebf0-11e3-ac10-0800200c9a66&amp;amp;type&#x3D;display#section-5.1&quot; class&#x3D;&quot;tooltips external-link-modal&quot; target&#x3D;&quot;_blank&quot; title&#x3D;&quot;By clicking this link, you are leaving this site an...</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(4) &gt; div &gt; p:nth-child(4) &gt; i &gt; a:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.38:1. Recommendation:  change text colour to #d34242.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid&#x3D;5adedc01-ebf0-11e3-ac10-0800200c9a66&amp;amp;type&#x3D;display#section-9.2&quot; class&#x3D;&quot;tooltips external-link-modal&quot; target&#x3D;&quot;_blank&quot; title&#x3D;&quot;By clicking this link, you are leaving this site an...</p><p class="selector">(selector "#aptensio-xr-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(4) &gt; div &gt; p:nth-child(4) &gt; i &gt; a:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-and-naloxone-sublingual-tablets-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-and-naloxone-sublingual-tablets-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-and-naloxone-sublingual-tablets-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-sublingual-tablets-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-sublingual-tablets-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-sublingual-tablets-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-transdermal-system-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-transdermal-system-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#buprenorphine-transdermal-system-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate-extended-release-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate-extended-release-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate-extended-release-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#dextroamphetamine-saccharate-amphetamine-aspartate-monohydrate-dextroamphetamine-sulfate-and-amphetamine-sulfate &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii-2 &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii-2 &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii-2 &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#dilaudid-hydromorphone-hcl-oral-solution-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#dronabinol-capsules-usp-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#dronabinol-capsules-usp-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#dronabinol-capsules-usp-ciii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#fenofibrate-capsules-micronized &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#fenofibrate-capsules-micronized &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#fenofibrate-capsules-micronized &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#fenofibrate-tablets-usp &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#fenofibrate-tablets-usp &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#fenofibrate-tablets-usp &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#formoterol-fumarate-dihydrate-solution &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#formoterol-fumarate-dihydrate-solution &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#formoterol-fumarate-dihydrate-solution &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#hydrocodone-bitartrate-and-acetaminophen-tablets-325mg-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#hydrocodone-bitartrate-and-acetaminophen-tablets-325mg-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#hydrocodone-bitartrate-and-acetaminophen-tablets-325mg-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#hydromorphone-hydrochloride-oral-solution-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#hydromorphone-hydrochloride-oral-solution-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#hydromorphone-hydrochloride-oral-solution-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#hydromorphone-hydrochloride-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#hydromorphone-hydrochloride-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#hydromorphone-hydrochloride-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#lisdexamfetamine-dimesylate-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#lisdexamfetamine-dimesylate-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#lisdexamfetamine-dimesylate-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h4&gt;&lt;/h4&gt;</p><p class="selector">(selector "#lisdexamfetamine-dimesylate-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(4) &gt; div &gt; h4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#methylphenidate-hydrochloride-extended-release-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#methylphenidate-hydrochloride-extended-release-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#methylphenidate-hydrochloride-extended-release-capsules-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#morphine-sulfate-extended-release-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#morphine-sulfate-extended-release-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#morphine-sulfate-extended-release-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#ms-contin-morphine-sulfate-extended-release-tablets-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#ms-contin-morphine-sulfate-extended-release-tablets-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#ms-contin-morphine-sulfate-extended-release-tablets-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#oxycodone-and-acetaminophen-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#oxycodone-and-acetaminophen-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#oxycodone-and-acetaminophen-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#oxycodone-hydrochloride-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#oxycodone-hydrochloride-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#oxycodone-hydrochloride-tablets-usp-cii &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#paroxetine-extended-release-tablets-usp &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#paroxetine-extended-release-tablets-usp &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#paroxetine-extended-release-tablets-usp &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#scopolamine-transdermal-system &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#scopolamine-transdermal-system &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#scopolamine-transdermal-system &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-primary-image product-image&quot;&gt;</p><p class="selector">(selector "#theophylline-anhydrous-extended-release-tablets &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; img")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-front-image product-image&quot;&gt;</p><p class="selector">(selector "#theophylline-anhydrous-extended-release-tablets &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H37</a></p><p class="context">&lt;img class&#x3D;&quot;product-back-image product-image&quot;&gt;</p><p class="selector">(selector "#theophylline-anhydrous-extended-release-tablets &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; img:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.18:1. Recommendation:  change background to #68797c.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://rhodespharma.com/terms-and-conditions/&quot; class&#x3D;&quot;nav-link&quot;&gt;Terms and Conditions&lt;/a&gt;</p><p class="selector">(selector "#footer &gt; div &gt; div &gt; nav &gt; ul &gt; li:nth-child(1) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.18:1. Recommendation:  change background to #68797c.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://www.purduepharma.com/about/ethics-and-compliance/ccpa/&quot; class&#x3D;&quot;nav-link&quot;&gt;Privacy Policy&lt;/a&gt;</p><p class="selector">(selector "#footer &gt; div &gt; div &gt; nav &gt; ul &gt; li:nth-child(2) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.18:1. Recommendation:  change background to #68797c.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://us59.dayforcehcm.com/CandidatePortal/en-US/purdue/SITE/CANDIDATEPORTALRHODES&quot; class&#x3D;&quot;nav-link tooltips external-link-modal&quot; title&#x3D;&quot;By clicking this link, you are leaving this site and entering a site that is neither t...</p><p class="selector">(selector "#footer &gt; div &gt; div &gt; nav &gt; ul &gt; li:nth-child(3) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.18:1. Recommendation:  change background to #68797c.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://www.purduepharma.com/about/ethics-and-compliance/&quot; class&#x3D;&quot;nav-link&quot;&gt;Ethics and Compliance&lt;/a&gt;</p><p class="selector">(selector "#footer &gt; div &gt; div &gt; nav &gt; ul &gt; li:nth-child(4) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;nav-link&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#footer &gt; div &gt; div &gt; nav &gt; ul &gt; li:nth-child(5) &gt; a:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.18:1. Recommendation:  change background to #68797c.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a style&#x3D;&quot;text-transform: uppercase; font-weight: 700; color: rgb(255, 255, 255); cursor: pointer !important;&quot; id&#x3D;&quot;clarip-do-not-sell-link&quot; href&#x3D;&quot;javascript:void(0)&quot;&gt;Do Not Sell My Information&lt;/a&gt;</p><p class="selector">(selector "#clarip-do-not-sell-link")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 4.18:1. Recommendation:  change background to #68797c.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p&gt;© 2025 Rhodes Pharmaceuticals L...&lt;/p&gt;</p><p class="selector">(selector "#footer &gt; div &gt; div &gt; div &gt; p")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.98:1. Recommendation:  change text colour to #0072ed.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.purduepharma.com/about/ethics-and-compliance/ccpa/&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener noreferrer&quot; data-auth&#x3D;&quot;NotApplicable&quot;&gt;Purdue Pharma L.P. Privacy Poli...&lt;/a&gt;</p><p class="selector">(selector "#wp-terms-popup-content &gt; p &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;wptp-form&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;form id&#x3D;&quot;wptp-form&quot; method&#x3D;&quot;post&quot;&gt;&lt;div class&#x3D;&quot;tthebutton&quot;&gt;
+    &lt;i...&lt;/form&gt;</p><p class="selector">(selector "#wptp-form")</p></div>
+			</li>
+		</ul>
+	</main>
+	<script>
+		const toggleIssues = (btn, pageQuery) => {
+			const className = 'hidden';
+			document.getElementById(btn).classList.toggle(className);
+			document.querySelectorAll(pageQuery).forEach((page) => {
+				page.classList.toggle(className);
+			});
+		};
+
+		const errorCountFilter = document.getElementById('error-count');
+		errorCountFilter.addEventListener('click', () =>
+			toggleIssues('error-count', '.issues .issue.error')
+		);
+		errorCountFilter.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('error-count', '.issues .issue.error')
+		);
+
+		const warningCountButton = document.getElementById('warning-count');
+		warningCountButton.addEventListener('click', () =>
+			toggleIssues('warning-count', '.issues .issue.warning')
+		);
+		warningCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('warning-count', '.issues .issue.warning')
+		);
+
+		const noticeCountButton = document.getElementById('notice-count');
+		noticeCountButton.addEventListener('click', () =>
+			toggleIssues('notice-count', '.issues .issue.notice')
+		);
+		noticeCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('notice-count', '.issues .issue.notice')
+		);
+	</script>
+	<script>
+		const svgCopy = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>';
+		const svgCheck = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+
+		if (navigator && navigator.clipboard) {
+			document.querySelectorAll(".issue .body .selector").forEach((selectorNode) => {
+				const selector = selectorNode.innerText
+					.match(/\(selector "(?<selector>.+)"\)/).groups.selector;
+
+				const button = document.createElement("button");
+				button.className = "clipboard-button";
+				button.type = "button";
+				button.title = "Copy selector";
+				button.innerHTML = svgCopy;
+				button.addEventListener("click", (event) => {
+					navigator.clipboard.writeText(selector)
+						.then(() => {
+							// Remove focus if mouse, since hovering and will remain visible.
+							// If keyboard, keep focus until another keyboard action blurs.
+							event.detail && button.blur();
+							button.innerHTML = svgCheck;
+							setTimeout(() => (button.innerHTML = svgCopy), 2000);
+						},
+						(error) => (button.innerHTML = "Error")
+					);
+				});
+
+				selectorNode.parentNode.insertBefore(button, selectorNode);
+			});
+		};
+	</script>
+</body>
+
+</html>

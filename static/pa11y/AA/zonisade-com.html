@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Pa11y results for "https://zonisade.com/"
+	</title>
+	<style>
+		html, body {
+			background-color: #ffffff;
+			color: rgb(51 51 51);
+			font-family: system-ui, sans-serif;
+			font-size: 16px;
+			line-height: 1.3rem;
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			margin-block: 0;
+			margin-inline: auto;
+			max-inline-size: 900px;
+			padding: 1.25rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			margin: 0;
+			margin-block-end: 0.5rem;
+		}
+
+		h2, h3 {
+			font-size: 1.15rem;
+			font-weight: normal;
+			margin: 0;
+			padding-block-end: 0.5rem;
+		}
+
+		h3 { padding-block-end: 0; }
+
+		p { margin: 0; }
+
+		.filter {
+			display: inline-grid;
+			grid-template-columns: 8.5rem 1fr 1fr 1fr;
+			margin-block-start: 1rem;
+		}
+
+		.filter .label {
+			font-size: 1.15rem;
+			padding-block: 0.45rem;
+			padding-inline: 0;
+		}
+
+		.count {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			cursor: pointer;
+			display: inline-grid;
+			font-size: 1.15rem;
+			grid-template-columns: 0.35rem 1fr;
+			margin-inline-end: 0.75rem;
+			min-inline-size: 80px;
+		}
+
+		.count .body {
+			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding-block: 0.35rem;
+			padding-inline: 0.7rem;
+			text-align: center;
+		}
+
+		.count.hidden {
+			background-color: #f4f4f4;
+			color: rgb(51 51 51);
+		}
+
+		.count.hidden .left-bar { background-color: #808080; }
+
+		.count.hidden .body { border-color: #d4d4d4; }
+
+		.issues {
+			list-style: none;
+			margin: 0;
+			margin-block-start: 1.5rem;
+			padding-inline-start: 0;
+		}
+
+		.issue {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			display: grid;
+			grid-template-columns: 0.5rem 1fr;
+			margin: 0;
+			margin-block-end: 1.5rem;
+			padding: 0;
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .left-bar { background-color: #808080; }
+
+		.issue p:not(:last-child) { padding-block-end: 0.1rem; }
+
+		.issue.hidden { display: none; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .body {
+ 			border-color: #bfbfbf;
+ 			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding: 0.5rem;
+			position: relative;
+		}
+
+		.issue .body h3 { padding-block-end: 0.25rem; }
+
+		.context, .selector {
+			font-family: monospace;
+			font-size: 0.95rem;
+			padding-block-start: 0.1rem;
+		}
+
+		.error {
+			background-color: #f8d7da;
+			color: rgb(103 25 31);
+		}
+
+		.warning {
+			background-color: #fff3cd;
+			color: rgb(84 64 3);
+		}
+
+		.notice {
+			background-color: #cfe2ff;
+			color: rgb(6 44 101);
+		}
+
+		.error a { color: #842029; }
+		.warning a { color: #664d03; }
+		.notice a { color: #074197; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .left-bar { background-color: #d53447; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .left-bar { background-color: #c79500; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .left-bar { background-color: #015cda; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .body { border-color: #f2bbc1; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .body { border-color: #ffd761; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .body { border-color: #a9cefe; }
+
+		.clipboard-button {
+			background-color: rgb(51 51 51 / 10%);
+			border: 2px solid;
+			border-color: rgb(51 51 51 / 30%);
+			border-radius: 2px;
+			color: rgb(51 51 51 / 40%);
+			font-size: 0.8rem;
+			inset-block-start: 7px;
+			inset-inline-end: 7px;
+			margin: 0;
+			opacity: 0;
+			padding-block: 5px 4px;
+			padding-inline: 7px;
+			position: absolute;
+			transition: 0.1s;
+			visibility: hidden;
+			z-index: 1;
+		}
+
+		.error .clipboard-button {
+			background-color: rgb(103 25 31 / 10%);
+			border-color: rgb(103 25 31 / 30%);
+			color: rgb(103 25 31 / 40%);
+		}
+
+		.warning .clipboard-button {
+			background-color: rgb(84 64 3 / 10%);
+			border-color: rgb(84 64 3 / 30%);
+			color: rgb(84 64 3 / 40%);
+		}
+
+		.notice .clipboard-button {
+			background-color: rgb(6 44 101 / 10%);
+			border-color: rgb(6 44 101 / 30%);
+			color: rgb(6 44 101 / 40%);
+		}
+
+		.clipboard-button > svg { fill: rgb(51 51 51 / 40%); }
+		.error .clipboard-button > svg { fill: rgb(103 25 31 / 40%); }
+		.warning .clipboard-button > svg { fill: rgb(84 64 3 / 40%); }
+		.notice .clipboard-button > svg { fill: rgb(6 44 101 / 40%); }
+
+		.clipboard-button:focus { outline: 0; }
+
+		.clipboard-button:hover,
+		.clipboard-button:focus {
+			background-color: rgb(51 51 51 / 20%);
+			border-color: rgb(51 51 51 / 70%);
+			color: rgb(51 51 51 / 80%);
+			cursor: pointer;
+		}
+
+		.error .clipboard-button:hover,
+		.error .clipboard-button:focus {
+			background-color: rgb(103 25 31 / 20%);
+			border-color: rgb(103 25 31 / 70%);
+			color: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover,
+		.warning .clipboard-button:focus {
+			background-color: rgb(84 64 3 / 20%);
+			border-color: rgb(84 64 3 / 70%);
+			color: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover,
+		.notice .clipboard-button:focus {
+			background-color: rgb(6 44 101 / 20%);
+			border-color: rgb(6 44 101 / 70%);
+			color: rgb(6 44 101 / 80%);
+		}
+
+		.clipboard-button:hover > svg,
+		.clipboard-button:focus > svg {
+			fill: rgb(51 51 51 / 80%);
+		}
+
+		.error .clipboard-button:hover > svg,
+		.error .clipboard-button:focus > svg {
+			fill: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover > svg,
+		.warning .clipboard-button:focus > svg {
+			fill: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover > svg,
+		.notice .clipboard-button:focus > svg {
+			fill: rgb(6 44 101 / 80%);
+		}
+
+		.issue .body:hover > .clipboard-button,
+		.issue .body:focus-within > .clipboard-button {
+			opacity: 1;
+			transition: 0.2s;
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>Pa11y results for "https://zonisade.com/"</h1>
+		<h2>Generated at: Mon Dec 29 2025 21:31:40 GMT-0500 (Eastern Standard Time)</h2>
+		<h2>Runners (with issues): htmlcs</h2>
+
+		<p class="filter">
+			<span class="label">Toggle by type</span>
+			<span class="count error" id="error-count" tabindex="0" role="button" aria-label="Toggle errors">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">141 errors</span>
+			</span>
+			<span class="count warning" id="warning-count" tabindex="0" role="button" aria-label="Toggle warnings">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 warnings</span>
+			</span>
+			<span class="count notice" id="notice-count" tabindex="0" role="button" aria-label="Toggle notices">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 notices</span>
+			</span>
+		</p>
+		<ul class="issues">
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2</a></p><p class="context">&lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;https://zonisade.com&quot; title&#x3D;&quot;&quot;&gt;
+                    &lt;img class...&lt;/a&gt;</p><p class="selector">(selector "#header &gt; div:nth-child(3) &gt; div &gt; div &gt; div &gt; div:nth-child(1) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;label&quot;&gt;The &lt;strong&gt;ONE&lt;/strong&gt; and &lt;s...&lt;/span&gt;</p><p class="selector">(selector "#cern-hero &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;ONE&lt;/strong&gt;</p><p class="selector">(selector "#cern-hero &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; span:nth-child(1) &gt; strong:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;ONLY&lt;/strong&gt;</p><p class="selector">(selector "#cern-hero &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; span:nth-child(1) &gt; strong:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup class&#x3D;&quot;num&quot;&gt;1&lt;/sup&gt;</p><p class="selector">(selector "#cern-hero &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; span:nth-child(1) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;span&gt;Transformed&lt;/span&gt;</p><p class="selector">(selector "#cern-hero &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; h1 &gt; span")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;innovative approach&lt;/strong&gt;</p><p class="selector">(selector "#cern-hero &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; p &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;#isi-link&quot;&gt;FULL IMPORTANT SAFETY INFORMATI...&lt;/a&gt;</p><p class="selector">(selector "#isi-bar-sec &gt; div:nth-child(2) &gt; div &gt; div &gt; div &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; p &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; p &gt; strong &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h2&gt;&lt;/h2&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(1) &gt; div &gt; h2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(1) &gt; div &gt; p &gt; strong:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(1) &gt; div &gt; p &gt; strong:nth-child(1) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h2&gt;&lt;/h2&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(2) &gt; div &gt; h2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(2) &gt; div &gt; p &gt; strong:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(2) &gt; div &gt; p &gt; strong:nth-child(1) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h2&gt;&lt;/h2&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(3) &gt; div &gt; h2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(3) &gt; div &gt; p &gt; strong:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#about &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; div:nth-child(3) &gt; div &gt; p &gt; strong:nth-child(1) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#calculator &gt; p:nth-child(1) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#calculator &gt; p:nth-child(1) &gt; strong &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#calculator &gt; p:nth-child(3) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#calculator &gt; p:nth-child(3) &gt; strong &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.8:1. Recommendation:  change text colour to #a16400.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures &gt; p &gt; strong:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.8:1. Recommendation:  change text colour to #a16400.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures &gt; p &gt; strong:nth-child(1) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.8:1. Recommendation:  change text colour to #a16400.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures &gt; p &gt; strong:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.8:1. Recommendation:  change text colour to #a16400.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures &gt; p &gt; strong:nth-child(2) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures &gt; div:nth-child(2) &gt; p &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures &gt; div:nth-child(2) &gt; p &gt; strong &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;caption&gt;Dosing for Patients Aged 16 Yea...&lt;/caption&gt;</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures &gt; div:nth-child(2) &gt; table &gt; caption")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form does not contain a submit button, which creates issues for those who cannot submit the form using the keyboard. Submit buttons are INPUT elements with type attribute &quot;submit&quot; or &quot;image&quot;, or BUTTON elements with type &quot;submit&quot; or omitted/invalid.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc3_2_2">htmlcs: WCAG2AA.Principle3.Guideline3_2.3_2_2.H32.2</a></p><p class="context">&lt;form&gt;
+                              ...&lt;/form&gt;</p><p class="selector">(selector "#conversion-calculator-sec &gt; div &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; form")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;span&gt;&#x3D;&lt;/span&gt;</p><p class="selector">(selector "#conversion-calculator-sec &gt; div &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; form &gt; div &gt; div &gt; span")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;button class&#x3D;&quot;btn btn-submit&quot; id&#x3D;&quot;calcBtn&quot;&gt;Calculate&lt;/button&gt;</p><p class="selector">(selector "#calcBtn")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;overcome certain barriers  to t...&lt;/strong&gt;</p><p class="selector">(selector "#liquid-benefits &gt; div &gt; div &gt; div &gt; h2 &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;strong&gt;ZONISADE&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;</p><p class="selector">(selector "#liquid-benefits &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(1) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup&gt;®&lt;/sup&gt;</p><p class="selector">(selector "#liquid-benefits &gt; div &gt; div &gt; div &gt; ul &gt; li:nth-child(1) &gt; strong &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;Did you know?&lt;/strong&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; h2 &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;h3&gt;4 out of 5&lt;/h3&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; h3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p class&#x3D;&quot;heading-six&quot;&gt;adults take several pills each ...&lt;/p&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; p")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup class&#x3D;&quot;num&quot;&gt;5&lt;/sup&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; p &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;Did you know?&lt;/strong&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; h2 &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p class&#x3D;&quot;heading-six&quot;&gt;Zonisamide powder can have a &lt;s...&lt;/p&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;bitter taste&lt;/strong&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p &gt; strong:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;disliking taste&lt;/strong&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p &gt; strong:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;barrier to clinical outcomes&lt;/strong&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p &gt; strong:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;adolescent epilepsy patients.&lt;/strong&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p &gt; strong:nth-child(4)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup class&#x3D;&quot;num&quot;&gt;7,&lt;/sup&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p &gt; sup:nth-child(5)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup class&#x3D;&quot;num&quot;&gt;8&lt;/sup&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; p &gt; sup:nth-child(6)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;Did you know?&lt;/strong&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(3) &gt; div:nth-child(1) &gt; h2 &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p class&#x3D;&quot;heading-six&quot;&gt;Listed by NIOSH as a hazardous ...&lt;/p&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(3) &gt; div:nth-child(1) &gt; p:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;sup class&#x3D;&quot;num&quot;&gt;10&lt;/sup&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(3) &gt; div:nth-child(1) &gt; p:nth-child(2) &gt; sup")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;p class&#x3D;&quot;heading-six-smaller&quot;&gt;NIOSH &#x3D; National Institute of O...&lt;/p&gt;</p><p class="selector">(selector "#hc-sec-six &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(3) &gt; div:nth-child(1) &gt; p:nth-child(3)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;Provider Resources&lt;/strong&gt;</p><p class="selector">(selector "#resources &gt; div &gt; div &gt; div &gt; h2:nth-child(1) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a href&#x3D;&quot;javascript:void(0)&quot; class&#x3D;&quot;btn btn-primary vimeo__video_trigger&quot; id&#x3D;&quot;learn1&quot; aria-labelledby&#x3D;&quot;learn1 heading1&quot;&gt;
+                              ...&lt;/a&gt;</p><p class="selector">(selector "#learn1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;Epilepsy Support Organizations&lt;/strong&gt;</p><p class="selector">(selector "#resources &gt; div &gt; div &gt; div &gt; h2:nth-child(5) &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2</a></p><p class="context">&lt;a id&#x3D;&quot;link1&quot; href&#x3D;&quot;https://aesnet.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link1 heading1&quot;&gt;
+                              ...&lt;/a&gt;</p><p class="selector">(selector "#link1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading1&quot;&gt;&lt;a id&#x3D;&quot;link1&quot; href&#x3D;&quot;https://aes...&lt;/h3&gt;</p><p class="selector">(selector "#heading1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link1&quot; href&#x3D;&quot;https://aesnet.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link1 heading1&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a id&#x3D;&quot;link1&quot; href&#x3D;&quot;https://aesnet.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link1 heading1&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://aesnet.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link1&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://aesnet.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link1&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2</a></p><p class="context">&lt;a id&#x3D;&quot;link2&quot; href&#x3D;&quot;https://www.childneurologyfoundation.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link2 heading2&quot;&gt;
+                              ...&lt;/a&gt;</p><p class="selector">(selector "#link2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading2&quot;&gt;&lt;a id&#x3D;&quot;link2&quot; href&#x3D;&quot;https://www...&lt;/h3&gt;</p><p class="selector">(selector "#heading2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link2&quot; href&#x3D;&quot;https://www.childneurologyfoundation.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link2 heading2&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a id&#x3D;&quot;link2&quot; href&#x3D;&quot;https://www.childneurologyfoundation.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link2 heading2&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.childneurologyfoundation.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link2&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.childneurologyfoundation.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link2&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading3&quot;&gt;&lt;a id&#x3D;&quot;link3&quot; href&#x3D;&quot;https://www...&lt;/h3&gt;</p><p class="selector">(selector "#heading3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link3&quot; href&#x3D;&quot;https://www.cureepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link3 heading3&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.cureepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link3&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.cureepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link3&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2</a></p><p class="context">&lt;a id&#x3D;&quot;link4&quot; href&#x3D;&quot;https://www.dannydid.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link4 heading4&quot;&gt;
+                              ...&lt;/a&gt;</p><p class="selector">(selector "#link4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading4&quot;&gt;&lt;a id&#x3D;&quot;link4&quot; href&#x3D;&quot;https://www...&lt;/h3&gt;</p><p class="selector">(selector "#heading4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link4&quot; href&#x3D;&quot;https://www.dannydid.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link4 heading4&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a id&#x3D;&quot;link4&quot; href&#x3D;&quot;https://www.dannydid.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link4 heading4&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.dannydid.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link4&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.dannydid.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link4&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading5&quot;&gt;&lt;a id&#x3D;&quot;link5&quot; href&#x3D;&quot;https://www...&lt;/h3&gt;</p><p class="selector">(selector "#heading5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link5&quot; href&#x3D;&quot;https://www.epilepsyallianceamerica.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link5 heading5&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.epilepsyallianceamerica.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link5&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.epilepsyallianceamerica.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link5&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading6&quot;&gt;&lt;a id&#x3D;&quot;link6&quot; href&#x3D;&quot;http://www....&lt;/h3&gt;</p><p class="selector">(selector "#heading6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link6&quot; href&#x3D;&quot;http://www.epilepsy.com&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link6 heading6&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;http://www.epilepsy.com&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link6&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;http://www.epilepsy.com&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link6&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2</a></p><p class="context">&lt;a id&#x3D;&quot;link7&quot; href&#x3D;&quot;https://www.empoweringepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link7 heading7&quot;&gt;
+                              ...&lt;/a&gt;</p><p class="selector">(selector "#link7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading7&quot;&gt;&lt;a id&#x3D;&quot;link7&quot; href&#x3D;&quot;https://www...&lt;/h3&gt;</p><p class="selector">(selector "#heading7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link7&quot; href&#x3D;&quot;https://www.empoweringepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link7 heading7&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a id&#x3D;&quot;link7&quot; href&#x3D;&quot;https://www.empoweringepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link7 heading7&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.empoweringepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link7&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.empoweringepilepsy.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link7&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading8&quot;&gt;&lt;a id&#x3D;&quot;link8&quot; href&#x3D;&quot;https://www...&lt;/h3&gt;</p><p class="selector">(selector "#heading8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link8&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link8&quot; href&#x3D;&quot;https://www.naec-epilepsy.org/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link8 heading8&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link8&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.naec-epilepsy.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link8&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.naec-epilepsy.org/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link8&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h3 id&#x3D;&quot;heading9&quot;&gt;&lt;a id&#x3D;&quot;link9&quot; href&#x3D;&quot;https://swa...&lt;/h3&gt;</p><p class="selector">(selector "#heading9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;link9&quot; href&#x3D;&quot;https://swallowingdisorderfoundation.com/&quot; target&#x3D;&quot;_blank&quot; aria-labelledby&#x3D;&quot;link9 heading9&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;link9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://swallowingdisorderfoundation.com/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link9&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;https://swallowingdisorderfoundation.com/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;title&quot; id&#x3D;&quot;link9&quot;&gt;&lt;/a&gt;</p><p class="selector">(selector "#link9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;Coverage and Assistance Informa...&lt;/strong&gt;</p><p class="selector">(selector "#resources &gt; div &gt; div &gt; div &gt; div:nth-child(8) &gt; h2 &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;strong&gt;Looking to learn more?&lt;/strong&gt;</p><p class="selector">(selector "#request-info &gt; div &gt; div &gt; div &gt; h2 &gt; strong")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;h2&gt;Important Safety Information&lt;/h2&gt;</p><p class="selector">(selector "#isi-link &gt; div &gt; div &gt; div &gt; div &gt; div &gt; h2:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;h2&gt;ADDITIONAL IMPORTANT SAFETY INF...&lt;/h2&gt;</p><p class="selector">(selector "#isi-link &gt; div &gt; div &gt; div &gt; div &gt; div &gt; h2:nth-child(5)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #d28200.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;h2&gt;USE IN SPECIFIC POPULATIONS&lt;/h2&gt;</p><p class="selector">(selector "#isi-link &gt; div &gt; div &gt; div &gt; div &gt; div &gt; h2:nth-child(30)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_1_1">htmlcs: WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2</a></p><p class="context">&lt;a href&#x3D;&quot;https://azurity.com/&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;https://zonisade.com/...&lt;/a&gt;</p><p class="selector">(selector "#footer &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div:nth-child(2) &gt; div &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Iframe element requires a non-empty title attribute that identifies the frame.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1</a></p><p class="context">&lt;iframe height&#x3D;&quot;0&quot; width&#x3D;&quot;0&quot; src&#x3D;&quot;https://12640450.fls.doubleclick.net/activityi;src&#x3D;12640450;type&#x3D;zonis0;cat&#x3D;azuri00;ord&#x3D;9415719189204;npa&#x3D;0;auiddc&#x3D;2132225871.1767061530;uaa&#x3D;;uab&#x3D;;uafvl&#x3D;;uamb&#x3D;0;uam&#x3D;;uap&#x3D;;uapv&#x3D;;uaw&#x3D;0;frm&#x3D;0;_tu&#x3D;IFA;gtm&#x3D;45fe5ca1v919010...</p><p class="selector">(selector "html &gt; body &gt; iframe:nth-child(20)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Iframe element requires a non-empty title attribute that identifies the frame.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1</a></p><p class="context">&lt;iframe height&#x3D;&quot;0&quot; width&#x3D;&quot;0&quot; src&#x3D;&quot;https://12640450.fls.doubleclick.net/activityi;src&#x3D;12640450;type&#x3D;zonis0;cat&#x3D;azuri0;ord&#x3D;7074649597982;npa&#x3D;0;auiddc&#x3D;2132225871.1767061530;uaa&#x3D;;uab&#x3D;;uafvl&#x3D;;uamb&#x3D;0;uam&#x3D;;uap&#x3D;;uapv&#x3D;;uaw&#x3D;0;frm&#x3D;0;_tu&#x3D;IFA;gtm&#x3D;45fe5ca1v9190102...</p><p class="selector">(selector "html &gt; body &gt; iframe:nth-child(21)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_wrapper_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework&quot; data-form-theme&#x3D;&quot;gravity-theme&quot; data-form-index&#x3D;&quot;0&quot; id&#x3D;&quot;gform_wrapper_9&quot;&gt;&lt;div id&#x3D;&quot;gf_9&quot; class&#x3D;&quot;gform_anc...&lt;/div&gt;</p><p class="selector">(selector "#gform_wrapper_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;form method&#x3D;&quot;post&quot; enctype&#x3D;&quot;multipart/form-data&quot; target&#x3D;&quot;gform_ajax_frame_9&quot; id&#x3D;&quot;gform_9&quot; action&#x3D;&quot;/#gf_9&quot; data-formid&#x3D;&quot;9&quot; novalidate&#x3D;&quot;&quot;&gt; 
+ &lt;input type&#x3D;&quot;hidden&quot; class&#x3D;&quot;...&lt;/form&gt;</p><p class="selector">(selector "#gform_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_fields_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;gform_fields_9&quot; class&#x3D;&quot;gform_fields top_label form_sublabel_below description_below validation_below&quot;&gt;&lt;div id&#x3D;&quot;field_9_3&quot; class&#x3D;&quot;gfie...&lt;/div&gt;</p><p class="selector">(selector "#gform_fields_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;field_9_3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;field_9_3&quot; class&#x3D;&quot;gfield gfield--type-text gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible&quot;&gt;&lt;label class&#x3D;&quot;gfield_label gfor...&lt;/div&gt;</p><p class="selector">(selector "#field_9_3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;input_9_3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input name&#x3D;&quot;input_3&quot; id&#x3D;&quot;input_9_3&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;large&quot; placeholder&#x3D;&quot;NPI Number&quot; aria-required&#x3D;&quot;true&quot; aria-invalid&#x3D;&quot;false&quot;&gt;</p><p class="selector">(selector "#input_9_3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;field_9_4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;field_9_4&quot; class&#x3D;&quot;gfield gfield--type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible&quot;&gt;&lt;label class&#x3D;&quot;gfield_label gfor...&lt;/...</p><p class="selector">(selector "#field_9_4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;input_9_4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input name&#x3D;&quot;input_4&quot; id&#x3D;&quot;input_9_4&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;large&quot; placeholder&#x3D;&quot;First Name&quot; aria-required&#x3D;&quot;true&quot; aria-invalid&#x3D;&quot;false&quot;&gt;</p><p class="selector">(selector "#input_9_4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;field_9_5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;field_9_5&quot; class&#x3D;&quot;gfield gfield--type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible&quot;&gt;&lt;label class&#x3D;&quot;gfield_label gfor...&lt;/...</p><p class="selector">(selector "#field_9_5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;input_9_5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input name&#x3D;&quot;input_5&quot; id&#x3D;&quot;input_9_5&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;large&quot; placeholder&#x3D;&quot;Last Name&quot; aria-required&#x3D;&quot;true&quot; aria-invalid&#x3D;&quot;false&quot;&gt;</p><p class="selector">(selector "#input_9_5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;field_9_7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;field_9_7&quot; class&#x3D;&quot;gfield gfield--type-text gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible&quot;&gt;&lt;label class&#x3D;&quot;gfield_label gfor...&lt;/...</p><p class="selector">(selector "#field_9_7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;input_9_7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input name&#x3D;&quot;input_7&quot; id&#x3D;&quot;input_9_7&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;large&quot; placeholder&#x3D;&quot;Institution/Practice Name&quot; aria-required&#x3D;&quot;true&quot; aria-invalid&#x3D;&quot;false&quot;&gt;</p><p class="selector">(selector "#input_9_7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;field_9_6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;field_9_6&quot; class&#x3D;&quot;gfield gfield--type-text gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible&quot;&gt;&lt;label class&#x3D;&quot;gfield_label gfor...&lt;/...</p><p class="selector">(selector "#field_9_6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;input_9_6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input name&#x3D;&quot;input_6&quot; id&#x3D;&quot;input_9_6&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;large&quot; placeholder&#x3D;&quot;ZIP Code&quot; aria-required&#x3D;&quot;true&quot; aria-invalid&#x3D;&quot;false&quot;&gt;</p><p class="selector">(selector "#input_9_6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;field_9_8&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;field_9_8&quot; class&#x3D;&quot;gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible&quot;&gt;&lt;label class&#x3D;&quot;gfield_label gfor...&lt;/div&gt;</p><p class="selector">(selector "#field_9_8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;input_9_8&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input name&#x3D;&quot;input_8&quot; id&#x3D;&quot;input_9_8&quot; type&#x3D;&quot;email&quot; value&#x3D;&quot;&quot; class&#x3D;&quot;large&quot; placeholder&#x3D;&quot;Email&quot; aria-required&#x3D;&quot;true&quot; aria-invalid&#x3D;&quot;false&quot;&gt;</p><p class="selector">(selector "#input_9_8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;field_9_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;field_9_9&quot; class&#x3D;&quot;gfield gfield--type-textarea gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible&quot;&gt;&lt;label class&#x3D;&quot;gfield_label gfor...&lt;/div&gt;</p><p class="selector">(selector "#field_9_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;input_9_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;textarea name&#x3D;&quot;input_9&quot; id&#x3D;&quot;input_9_9&quot; class&#x3D;&quot;textarea medium&quot; placeholder&#x3D;&quot;Question/Request&quot; aria-required&#x3D;&quot;true&quot; aria-invalid&#x3D;&quot;false&quot; rows&#x3D;&quot;10&quot; cols&#x3D;&quot;50&quot;&gt;&lt;/textarea&gt;</p><p class="selector">(selector "#input_9_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_submit_button_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;submit&quot; id&#x3D;&quot;gform_submit_button_9&quot; class&#x3D;&quot;gform_button button&quot; onclick&#x3D;&quot;gform.submission.handleButtonClick(this);&quot; data-submission-type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot;&gt;</p><p class="selector">(selector "#gform_submit_button_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_theme_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; class&#x3D;&quot;gform_hidden&quot; name&#x3D;&quot;gform_theme&quot; data-js&#x3D;&quot;gform_theme_9&quot; id&#x3D;&quot;gform_theme_9&quot; value&#x3D;&quot;gravity-theme&quot;&gt;</p><p class="selector">(selector "#gform_theme_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_style_settings_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; class&#x3D;&quot;gform_hidden&quot; name&#x3D;&quot;gform_style_settings&quot; data-js&#x3D;&quot;gform_style_settings_9&quot; id&#x3D;&quot;gform_style_settings_9&quot; value&#x3D;&quot;[]&quot;&gt;</p><p class="selector">(selector "#gform_style_settings_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_target_page_number_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; autocomplete&#x3D;&quot;off&quot; class&#x3D;&quot;gform_hidden&quot; name&#x3D;&quot;gform_target_page_number_9&quot; id&#x3D;&quot;gform_target_page_number_9&quot; value&#x3D;&quot;0&quot;&gt;</p><p class="selector">(selector "#gform_target_page_number_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_source_page_number_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; autocomplete&#x3D;&quot;off&quot; class&#x3D;&quot;gform_hidden&quot; name&#x3D;&quot;gform_source_page_number_9&quot; id&#x3D;&quot;gform_source_page_number_9&quot; value&#x3D;&quot;1&quot;&gt;</p><p class="selector">(selector "#gform_source_page_number_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;gform_ajax_frame_9&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;iframe style&#x3D;&quot;display:none;width:0px;height:0px;&quot; src&#x3D;&quot;about:blank&quot; name&#x3D;&quot;gform_ajax_frame_9&quot; id&#x3D;&quot;gform_ajax_frame_9&quot; title&#x3D;&quot;This iframe contains the logic required to handle Ajax powered Gravity Forms.&quot;&gt;&lt;/iframe&gt;</p><p class="selector">(selector "#gform_ajax_frame_9")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Iframe element requires a non-empty title attribute that identifies the frame.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1</a></p><p class="context">&lt;iframe src&#x3D;&quot;https://a2.adform.net/serving/container/?pm&#x3D;3043884&amp;amp;lid&#x3D;145938032&amp;amp;ctype&#x3D;0&amp;amp;media&#x3D;0&amp;amp;PageName&#x3D;EPZO_RT&amp;amp;rnd&#x3D;1540559550&amp;amp;cpref&#x3D;&amp;amp;loc&#x3D;https%3a%2f%2fzonisade.com%2f&quot; allowtransparency&#x3D;&quot;true&quot; webkitallowfullscreen&#x3D;&quot;&quot; moz...</p><p class="selector">(selector "html &gt; body &gt; iframe:nth-child(61)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Pediatric Neurologist&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(1) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Neurologist&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(2) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Registered Nurse&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(3) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Physician Assistant&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(4) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Nurse Practitioner&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(5) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Primary Care Provider&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(6) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Office Administration&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(7) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Pharmacist&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(8) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change background to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;label tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;presentation&quot; style&#x3D;&quot;text-align: center;&quot;&gt;Other&lt;/label&gt;</p><p class="selector">(selector "#_pi_surveyWidget &gt; div:nth-child(3) &gt; ul &gt; li:nth-child(9) &gt; a &gt; label")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.93:1. Recommendation:  change text colour to #a86800.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;button class&#x3D;&quot;nav-link active&quot; id&#x3D;&quot;adjunctive-therapy-for-partial-onset-seizures-tab&quot; data-bs-toggle&#x3D;&quot;tab&quot; data-bs-target&#x3D;&quot;#adjunctive-therapy-for-partial-onset-seizures&quot; type&#x3D;&quot;button&quot; role&#x3D;&quot;tab&quot; aria-controls&#x3D;&quot;adjunctive-therapy-for-partial-onset-s...</p><p class="selector">(selector "#adjunctive-therapy-for-partial-onset-seizures-tab")</p></div>
+			</li>
+		</ul>
+	</main>
+	<script>
+		const toggleIssues = (btn, pageQuery) => {
+			const className = 'hidden';
+			document.getElementById(btn).classList.toggle(className);
+			document.querySelectorAll(pageQuery).forEach((page) => {
+				page.classList.toggle(className);
+			});
+		};
+
+		const errorCountFilter = document.getElementById('error-count');
+		errorCountFilter.addEventListener('click', () =>
+			toggleIssues('error-count', '.issues .issue.error')
+		);
+		errorCountFilter.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('error-count', '.issues .issue.error')
+		);
+
+		const warningCountButton = document.getElementById('warning-count');
+		warningCountButton.addEventListener('click', () =>
+			toggleIssues('warning-count', '.issues .issue.warning')
+		);
+		warningCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('warning-count', '.issues .issue.warning')
+		);
+
+		const noticeCountButton = document.getElementById('notice-count');
+		noticeCountButton.addEventListener('click', () =>
+			toggleIssues('notice-count', '.issues .issue.notice')
+		);
+		noticeCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('notice-count', '.issues .issue.notice')
+		);
+	</script>
+	<script>
+		const svgCopy = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>';
+		const svgCheck = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+
+		if (navigator && navigator.clipboard) {
+			document.querySelectorAll(".issue .body .selector").forEach((selectorNode) => {
+				const selector = selectorNode.innerText
+					.match(/\(selector "(?<selector>.+)"\)/).groups.selector;
+
+				const button = document.createElement("button");
+				button.className = "clipboard-button";
+				button.type = "button";
+				button.title = "Copy selector";
+				button.innerHTML = svgCopy;
+				button.addEventListener("click", (event) => {
+					navigator.clipboard.writeText(selector)
+						.then(() => {
+							// Remove focus if mouse, since hovering and will remain visible.
+							// If keyboard, keep focus until another keyboard action blurs.
+							event.detail && button.blur();
+							button.innerHTML = svgCheck;
+							setTimeout(() => (button.innerHTML = svgCopy), 2000);
+						},
+						(error) => (button.innerHTML = "Error")
+					);
+				});
+
+				selectorNode.parentNode.insertBefore(button, selectorNode);
+			});
+		};
+	</script>
+</body>
+
+</html>

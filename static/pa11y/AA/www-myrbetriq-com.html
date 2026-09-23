@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Pa11y results for "https://www.myrbetriq.com/"
+	</title>
+	<style>
+		html, body {
+			background-color: #ffffff;
+			color: rgb(51 51 51);
+			font-family: system-ui, sans-serif;
+			font-size: 16px;
+			line-height: 1.3rem;
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			margin-block: 0;
+			margin-inline: auto;
+			max-inline-size: 900px;
+			padding: 1.25rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			margin: 0;
+			margin-block-end: 0.5rem;
+		}
+
+		h2, h3 {
+			font-size: 1.15rem;
+			font-weight: normal;
+			margin: 0;
+			padding-block-end: 0.5rem;
+		}
+
+		h3 { padding-block-end: 0; }
+
+		p { margin: 0; }
+
+		.filter {
+			display: inline-grid;
+			grid-template-columns: 8.5rem 1fr 1fr 1fr;
+			margin-block-start: 1rem;
+		}
+
+		.filter .label {
+			font-size: 1.15rem;
+			padding-block: 0.45rem;
+			padding-inline: 0;
+		}
+
+		.count {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			cursor: pointer;
+			display: inline-grid;
+			font-size: 1.15rem;
+			grid-template-columns: 0.35rem 1fr;
+			margin-inline-end: 0.75rem;
+			min-inline-size: 80px;
+		}
+
+		.count .body {
+			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding-block: 0.35rem;
+			padding-inline: 0.7rem;
+			text-align: center;
+		}
+
+		.count.hidden {
+			background-color: #f4f4f4;
+			color: rgb(51 51 51);
+		}
+
+		.count.hidden .left-bar { background-color: #808080; }
+
+		.count.hidden .body { border-color: #d4d4d4; }
+
+		.issues {
+			list-style: none;
+			margin: 0;
+			margin-block-start: 1.5rem;
+			padding-inline-start: 0;
+		}
+
+		.issue {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			display: grid;
+			grid-template-columns: 0.5rem 1fr;
+			margin: 0;
+			margin-block-end: 1.5rem;
+			padding: 0;
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .left-bar { background-color: #808080; }
+
+		.issue p:not(:last-child) { padding-block-end: 0.1rem; }
+
+		.issue.hidden { display: none; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .body {
+ 			border-color: #bfbfbf;
+ 			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding: 0.5rem;
+			position: relative;
+		}
+
+		.issue .body h3 { padding-block-end: 0.25rem; }
+
+		.context, .selector {
+			font-family: monospace;
+			font-size: 0.95rem;
+			padding-block-start: 0.1rem;
+		}
+
+		.error {
+			background-color: #f8d7da;
+			color: rgb(103 25 31);
+		}
+
+		.warning {
+			background-color: #fff3cd;
+			color: rgb(84 64 3);
+		}
+
+		.notice {
+			background-color: #cfe2ff;
+			color: rgb(6 44 101);
+		}
+
+		.error a { color: #842029; }
+		.warning a { color: #664d03; }
+		.notice a { color: #074197; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .left-bar { background-color: #d53447; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .left-bar { background-color: #c79500; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .left-bar { background-color: #015cda; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .body { border-color: #f2bbc1; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .body { border-color: #ffd761; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .body { border-color: #a9cefe; }
+
+		.clipboard-button {
+			background-color: rgb(51 51 51 / 10%);
+			border: 2px solid;
+			border-color: rgb(51 51 51 / 30%);
+			border-radius: 2px;
+			color: rgb(51 51 51 / 40%);
+			font-size: 0.8rem;
+			inset-block-start: 7px;
+			inset-inline-end: 7px;
+			margin: 0;
+			opacity: 0;
+			padding-block: 5px 4px;
+			padding-inline: 7px;
+			position: absolute;
+			transition: 0.1s;
+			visibility: hidden;
+			z-index: 1;
+		}
+
+		.error .clipboard-button {
+			background-color: rgb(103 25 31 / 10%);
+			border-color: rgb(103 25 31 / 30%);
+			color: rgb(103 25 31 / 40%);
+		}
+
+		.warning .clipboard-button {
+			background-color: rgb(84 64 3 / 10%);
+			border-color: rgb(84 64 3 / 30%);
+			color: rgb(84 64 3 / 40%);
+		}
+
+		.notice .clipboard-button {
+			background-color: rgb(6 44 101 / 10%);
+			border-color: rgb(6 44 101 / 30%);
+			color: rgb(6 44 101 / 40%);
+		}
+
+		.clipboard-button > svg { fill: rgb(51 51 51 / 40%); }
+		.error .clipboard-button > svg { fill: rgb(103 25 31 / 40%); }
+		.warning .clipboard-button > svg { fill: rgb(84 64 3 / 40%); }
+		.notice .clipboard-button > svg { fill: rgb(6 44 101 / 40%); }
+
+		.clipboard-button:focus { outline: 0; }
+
+		.clipboard-button:hover,
+		.clipboard-button:focus {
+			background-color: rgb(51 51 51 / 20%);
+			border-color: rgb(51 51 51 / 70%);
+			color: rgb(51 51 51 / 80%);
+			cursor: pointer;
+		}
+
+		.error .clipboard-button:hover,
+		.error .clipboard-button:focus {
+			background-color: rgb(103 25 31 / 20%);
+			border-color: rgb(103 25 31 / 70%);
+			color: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover,
+		.warning .clipboard-button:focus {
+			background-color: rgb(84 64 3 / 20%);
+			border-color: rgb(84 64 3 / 70%);
+			color: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover,
+		.notice .clipboard-button:focus {
+			background-color: rgb(6 44 101 / 20%);
+			border-color: rgb(6 44 101 / 70%);
+			color: rgb(6 44 101 / 80%);
+		}
+
+		.clipboard-button:hover > svg,
+		.clipboard-button:focus > svg {
+			fill: rgb(51 51 51 / 80%);
+		}
+
+		.error .clipboard-button:hover > svg,
+		.error .clipboard-button:focus > svg {
+			fill: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover > svg,
+		.warning .clipboard-button:focus > svg {
+			fill: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover > svg,
+		.notice .clipboard-button:focus > svg {
+			fill: rgb(6 44 101 / 80%);
+		}
+
+		.issue .body:hover > .clipboard-button,
+		.issue .body:focus-within > .clipboard-button {
+			opacity: 1;
+			transition: 0.2s;
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>Pa11y results for "https://www.myrbetriq.com/"</h1>
+		<h2>Generated at: Mon Dec 29 2025 21:31:39 GMT-0500 (Eastern Standard Time)</h2>
+		<h2>Runners (with issues): htmlcs</h2>
+
+		<p class="filter">
+			<span class="label">Toggle by type</span>
+			<span class="count error" id="error-count" tabindex="0" role="button" aria-label="Toggle errors">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">239 errors</span>
+			</span>
+			<span class="count warning" id="warning-count" tabindex="0" role="button" aria-label="Toggle warnings">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 warnings</span>
+			</span>
+			<span class="count notice" id="notice-count" tabindex="0" role="button" aria-label="Toggle notices">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 notices</span>
+			</span>
+		</p>
+		<ul class="issues">
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-0f84f36950&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-0f84f36950&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-0f84f36950")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-0f84f36950&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-0f84f36950&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-0f84f36950")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-0f84f36950&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-0f84f36950&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-0f84f36950")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-0f84f36950&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-0f84f36950&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-0f84f36950")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-0f84f36950&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-0f84f36950&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-0f84f36950")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-0f84f36950&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-0f84f36950&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-0f84f36950")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-0f84f36950&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-0f84f36950&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-0f84f36950")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #00a882.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;label id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop___input_label_1&quot;&gt;Up to 7 times&lt;/label&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop___input_label_1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #00a882.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;label id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop___input_label_2&quot;&gt;8 to 12 times&lt;/label&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop___input_label_2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #00a882.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;label id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop___input_label_3&quot;&gt;13 or more&lt;/label&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop___input_label_3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_2096193370__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_2096193370__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_2096193370__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-1_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;Never&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop___input_l...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-1_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;Never&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop___input_l...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-2_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;Sometimes&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop___inp...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-2_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;Sometimes&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop___inp...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-3_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;Most of the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_co...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-3_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;Most of the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_co...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-4_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;All the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop___...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-4_widget&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;All the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop___...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2096193370-guideradiobutton_cop__-4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_338732343__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_338732343__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_338732343__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-1_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;Never&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_2...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-1_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;Never&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_2...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-2_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;Sometimes&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_c...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-2_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;Sometimes&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_c...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-3_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;Most of the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiob...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-3_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;Most of the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiob...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-4_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;All the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutto...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-4_widget&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;All the time&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutto...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_338732343-guideradiobutton_cop_285843593__-4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_1616593753__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_1616593753__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_1616593753__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___1_widget&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___1_widget&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___2_widget&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___2_widget&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___3_widget&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___3_widget&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1616593753-guidecheckbox___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_2121953379__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_2121953379__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_2121953379__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-1_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;Less than 1 month&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guiderad...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-1_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;Less than 1 month&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guiderad...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-2_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;1-6 months&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutto...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-2_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;1-6 months&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutto...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-3_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;6 months to 1 year&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guidera...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-3_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;6 months to 1 year&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guidera...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-4_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;1-5 years&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-4_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;1-5 years&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This radioinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputRadio.Name</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-5_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;6+ years&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-5_widget&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;6+ years&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_...</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_2121953379-guideradiobutton_cop_688822177__-5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_745042354__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_745042354__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_745042354__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___1_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___1_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___2_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___2_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___3_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___3_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___4_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___4_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___5_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___5_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___6_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;6&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___6_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___6_widget&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;6&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_745042354-guidecheckbox_copy___6_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_1160845004__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_1160845004__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_1160845004__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___1_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___1_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___2_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___2_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___3_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___3_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___4_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___4_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___5_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___5_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___6_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;6&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___6_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___6_widget&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;6&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1160845004-guidecheckbox_copy___6_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_1846615584__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_1846615584__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_1846615584__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___1_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___1_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___2_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___2_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___3_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___3_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___4_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___4_widget&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_1846615584-guidecheckbox_copy_c___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_160089750__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_160089750__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_160089750__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___1_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___1_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___2_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___2_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___3_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___3_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___4_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___4_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___5_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___5_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___6_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;6&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___6_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___6_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;6&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___6_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___7_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;7&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___7_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___7_widget&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;7&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_160089750-guidecheckbox_copy_c___7_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel1685518469186_c_229543514__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel1685518469186_c_229543514__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel1685518469186_c_229543514__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___1_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___1_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;1&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___1_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___2_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___2_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;2&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___2_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___3_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___3_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;3&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___3_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___4_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___4_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;4&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___4_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___5_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This form field should be labelled in some way. Use the label element (either with a &quot;for&quot; attribute or wrapped around the form field), or &quot;title&quot;, &quot;aria-label&quot; or &quot;aria-labelledby&quot; attributes as appropriate.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F68</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___5_widget&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;5&quot; aria-describedby&#x3D;&quot;guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___desc&quot;&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c_229543514-guidecheckbox_copy_c___5_widget")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;im_guideContainer-rootPanel-panel_copy_copy_copy__&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;im_guideContainer-rootPanel-panel_copy_copy_copy__&quot; style&#x3D;&quot;display: none&quot; data-guide-template-marker&#x3D;&quot;true&quot;&gt;&lt;/div&gt;</p><p class="selector">(selector "#im_guideContainer-rootPanel-panel_copy_copy_copy__")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This link points to a named anchor &quot;downloadPdf&quot; within the document, but no anchor exists with that name.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc2_4_1">htmlcs: WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID</a></p><p class="context">&lt;a href&#x3D;&quot;#downloadPdf&quot; data-clickable-id&#x3D;&quot;clickable-37&quot; target&#x3D;&quot;_blank&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;global-link-07112025-07:00&amp;quot;:{&amp;quot;xdm:linkTarget&amp;quot;:&amp;quot;_blank&amp;quot;,&amp;quot;xdm:linkType&amp;quot;:&amp;quot;internal&amp;quot;,&amp;quot;xdm:linkURL&amp;quot;:...</p><p class="selector">(selector "#guideContainer-rootPanel-panel_copy_copy_copy-panel-panel-guidetextdraw_copy__ &gt; ul &gt; li:nth-child(1) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This buttoninput element does not have a name available to an accessibility API. Valid names are: value undefined, aria-label undefined, aria-labelledby undefined.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputButton.Name</a></p><p class="context">&lt;input type&#x3D;&quot;submit&quot; class&#x3D;&quot;guideContainerFormSubmitButton&quot; style&#x3D;&quot;display : none;&quot;&gt;</p><p class="selector">(selector "#guideContainerForm &gt; input")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;My Sympt...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-d875ff19f0&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-d875ff19f0&quot; class&#x3D;&quot;cmp-container cmp-symptom-sec&quot;&gt;
+      &lt;div class&#x3D;&quot;columncontai...&lt;/div&gt;</p><p class="selector">(selector "#container-d875ff19f0")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;My Sympt...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-d875ff19f0&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-d875ff19f0&quot; class&#x3D;&quot;cmp-container cmp-symptom-sec&quot;&gt;
+      &lt;div class&#x3D;&quot;columncontai...&lt;/div&gt;</p><p class="selector">(selector "#container-d875ff19f0")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;Lifestyl...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-d875ff19f0&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-d875ff19f0&quot; class&#x3D;&quot;cmp-container cmp-symptom-sec&quot;&gt;
+      &lt;div class&#x3D;&quot;columncontai...&lt;/div&gt;</p><p class="selector">(selector "#container-d875ff19f0")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;How I fe...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+          &lt;p&gt;Myrbetriq® is a r...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot;&gt;
+          &lt;p&gt;
+            &lt;spa...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;button-7e390a2bed&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;button-7e390a2bed&quot; class&#x3D;&quot;cmp-button&quot; href&#x3D;&quot;#&quot;&gt;
+    &lt;span class&#x3D;&quot;cmp-button__t...&lt;/a&gt;</p><p class="selector">(selector "#button-7e390a2bed")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-filename&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; id&#x3D;&quot;pdf-filename&quot; value&#x3D;&quot;DoctorConversationGuide.pdf&quot;&gt;</p><p class="selector">(selector "#pdf-filename")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;cmp-pdfpage-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;cmp-myrbetriq-pdffordownload&quot; id&#x3D;&quot;cmp-pdfpage-1&quot;&gt;
+  &lt;div class&#x3D;&quot;cmp-first-page-c...&lt;/div&gt;</p><p class="selector">(selector "#cmp-pdfpage-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                &lt;h3&gt;Starting t...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-d875ff19f0&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-d875ff19f0&quot; class&#x3D;&quot;cmp-container cmp-symptom-sec&quot;&gt;
+      &lt;div class&#x3D;&quot;columncontai...&lt;/div&gt;</p><p class="selector">(selector "#container-d875ff19f0")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;My Sympt...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-1-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-1-option-1&quot; name&#x3D;&quot;section-1&quot; value&#x3D;&quot;option1-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-1-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-1-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-1-option-2&quot; name&#x3D;&quot;section-1&quot; value&#x3D;&quot;option1-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-1-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-1-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-1-option-3&quot; name&#x3D;&quot;section-1&quot; value&#x3D;&quot;option1-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-1-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-2-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-2-option-1&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;option2-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-2-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-2-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-2-option-2&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;option2-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-2-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-2-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-2-option-3&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;option2-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-2-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-2-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-2-option-4&quot; name&#x3D;&quot;section-2&quot; value&#x3D;&quot;option2-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-2-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-3-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-3-option-1&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;option3-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-3-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-3-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-3-option-2&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;option3-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-3-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-3-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-3-option-3&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;option3-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-3-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-3-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-3-option-4&quot; name&#x3D;&quot;section-3&quot; value&#x3D;&quot;option3-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-3-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-title&#x3D;&quot;celebrate&quot; id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;product-link-page1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.myrbetriq.com/content/pdf/Myrbetriq_patient_information.pdf&quot; id&#x3D;&quot;product-link-page1&quot; class&#x3D;&quot;cmp-underline-text&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Patient Product Information&lt;/a&gt;</p><p class="selector">(selector "#product-link-page1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;info-link-page1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;info-link-page1&quot; class&#x3D;&quot;cmp-underline-text&quot; href&#x3D;&quot;https://www.us.astellas.com/docs/Myrbetriq_WPI.pdf&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Prescribing Information&lt;/a&gt;</p><p class="selector">(selector "#info-link-page1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;cmp-pdfpage-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;cmp-myrbetriq-pdffordownload&quot; id&#x3D;&quot;cmp-pdfpage-2&quot;&gt;
+  &lt;div class&#x3D;&quot;cmp-second-page-...&lt;/div&gt;</p><p class="selector">(selector "#cmp-pdfpage-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-d875ff19f0&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-d875ff19f0&quot; class&#x3D;&quot;cmp-container cmp-symptom-sec&quot;&gt;
+      &lt;div class&#x3D;&quot;columncontai...&lt;/div&gt;</p><p class="selector">(selector "#container-d875ff19f0")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;My Sympt...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-4-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-4-option-1&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;option4-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-4-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-4-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-4-option-2&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;option4-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-4-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-4-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-4-option-3&quot; name&#x3D;&quot;section-4&quot; value&#x3D;&quot;option4-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-4-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-5-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-5-option-1&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;option5-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-5-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-5-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-5-option-2&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;option5-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-5-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-5-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-5-option-3&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;option5-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-5-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-5-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-5-option-4&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;option5-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-5-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-5-option-5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;pdf-section-5-option-5&quot; name&#x3D;&quot;section-5&quot; value&#x3D;&quot;option5-05&quot;&gt;</p><p class="selector">(selector "#pdf-section-5-option-5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-6-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-6-option-1&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;option6-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-6-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-6-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-6-option-2&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;option6-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-6-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-6-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-6-option-3&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;option6-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-6-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-6-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-6-option-4&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;option6-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-6-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-6-option-5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-6-option-5&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;option6-05&quot;&gt;</p><p class="selector">(selector "#pdf-section-6-option-5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-6-option-6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-6-option-6&quot; name&#x3D;&quot;section-6&quot; value&#x3D;&quot;option6-06&quot;&gt;</p><p class="selector">(selector "#pdf-section-6-option-6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;product-link-page2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.myrbetriq.com/content/pdf/Myrbetriq_patient_information.pdf&quot; id&#x3D;&quot;product-link-page2&quot; class&#x3D;&quot;cmp-underline-text&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Patient Product Information&lt;/a&gt;</p><p class="selector">(selector "#product-link-page2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;info-link-page2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;info-link-page2&quot; class&#x3D;&quot;cmp-underline-text&quot; href&#x3D;&quot;https://www.us.astellas.com/docs/Myrbetriq_WPI.pdf&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Prescribing Information&lt;/a&gt;</p><p class="selector">(selector "#info-link-page2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;cmp-pdfpage-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;cmp-myrbetriq-pdffordownload&quot; id&#x3D;&quot;cmp-pdfpage-3&quot;&gt;
+  &lt;div class&#x3D;&quot;cmp-third-page-c...&lt;/div&gt;</p><p class="selector">(selector "#cmp-pdfpage-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-d875ff19f0&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-d875ff19f0&quot; class&#x3D;&quot;cmp-container cmp-symptom-sec&quot;&gt;
+      &lt;div class&#x3D;&quot;columncontai...&lt;/div&gt;</p><p class="selector">(selector "#container-d875ff19f0")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;Lifestyl...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-7-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-7-option-1&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;option7-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-7-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-7-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-7-option-2&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;option7-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-7-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-7-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-7-option-3&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;option7-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-7-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-7-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-7-option-4&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;option7-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-7-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-7-option-5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-7-option-5&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;option7-05&quot;&gt;</p><p class="selector">(selector "#pdf-section-7-option-5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-7-option-6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-7-option-6&quot; name&#x3D;&quot;section-7&quot; value&#x3D;&quot;option7-06&quot;&gt;</p><p class="selector">(selector "#pdf-section-7-option-6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-8-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-8-option-1&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;option8-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-8-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-8-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-8-option-2&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;option8-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-8-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-8-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-8-option-3&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;option8-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-8-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-8-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-8-option-4&quot; name&#x3D;&quot;section-8&quot; value&#x3D;&quot;option8-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-8-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;product-link-page3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.myrbetriq.com/content/pdf/Myrbetriq_patient_information.pdf&quot; id&#x3D;&quot;product-link-page3&quot; class&#x3D;&quot;cmp-underline-text&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Patient Product Information&lt;/a&gt;</p><p class="selector">(selector "#product-link-page3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;info-link-page3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;info-link-page3&quot; class&#x3D;&quot;cmp-underline-text&quot; href&#x3D;&quot;https://www.us.astellas.com/docs/Myrbetriq_WPI.pdf&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Prescribing Information&lt;/a&gt;</p><p class="selector">(selector "#info-link-page3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;cmp-pdfpage-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;cmp-myrbetriq-pdffordownload&quot; id&#x3D;&quot;cmp-pdfpage-4&quot;&gt;
+  &lt;div class&#x3D;&quot;cmp-fourth-page-...&lt;/div&gt;</p><p class="selector">(selector "#cmp-pdfpage-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-d875ff19f0&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-d875ff19f0&quot; class&#x3D;&quot;cmp-container cmp-symptom-sec&quot;&gt;
+      &lt;div class&#x3D;&quot;columncontai...&lt;/div&gt;</p><p class="selector">(selector "#container-d875ff19f0")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;columncontainer-6effa9e26c&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;columncontainer-6effa9e26c&quot; class&#x3D;&quot;cmp-columncontainer   cmp-columncontainer-- cmp-columncontainer--spcol-&quot;&gt;
+          &lt;div class&#x3D;&quot;cmp-colu...&lt;/div&gt;</p><p class="selector">(selector "#columncontainer-6effa9e26c")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+                  &lt;h2&gt;How I fe...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-9-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-9-option-1&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;option9-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-9-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-9-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-9-option-2&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;option9-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-9-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-9-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-9-option-3&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;option9-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-9-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-9-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-9-option-4&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;option9-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-9-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-9-option-5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-9-option-5&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;option9-05&quot;&gt;</p><p class="selector">(selector "#pdf-section-9-option-5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-9-option-6&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-9-option-6&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;option9-06&quot;&gt;</p><p class="selector">(selector "#pdf-section-9-option-6")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-9-option-7&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-9-option-7&quot; name&#x3D;&quot;section-9&quot; value&#x3D;&quot;option9-07&quot;&gt;</p><p class="selector">(selector "#pdf-section-9-option-7")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-10-option-1&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-10-option-1&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;option10-01&quot;&gt;</p><p class="selector">(selector "#pdf-section-10-option-1")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-10-option-2&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-10-option-2&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;option10-02&quot;&gt;</p><p class="selector">(selector "#pdf-section-10-option-2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-10-option-3&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-10-option-3&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;option10-03&quot;&gt;</p><p class="selector">(selector "#pdf-section-10-option-3")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-10-option-4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-10-option-4&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;option10-04&quot;&gt;</p><p class="selector">(selector "#pdf-section-10-option-4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;pdf-section-10-option-5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;pdf-section-10-option-5&quot; name&#x3D;&quot;section-10&quot; value&#x3D;&quot;option10-05&quot;&gt;</p><p class="selector">(selector "#pdf-section-10-option-5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;image-4807c0f400&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;image-4807c0f400&quot; class&#x3D;&quot;cmp-image&quot;&gt;
+                &lt;img src&#x3D;&quot;/con...&lt;/div&gt;</p><p class="selector">(selector "#image-4807c0f400")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;product-link-page4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.myrbetriq.com/content/pdf/Myrbetriq_patient_information.pdf&quot; id&#x3D;&quot;product-link-page4&quot; class&#x3D;&quot;cmp-underline-text&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Patient Product Information&lt;/a&gt;</p><p class="selector">(selector "#product-link-page4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;info-link-page4&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;info-link-page4&quot; class&#x3D;&quot;cmp-underline-text&quot; href&#x3D;&quot;https://www.us.astellas.com/docs/Myrbetriq_WPI.pdf&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Prescribing Information&lt;/a&gt;</p><p class="selector">(selector "#info-link-page4")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;cmp-pdfpage-5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;cmp-myrbetriq-pdffordownload&quot; id&#x3D;&quot;cmp-pdfpage-5&quot;&gt;
+  &lt;div class&#x3D;&quot;cmp-fifth-page-c...&lt;/div&gt;</p><p class="selector">(selector "#cmp-pdfpage-5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;product-link-page5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a href&#x3D;&quot;https://www.myrbetriq.com/content/pdf/Myrbetriq_patient_information.pdf&quot; id&#x3D;&quot;product-link-page5&quot; class&#x3D;&quot;cmp-underline-text&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Patient Product Information&lt;/a&gt;</p><p class="selector">(selector "#product-link-page5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;info-link-page5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a id&#x3D;&quot;info-link-page5&quot; class&#x3D;&quot;cmp-underline-text&quot; href&#x3D;&quot;https://www.us.astellas.com/docs/Myrbetriq_WPI.pdf&quot; data-cmp-clickable&#x3D;&quot; &quot;&gt;Prescribing Information&lt;/a&gt;</p><p class="selector">(selector "#info-link-page5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;fda-link-page5&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;a class&#x3D;&quot;cmp-fd-link&quot; id&#x3D;&quot;fda-link-page5&quot; href&#x3D;&quot;https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program&quot;&gt;www.fda.gov/medwatch&lt;/a&gt;</p><p class="selector">(selector "#fda-link-page5")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot; class&#x3D;&quot;cmp-text&quot;&gt;
+          &lt;p&gt;Myrbetriq® is a r...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-39e6491a13&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;text-39e6491a13&quot;&gt;
+          &lt;p&gt;
+            &lt;spa...&lt;/div&gt;</p><p class="selector">(selector "#text-39e6491a13")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;add-isi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;add-isi&quot;&gt;
+		&lt;li&gt;
+			
+				
+				
+					&lt;!--...&lt;/ul&gt;</p><p class="selector">(selector "#add-isi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;remove-isi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;remove-isi&quot;&gt;
+		&lt;li&gt;
+			
+				
+				
+					&lt;!--...&lt;/ul&gt;</p><p class="selector">(selector "#remove-isi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #008768.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a style&#x3D;&quot;color: rgb(0,177,137);&quot; href&#x3D;&quot;/content/dam/myrbetriq/patient/north-america/us/en/pdf/myrbetriq-patient-information.pdf&quot; target&#x3D;&quot;_blank&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;global-link-07282025-09:10&amp;quot;:{&amp;quot;xdm:linkTarget&amp;quot;:&amp;quot;_blank&amp;qu...</p><p class="selector">(selector "#text-209e383def &gt; p &gt; a:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #008768.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a style&#x3D;&quot;color: rgb(0,177,137);&quot; href&#x3D;&quot;https://www.us.astellas.com/docs/Myrbetriq_WPI.pdf&quot; target&#x3D;&quot;_blank&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;global-link-07282025-09:12&amp;quot;:{&amp;quot;xdm:linkTarget&amp;quot;:&amp;quot;_blank&amp;quot;,&amp;quot;xdm:linkType&amp;quot;:&amp;quot;ext...</p><p class="selector">(selector "#text-209e383def &gt; p &gt; a:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #008768.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;a style&#x3D;&quot;color: rgb(0,177,137);&quot; title&#x3D;&quot;fda&quot; data-exitmodal&#x3D;&quot;model-1&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#model-1&quot; href&#x3D;&quot;https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program&quot; target&#x3D;&quot;_blank&quot; data-cmp-data-laye...</p><p class="selector">(selector "#text-0e66f9ecaf &gt; p &gt; a:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ISI_Content_custom-CTA_color&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;cmp-isi sticky-isi&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;ISI_Content_custom-CTA_color&amp;quot;:{&amp;quot;dc:description&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;MYRBETRIQ® (mirabegron extended-release tablets) is a prescription medicine for adults used to treat overactive ...</p><p class="selector">(selector "#ISI_Content_custom-CTA_color")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;add-isi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;add-isi&quot;&gt;
+		&lt;li&gt;
+			
+				
+				
+					&lt;!--...&lt;/ul&gt;</p><p class="selector">(selector "#add-isi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;remove-isi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;remove-isi&quot;&gt;
+		&lt;li&gt;
+			
+				
+				
+					&lt;!--...&lt;/ul&gt;</p><p class="selector">(selector "#remove-isi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;add-isi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;add-isi&quot;&gt;
+		&lt;li&gt;
+			
+				
+				
+					&lt;!--...&lt;/ul&gt;</p><p class="selector">(selector "#add-isi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;remove-isi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;ul id&#x3D;&quot;remove-isi&quot;&gt;
+		&lt;li&gt;
+			
+				
+				
+					&lt;!--...&lt;/ul&gt;</p><p class="selector">(selector "#remove-isi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-ec9ee309ee&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-ec9ee309ee&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    &lt;div class&#x3D;&quot;text bott...&lt;/div&gt;</p><p class="selector">(selector "#container-ec9ee309ee")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-6e3b57f4ef&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;text-6e3b57f4ef&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-19T18:39:07Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;Do not take MYRBETR...</p><p class="selector">(selector "#text-6e3b57f4ef")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-209e383def&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;text-209e383def&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-07-28T15:47:10Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;For further informa...</p><p class="selector">(selector "#text-209e383def")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-0e66f9ecaf&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2AA.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;text-0e66f9ecaf&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-07-28T15:50:11Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;You are encouraged ...</p><p class="selector">(selector "#text-0e66f9ecaf")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.43:1. Recommendation:  change background to #8f7400.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail</a></p><p class="context">&lt;span translate&#x3D;&quot;no&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;material-symbols-rounded notranslate&quot;&gt;add&lt;/span&gt;</p><p class="selector">(selector "#add-isi &gt; li &gt; a &gt; span:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #00a882.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;material-symbols-rounded notranslate quiz_unchecked&quot; translate&#x3D;&quot;no&quot; aria-hidden&#x3D;&quot;true&quot;&gt;radio_button_unchecked&lt;/span&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop__ &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; div &gt; ul &gt; li &gt; a &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #00a882.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;material-symbols-rounded notranslate quiz_unchecked&quot; translate&#x3D;&quot;no&quot; aria-hidden&#x3D;&quot;true&quot;&gt;radio_button_unchecked&lt;/span&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop__ &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; div &gt; ul &gt; li &gt; a &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.75:1. Recommendation:  change text colour to #00a882.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_4_3">htmlcs: WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail</a></p><p class="context">&lt;span class&#x3D;&quot;material-symbols-rounded notranslate quiz_unchecked&quot; translate&#x3D;&quot;no&quot; aria-hidden&#x3D;&quot;true&quot;&gt;radio_button_unchecked&lt;/span&gt;</p><p class="selector">(selector "#guideContainer-rootPanel-panel1685518469186_c-guideradiobutton_cop__ &gt; div:nth-child(1) &gt; div:nth-child(3) &gt; div:nth-child(1) &gt; div &gt; ul &gt; li &gt; a &gt; span:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element&#x27;s role is &quot;presentation&quot; but contains child elements with semantic meaning.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F92,ARIA4</a></p><p class="context">&lt;li class&#x3D;&quot;ot-abt-tab&quot; role&#x3D;&quot;presentation&quot;&gt;&lt;!-- About Privacy container --...&lt;/li&gt;</p><p class="selector">(selector "#ot-pc-content &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element&#x27;s role is &quot;presentation&quot; but contains child elements with semantic meaning.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F92,ARIA4</a></p><p class="context">&lt;li class&#x3D;&quot;ot-cat-item ot-always-active-group ot-vs-config&quot; role&#x3D;&quot;presentation&quot; data-optanongroupid&#x3D;&quot;BG691&quot;&gt;&lt;div class&#x3D;&quot;category-menu-switc...&lt;/li&gt;</p><p class="selector">(selector "#ot-pc-content &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element&#x27;s role is &quot;presentation&quot; but contains child elements with semantic meaning.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2AA.Principle1.Guideline1_3.1_3_1.F92,ARIA4</a></p><p class="context">&lt;li class&#x3D;&quot;ot-cat-item ot-vs-config&quot; role&#x3D;&quot;presentation&quot; data-optanongroupid&#x3D;&quot;C0004&quot;&gt;&lt;div class&#x3D;&quot;category-menu-switc...&lt;/li&gt;</p><p class="selector">(selector "#ot-pc-content &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(3)")</p></div>
+			</li>
+		</ul>
+	</main>
+	<script>
+		const toggleIssues = (btn, pageQuery) => {
+			const className = 'hidden';
+			document.getElementById(btn).classList.toggle(className);
+			document.querySelectorAll(pageQuery).forEach((page) => {
+				page.classList.toggle(className);
+			});
+		};
+
+		const errorCountFilter = document.getElementById('error-count');
+		errorCountFilter.addEventListener('click', () =>
+			toggleIssues('error-count', '.issues .issue.error')
+		);
+		errorCountFilter.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('error-count', '.issues .issue.error')
+		);
+
+		const warningCountButton = document.getElementById('warning-count');
+		warningCountButton.addEventListener('click', () =>
+			toggleIssues('warning-count', '.issues .issue.warning')
+		);
+		warningCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('warning-count', '.issues .issue.warning')
+		);
+
+		const noticeCountButton = document.getElementById('notice-count');
+		noticeCountButton.addEventListener('click', () =>
+			toggleIssues('notice-count', '.issues .issue.notice')
+		);
+		noticeCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('notice-count', '.issues .issue.notice')
+		);
+	</script>
+	<script>
+		const svgCopy = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>';
+		const svgCheck = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+
+		if (navigator && navigator.clipboard) {
+			document.querySelectorAll(".issue .body .selector").forEach((selectorNode) => {
+				const selector = selectorNode.innerText
+					.match(/\(selector "(?<selector>.+)"\)/).groups.selector;
+
+				const button = document.createElement("button");
+				button.className = "clipboard-button";
+				button.type = "button";
+				button.title = "Copy selector";
+				button.innerHTML = svgCopy;
+				button.addEventListener("click", (event) => {
+					navigator.clipboard.writeText(selector)
+						.then(() => {
+							// Remove focus if mouse, since hovering and will remain visible.
+							// If keyboard, keep focus until another keyboard action blurs.
+							event.detail && button.blur();
+							button.innerHTML = svgCheck;
+							setTimeout(() => (button.innerHTML = svgCopy), 2000);
+						},
+						(error) => (button.innerHTML = "Error")
+					);
+				});
+
+				selectorNode.parentNode.insertBefore(button, selectorNode);
+			});
+		};
+	</script>
+</body>
+
+</html>

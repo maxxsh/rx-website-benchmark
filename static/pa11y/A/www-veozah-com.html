@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
+		Pa11y results for "https://www.veozah.com/"
+	</title>
+	<style>
+		html, body {
+			background-color: #ffffff;
+			color: rgb(51 51 51);
+			font-family: system-ui, sans-serif;
+			font-size: 16px;
+			line-height: 1.3rem;
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			margin-block: 0;
+			margin-inline: auto;
+			max-inline-size: 900px;
+			padding: 1.25rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			margin: 0;
+			margin-block-end: 0.5rem;
+		}
+
+		h2, h3 {
+			font-size: 1.15rem;
+			font-weight: normal;
+			margin: 0;
+			padding-block-end: 0.5rem;
+		}
+
+		h3 { padding-block-end: 0; }
+
+		p { margin: 0; }
+
+		.filter {
+			display: inline-grid;
+			grid-template-columns: 8.5rem 1fr 1fr 1fr;
+			margin-block-start: 1rem;
+		}
+
+		.filter .label {
+			font-size: 1.15rem;
+			padding-block: 0.45rem;
+			padding-inline: 0;
+		}
+
+		.count {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			cursor: pointer;
+			display: inline-grid;
+			font-size: 1.15rem;
+			grid-template-columns: 0.35rem 1fr;
+			margin-inline-end: 0.75rem;
+			min-inline-size: 80px;
+		}
+
+		.count .body {
+			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding-block: 0.35rem;
+			padding-inline: 0.7rem;
+			text-align: center;
+		}
+
+		.count.hidden {
+			background-color: #f4f4f4;
+			color: rgb(51 51 51);
+		}
+
+		.count.hidden .left-bar { background-color: #808080; }
+
+		.count.hidden .body { border-color: #d4d4d4; }
+
+		.issues {
+			list-style: none;
+			margin: 0;
+			margin-block-start: 1.5rem;
+			padding-inline-start: 0;
+		}
+
+		.issue {
+			border-radius: 0;
+			border-width: 0;
+			box-shadow: 0.1rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+			display: grid;
+			grid-template-columns: 0.5rem 1fr;
+			margin: 0;
+			margin-block-end: 1.5rem;
+			padding: 0;
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .left-bar { background-color: #808080; }
+
+		.issue p:not(:last-child) { padding-block-end: 0.1rem; }
+
+		.issue.hidden { display: none; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.issue .body {
+ 			border-color: #bfbfbf;
+ 			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			overflow-x: hidden;
+			padding: 0.5rem;
+			position: relative;
+		}
+
+		.issue .body h3 { padding-block-end: 0.25rem; }
+
+		.context, .selector {
+			font-family: monospace;
+			font-size: 0.95rem;
+			padding-block-start: 0.1rem;
+		}
+
+		.error {
+			background-color: #f8d7da;
+			color: rgb(103 25 31);
+		}
+
+		.warning {
+			background-color: #fff3cd;
+			color: rgb(84 64 3);
+		}
+
+		.notice {
+			background-color: #cfe2ff;
+			color: rgb(6 44 101);
+		}
+
+		.error a { color: #842029; }
+		.warning a { color: #664d03; }
+		.notice a { color: #074197; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .left-bar { background-color: #d53447; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .left-bar { background-color: #c79500; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .left-bar { background-color: #015cda; }
+
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.error .body { border-color: #f2bbc1; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.warning .body { border-color: #ffd761; }
+		/* stylelint-disable-next-line no-descending-specificity -- different parent elements */
+		.notice .body { border-color: #a9cefe; }
+
+		.clipboard-button {
+			background-color: rgb(51 51 51 / 10%);
+			border: 2px solid;
+			border-color: rgb(51 51 51 / 30%);
+			border-radius: 2px;
+			color: rgb(51 51 51 / 40%);
+			font-size: 0.8rem;
+			inset-block-start: 7px;
+			inset-inline-end: 7px;
+			margin: 0;
+			opacity: 0;
+			padding-block: 5px 4px;
+			padding-inline: 7px;
+			position: absolute;
+			transition: 0.1s;
+			visibility: hidden;
+			z-index: 1;
+		}
+
+		.error .clipboard-button {
+			background-color: rgb(103 25 31 / 10%);
+			border-color: rgb(103 25 31 / 30%);
+			color: rgb(103 25 31 / 40%);
+		}
+
+		.warning .clipboard-button {
+			background-color: rgb(84 64 3 / 10%);
+			border-color: rgb(84 64 3 / 30%);
+			color: rgb(84 64 3 / 40%);
+		}
+
+		.notice .clipboard-button {
+			background-color: rgb(6 44 101 / 10%);
+			border-color: rgb(6 44 101 / 30%);
+			color: rgb(6 44 101 / 40%);
+		}
+
+		.clipboard-button > svg { fill: rgb(51 51 51 / 40%); }
+		.error .clipboard-button > svg { fill: rgb(103 25 31 / 40%); }
+		.warning .clipboard-button > svg { fill: rgb(84 64 3 / 40%); }
+		.notice .clipboard-button > svg { fill: rgb(6 44 101 / 40%); }
+
+		.clipboard-button:focus { outline: 0; }
+
+		.clipboard-button:hover,
+		.clipboard-button:focus {
+			background-color: rgb(51 51 51 / 20%);
+			border-color: rgb(51 51 51 / 70%);
+			color: rgb(51 51 51 / 80%);
+			cursor: pointer;
+		}
+
+		.error .clipboard-button:hover,
+		.error .clipboard-button:focus {
+			background-color: rgb(103 25 31 / 20%);
+			border-color: rgb(103 25 31 / 70%);
+			color: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover,
+		.warning .clipboard-button:focus {
+			background-color: rgb(84 64 3 / 20%);
+			border-color: rgb(84 64 3 / 70%);
+			color: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover,
+		.notice .clipboard-button:focus {
+			background-color: rgb(6 44 101 / 20%);
+			border-color: rgb(6 44 101 / 70%);
+			color: rgb(6 44 101 / 80%);
+		}
+
+		.clipboard-button:hover > svg,
+		.clipboard-button:focus > svg {
+			fill: rgb(51 51 51 / 80%);
+		}
+
+		.error .clipboard-button:hover > svg,
+		.error .clipboard-button:focus > svg {
+			fill: rgb(103 25 31 / 80%);
+		}
+
+		.warning .clipboard-button:hover > svg,
+		.warning .clipboard-button:focus > svg {
+			fill: rgb(84 64 3 / 80%);
+		}
+
+		.notice .clipboard-button:hover > svg,
+		.notice .clipboard-button:focus > svg {
+			fill: rgb(6 44 101 / 80%);
+		}
+
+		.issue .body:hover > .clipboard-button,
+		.issue .body:focus-within > .clipboard-button {
+			opacity: 1;
+			transition: 0.2s;
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>Pa11y results for "https://www.veozah.com/"</h1>
+		<h2>Generated at: Mon Dec 29 2025 21:05:04 GMT-0500 (Eastern Standard Time)</h2>
+		<h2>Runners (with issues): htmlcs</h2>
+
+		<p class="filter">
+			<span class="label">Toggle by type</span>
+			<span class="count error" id="error-count" tabindex="0" role="button" aria-label="Toggle errors">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">43 errors</span>
+			</span>
+			<span class="count warning" id="warning-count" tabindex="0" role="button" aria-label="Toggle warnings">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 warnings</span>
+			</span>
+			<span class="count notice" id="notice-count" tabindex="0" role="button" aria-label="Toggle notices">
+				<span class="left-bar" aria-hidden="true"></span>
+				<span class="body">0 notices</span>
+			</span>
+		</p>
+		<ul class="issues">
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;resourcePath&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;resourcePath&quot; id&#x3D;&quot;resourcePath&quot; value&#x3D;&quot;/content/veozah/patient/north-america/us/en/home&quot;&gt;</p><p class="selector">(selector "#resourcePath")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;type&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;type&quot; id&#x3D;&quot;type&quot;&gt;</p><p class="selector">(selector "#type")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;subtype&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;subtype&quot; id&#x3D;&quot;subtype&quot;&gt;</p><p class="selector">(selector "#subtype")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;channel&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;channel&quot; id&#x3D;&quot;channel&quot;&gt;</p><p class="selector">(selector "#channel")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;seatavailability&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;seatavailability&quot; id&#x3D;&quot;seatavailability&quot;&gt;</p><p class="selector">(selector "#seatavailability")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;eventDateSep&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;seperator&quot; id&#x3D;&quot;eventDateSep&quot;&gt;</p><p class="selector">(selector "#eventDateSep")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;jobcodeDetail&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;jobcodeDetail&quot; id&#x3D;&quot;jobcodeDetail&quot;&gt;</p><p class="selector">(selector "#jobcodeDetail")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;resourcePath&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;resourcePath&quot; id&#x3D;&quot;resourcePath&quot; value&#x3D;&quot;/content/veozah/patient/north-america/us/en/home&quot;&gt;</p><p class="selector">(selector "#resourcePath")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;type&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;type&quot; id&#x3D;&quot;type&quot;&gt;</p><p class="selector">(selector "#type")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;subtype&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;subtype&quot; id&#x3D;&quot;subtype&quot;&gt;</p><p class="selector">(selector "#subtype")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;channel&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;channel&quot; id&#x3D;&quot;channel&quot;&gt;</p><p class="selector">(selector "#channel")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;seatavailability&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;seatavailability&quot; id&#x3D;&quot;seatavailability&quot;&gt;</p><p class="selector">(selector "#seatavailability")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;eventDateSep&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;seperator&quot; id&#x3D;&quot;eventDateSep&quot;&gt;</p><p class="selector">(selector "#eventDateSep")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;jobcodeDetail&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;input type&#x3D;&quot;hidden&quot; name&#x3D;&quot;jobcodeDetail&quot; id&#x3D;&quot;jobcodeDetail&quot;&gt;</p><p class="selector">(selector "#jobcodeDetail")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2A.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h2&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nb...&lt;/h2&gt;</p><p class="selector">(selector "#text-fb71b1d12e &gt; h2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2A.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h2&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nb...&lt;/h2&gt;</p><p class="selector">(selector "#text-0f33d35e83 &gt; h2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2A.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h2&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nb...&lt;/h2&gt;</p><p class="selector">(selector "#text-c1d21e5657 &gt; h2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2A.Principle1.Guideline1_3.1_3_1.H42.2</a></p><p class="context">&lt;h2&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nb...&lt;/h2&gt;</p><p class="selector">(selector "#text-c66284d80a &gt; h2")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-05-29T15:07:39Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-12T19:07:13Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-05-29T15:11:27Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;These are not all the possib...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-12T21:45:21Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-19T20:56:07Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;ISI_Bottom&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div class&#x3D;&quot;cmp-isi sticky-isi&quot; data-isi-height&#x3D;&quot;25vh&quot; data-isi-on-scroll-height&#x3D;&quot;25vh&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;ISI_Bottom&amp;quot;:{&amp;quot;dc:description&amp;quot;:&amp;quot;&amp;lt;p class&#x3D;\&amp;quot;bottom-padding-s\&amp;quot;&amp;gt;VEOZAH is a prescription medicine use...</p><p class="selector">(selector "#ISI_Bottom")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;separator-5c29d86d87&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;separator-5c29d86d87&quot; class&#x3D;&quot;cmp-separator&quot;&gt;
+    &lt;hr class&#x3D;&quot;cmp-separator__...&lt;/div&gt;</p><p class="selector">(selector "#separator-5c29d86d87")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;separator-c6b87dcbc8&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;separator-c6b87dcbc8&quot; class&#x3D;&quot;cmp-separator&quot;&gt;
+    &lt;hr class&#x3D;&quot;cmp-separator__...&lt;/div&gt;</p><p class="selector">(selector "#separator-c6b87dcbc8")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;separator-4b112057af&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;separator-4b112057af&quot; class&#x3D;&quot;cmp-separator&quot;&gt;
+    &lt;hr class&#x3D;&quot;cmp-separator__...&lt;/div&gt;</p><p class="selector">(selector "#separator-4b112057af")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-57a2118d7e&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-57a2118d7e&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    &lt;div class&#x3D;&quot;text bott...&lt;/div&gt;</p><p class="selector">(selector "#container-57a2118d7e")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;text-eef10e0a5a&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;text-eef10e0a5a&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-04T20:00:26Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;qu...</p><p class="selector">(selector "#text-eef10e0a5a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-05-29T15:07:26Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-05-29T15:07:39Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-12T19:07:13Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-05-29T15:11:27Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;These are not all the possib...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-12T21:45:21Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;txtisi&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div data-cmp-data-layer&#x3D;&quot;{&amp;quot;txtisi&amp;quot;:{&amp;quot;@type&amp;quot;:&amp;quot;global/components/globalcomponents/text/v1/text&amp;quot;,&amp;quot;repo:modifyDate&amp;quot;:&amp;quot;2025-06-19T20:56:07Z&amp;quot;,&amp;quot;xdm:text&amp;quot;:&amp;quot;&amp;lt;p&amp;gt;&amp;lt;span class&#x3D;\&amp;quot;cmp-we...</p><p class="selector">(selector "#txtisi")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Duplicate id attribute value &quot;container-36a9393973&quot; found on the web page.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_1">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_1.F77</a></p><p class="context">&lt;div id&#x3D;&quot;container-36a9393973&quot; class&#x3D;&quot;cmp-container&quot;&gt;
+    
+    
+    
+    &lt;/div&gt;</p><p class="selector">(selector "#container-36a9393973")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;javascript:void(0);&quot; class&#x3D;&quot;actionModalOpen&quot; data-modal-id&#x3D;&quot;veozah-modal-fb&quot; data-modal-link&#x3D;&quot;#&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;global-link-443e6a8061-headerlink-item0null&amp;quot;:{
+  &amp;quot;xdm:linkTarget&amp;quot; : &amp;quot;_blank&amp;quot;,
+  &amp;quot;xdm:l...</p><p class="selector">(selector "#container-395e7064fe &gt; div &gt; ul &gt; li:nth-child(1) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;javascript:void(0);&quot; class&#x3D;&quot;actionModalOpen&quot; data-modal-id&#x3D;&quot;veozah-modal-instagram&quot; data-modal-link&#x3D;&quot;#&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;global-link-443e6a8061-headerlink-item1null&amp;quot;:{
+  &amp;quot;xdm:linkTarget&amp;quot; : &amp;quot;_blank&amp;quot;,
+  &amp;quo...</p><p class="selector">(selector "#container-395e7064fe &gt; div &gt; ul &gt; li:nth-child(2) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;javascript:void(0);&quot; class&#x3D;&quot;actionModalOpen&quot; data-modal-id&#x3D;&quot;veozah-modal-youtube&quot; data-modal-link&#x3D;&quot;#&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;global-link-443e6a8061-headerlink-item2null&amp;quot;:{
+  &amp;quot;xdm:linkTarget&amp;quot; : &amp;quot;_blank&amp;quot;,
+  &amp;quot;...</p><p class="selector">(selector "#container-395e7064fe &gt; div &gt; ul &gt; li:nth-child(3) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: Anchor element found with a valid href attribute, but no link content has been supplied.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc4_1_2">htmlcs: WCAG2A.Principle4.Guideline4_1.4_1_2.H91.A.NoContent</a></p><p class="context">&lt;a href&#x3D;&quot;javascript:void(0);&quot; class&#x3D;&quot;actionModalOpen&quot; data-modal-id&#x3D;&quot;veozah-modal-tik_tok&quot; data-modal-link&#x3D;&quot;#&quot; data-cmp-data-layer&#x3D;&quot;{&amp;quot;global-link-443e6a8061-headerlink-item3null&amp;quot;:{
+  &amp;quot;xdm:linkTarget&amp;quot; : &amp;quot;_blank&amp;quot;,
+  &amp;quot;...</p><p class="selector">(selector "#container-395e7064fe &gt; div &gt; ul &gt; li:nth-child(4) &gt; a")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element&#x27;s role is &quot;presentation&quot; but contains child elements with semantic meaning.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2A.Principle1.Guideline1_3.1_3_1.F92,ARIA4</a></p><p class="context">&lt;li class&#x3D;&quot;ot-abt-tab&quot; role&#x3D;&quot;presentation&quot;&gt;&lt;!-- About Privacy container --...&lt;/li&gt;</p><p class="selector">(selector "#ot-pc-content &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(1)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element&#x27;s role is &quot;presentation&quot; but contains child elements with semantic meaning.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2A.Principle1.Guideline1_3.1_3_1.F92,ARIA4</a></p><p class="context">&lt;li class&#x3D;&quot;ot-cat-item ot-always-active-group ot-vs-config&quot; role&#x3D;&quot;presentation&quot; data-optanongroupid&#x3D;&quot;BG691&quot;&gt;&lt;div class&#x3D;&quot;category-menu-switc...&lt;/li&gt;</p><p class="selector">(selector "#ot-pc-content &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(2)")</p></div>
+			</li>
+			<li class="issue error">
+				<div class="left-bar" aria-hidden="true"></div>
+				<div class="body">
+					<h3><strong>Error</strong>: This element&#x27;s role is &quot;presentation&quot; but contains child elements with semantic meaning.</h3><p><a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/#sc1_3_1">htmlcs: WCAG2A.Principle1.Guideline1_3.1_3_1.F92,ARIA4</a></p><p class="context">&lt;li class&#x3D;&quot;ot-cat-item ot-vs-config&quot; role&#x3D;&quot;presentation&quot; data-optanongroupid&#x3D;&quot;C0004&quot;&gt;&lt;div class&#x3D;&quot;category-menu-switc...&lt;/li&gt;</p><p class="selector">(selector "#ot-pc-content &gt; div:nth-child(2) &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(3)")</p></div>
+			</li>
+		</ul>
+	</main>
+	<script>
+		const toggleIssues = (btn, pageQuery) => {
+			const className = 'hidden';
+			document.getElementById(btn).classList.toggle(className);
+			document.querySelectorAll(pageQuery).forEach((page) => {
+				page.classList.toggle(className);
+			});
+		};
+
+		const errorCountFilter = document.getElementById('error-count');
+		errorCountFilter.addEventListener('click', () =>
+			toggleIssues('error-count', '.issues .issue.error')
+		);
+		errorCountFilter.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('error-count', '.issues .issue.error')
+		);
+
+		const warningCountButton = document.getElementById('warning-count');
+		warningCountButton.addEventListener('click', () =>
+			toggleIssues('warning-count', '.issues .issue.warning')
+		);
+		warningCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('warning-count', '.issues .issue.warning')
+		);
+
+		const noticeCountButton = document.getElementById('notice-count');
+		noticeCountButton.addEventListener('click', () =>
+			toggleIssues('notice-count', '.issues .issue.notice')
+		);
+		noticeCountButton.addEventListener('keydown', (event) =>
+			event.key === "Enter" && toggleIssues('notice-count', '.issues .issue.notice')
+		);
+	</script>
+	<script>
+		const svgCopy = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>';
+		const svgCheck = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+
+		if (navigator && navigator.clipboard) {
+			document.querySelectorAll(".issue .body .selector").forEach((selectorNode) => {
+				const selector = selectorNode.innerText
+					.match(/\(selector "(?<selector>.+)"\)/).groups.selector;
+
+				const button = document.createElement("button");
+				button.className = "clipboard-button";
+				button.type = "button";
+				button.title = "Copy selector";
+				button.innerHTML = svgCopy;
+				button.addEventListener("click", (event) => {
+					navigator.clipboard.writeText(selector)
+						.then(() => {
+							// Remove focus if mouse, since hovering and will remain visible.
+							// If keyboard, keep focus until another keyboard action blurs.
+							event.detail && button.blur();
+							button.innerHTML = svgCheck;
+							setTimeout(() => (button.innerHTML = svgCopy), 2000);
+						},
+						(error) => (button.innerHTML = "Error")
+					);
+				});
+
+				selectorNode.parentNode.insertBefore(button, selectorNode);
+			});
+		};
+	</script>
+</body>
+
+</html>

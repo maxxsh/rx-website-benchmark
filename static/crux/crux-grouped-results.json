@@ -1,0 +1,5035 @@
+{
+  "totalPages": 338,
+  "successfulPages": 362,
+  "noDataPages": 64,
+  "failedPages": 6,
+  "timestamp": "2026-01-16T21:33:54.937Z",
+  "results": {
+    "https://www.eliquis.bmscustomerconnect.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 68.6,
+        "desktop": 29.6,
+        "tablet": 1.8
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/products/jardiance/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 88,
+        "desktop": 12,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xarelto-us.com/en/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 81,
+        "desktop": 19,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.januvia.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 68.1,
+        "desktop": 31.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.myrbetriq.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 2,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 2,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 70,
+        "desktop": 30,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.entresto.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 65.9,
+        "desktop": 34.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.linzess.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 76.2,
+        "desktop": 22.2,
+        "tablet": 1.6
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/products/tradjenta/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 53.5,
+        "desktop": 46.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.rybelsus.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 75.5,
+        "desktop": 24.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://vascepa.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/products/spiriva/copd": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 66.9,
+        "desktop": 33.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.brilinta.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 79.2,
+        "desktop": 20.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.gemtesa.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 80.4,
+        "desktop": 17.7,
+        "tablet": 1.9
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://sutab.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 64.1,
+        "desktop": 35.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/pradaxa/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://us.trintellix.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 66.3,
+        "desktop": 22.8,
+        "tablet": 10.9
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xifaxan.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 74.9,
+        "desktop": 25.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lokelma.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 68.3,
+        "desktop": 31.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.janumetxr.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 69.9,
+        "desktop": 30.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.biktarvy.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 2,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 80.9,
+        "desktop": 16.7,
+        "tablet": 2.4
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nurtec.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 94,
+        "desktop": 4.3,
+        "tablet": 1.7
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.multaq.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 64.9,
+        "desktop": 35.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.invokana.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.rexulti.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 82.1,
+        "desktop": 17.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://oxycontin.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.kerendia-us.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 67.2,
+        "desktop": 32.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/products/synjardy/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 66.2,
+        "desktop": 33.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.ubrelvy.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 82.8,
+        "desktop": 14.2,
+        "tablet": 3.1
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.vyvanse.ca/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 60.6,
+        "desktop": 39.4,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://xtampzaer.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.veltassa.com/patient": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.trulance.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 76.1,
+        "desktop": 24,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.revlimid.com/multiple-myeloma": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 60.9,
+        "desktop": 39.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.velphoro.us/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 88.7,
+        "desktop": 11.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://rytary.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 50.2,
+        "desktop": 49.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://us.tivicay.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.descovy.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 2,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 2,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 95,
+        "desktop": 3.7,
+        "tablet": 1.3
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.ingrezza.com/tardive-dyskinesia": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 69.5,
+        "desktop": 27.6,
+        "tablet": 2.9
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xtandi.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 89.3,
+        "desktop": 5.2,
+        "tablet": 5.5
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/glyxambi/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 62.2,
+        "desktop": 37.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.otezla.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 66.4,
+        "desktop": 33.6,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.qulipta.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 74.8,
+        "desktop": 22.5,
+        "tablet": 2.7
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://unithroid.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 81.3,
+        "desktop": 18.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.caplyta.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 72.2,
+        "desktop": 17.5,
+        "tablet": 10.4
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.rinvoq.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 70.1,
+        "desktop": 27.7,
+        "tablet": 2.2
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://auryxia.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/products/jentadueto/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/products/ofev/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 48.1,
+        "desktop": 51.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.dilantin.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nexlizet.com/about-nexletol/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 79.8,
+        "desktop": 20.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.austedo.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 2,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 58.8,
+        "desktop": 41.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://us.triumeq.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.edarbi.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 2,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nuedexta.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 2,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.imbruvica.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 57.9,
+        "desktop": 42.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/trijardy/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 65.5,
+        "desktop": 34.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nexlizet.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 79.6,
+        "desktop": 20.4,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.renvela.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.savella.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 84.2,
+        "desktop": 15.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.ibrance.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 88.1,
+        "desktop": 6.8,
+        "tablet": 5.1
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nuplazid.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 62.3,
+        "desktop": 37.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.orgovyx.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 70.7,
+        "desktop": 29.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.dovato.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 73.2,
+        "desktop": 26.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.relistor.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 2,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 2,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 84.8,
+        "desktop": 15.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.jakafi.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 72.7,
+        "desktop": 27.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.vemlidy.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 54.6,
+        "desktop": 45.4,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.edarbi.com/edarbyclor": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lyrica.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 86.9,
+        "desktop": 13.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.epclusa.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 90.8,
+        "desktop": 6.9,
+        "tablet": 2.3
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.briviact.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 2,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://tirosint.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 76.3,
+        "desktop": 23.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.calquence.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 67.7,
+        "desktop": 32.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.prezcobix.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.dayvigo.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 63.8,
+        "desktop": 36.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.erleada.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 50.2,
+        "desktop": 49.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.symtuza.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 69.6,
+        "desktop": 30.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xcopri.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 85.6,
+        "desktop": 12.5,
+        "tablet": 1.9
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://brukinsa.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 70,
+        "desktop": 30,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tagrisso.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 80.5,
+        "desktop": 16.2,
+        "tablet": 3.3
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.auvelity.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 81.5,
+        "desktop": 16.7,
+        "tablet": 1.8
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lybalvi.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 79.9,
+        "desktop": 18.5,
+        "tablet": 1.6
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.opsumit.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.mavyret.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 87.2,
+        "desktop": 12.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.verquvo-us.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://verzenio.lilly.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 2,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 73.9,
+        "desktop": 3.3,
+        "tablet": 22.8
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.cabometyx.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 74.6,
+        "desktop": 25.4,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lenvima.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 69.8,
+        "desktop": 30.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lipitor.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 80.9,
+        "desktop": 19.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.vyndamax.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 86.4,
+        "desktop": 8.5,
+        "tablet": 5.1
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.isentress.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.pfizermedical.com/patient/toviaz": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.nubeqa-us.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 79.5,
+        "desktop": 14.6,
+        "tablet": 5.9
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.viberzi.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 64.5,
+        "desktop": 35.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xeljanz.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 82.4,
+        "desktop": 17.6,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nucynta.com/patient/home/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 83.4,
+        "desktop": 16.6,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.fycompa.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.fetzima.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 76,
+        "desktop": 24,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.horizant.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 66.7,
+        "desktop": 33.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lynparza.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 49,
+        "desktop": 51,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xofluza.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 85.9,
+        "desktop": 6.5,
+        "tablet": 7.6
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://us.promacta.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.norvasc.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://hysinglaer.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.sprycel.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.symproic.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://xopenexhfa.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.ibsrela.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 76.9,
+        "desktop": 23.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.adempas-us.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://rayaldee.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.inlyta.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.invokana.com/about-invokamet-invokamet-xr/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://us.kisqali.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 93.3,
+        "desktop": 6.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://osphena.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://benicar.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.gocovri.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 67.1,
+        "desktop": 32.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.pifeltro.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 86.8,
+        "desktop": 1.9,
+        "tablet": 11.3
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.gralise.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.epidiolex.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 67.4,
+        "desktop": 32.6,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://fanapt.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 61.4,
+        "desktop": 38.6,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.talicia.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 75.8,
+        "desktop": 24.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.uptravi.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 84.2,
+        "desktop": 15.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nuzyrahcp.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 37,
+        "desktop": 63,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.celebrex.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.cresemba.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 82.2,
+        "desktop": 17.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.nourianz.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.trokendixr.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xanax.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.ninlaro.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://ongentys.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.topamax.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.wellbutrinxl.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 70.5,
+        "desktop": 29.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lonsurf.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 85.9,
+        "desktop": 3.6,
+        "tablet": 10.5
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tecfidera.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.austedo.com/tardive-dyskinesia/treatment": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 2,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 78.4,
+        "desktop": 17.3,
+        "tablet": 4.4
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tyvaso.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.effexorxr.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 86,
+        "desktop": 14,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tasigna-hcp.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.oxtellarxr.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.veozah.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 85.9,
+        "desktop": 14.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.zoloft.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 76.7,
+        "desktop": 15.6,
+        "tablet": 7.7
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.depakote.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://ambien.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.prevymis.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.envarsusxr.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.vumerity.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 71.4,
+        "desktop": 23.1,
+        "tablet": 5.6
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.inqovi.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 60.5,
+        "desktop": 39.6,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.zypitamag.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.qelbree.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 70.1,
+        "desktop": 29.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://tirosintsol.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.jnjwithme.com/patient/edurant/cost-support/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.camzyos.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 66.5,
+        "desktop": 33.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.stivarga-us.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.seroquelxr.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://zejula.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://esbriet.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://aciphex.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.abilify.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 71.7,
+        "desktop": 28.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.bosulif.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://orserdu.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://savaysa.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://doptelet.com/home/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 71.9,
+        "desktop": 28.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lumakras.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.oxbryta.com/patients": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.alecensa.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 76.4,
+        "desktop": 23.6,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://coregcr.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.xywav.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 60.1,
+        "desktop": 39.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.braftovi.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 2,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://wakix.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 76.2,
+        "desktop": 23.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://pro.campus.sanofi/us/products/avapro": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.rukobia.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.onfi.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://lunesta.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://ampyra.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.arestin.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 44.9,
+        "desktop": 55.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.sotyktu.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 79,
+        "desktop": 21.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.mavenclad.com/en": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 90.7,
+        "desktop": 7.6,
+        "tablet": 1.7
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://xpovio.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://jatenzo.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 76,
+        "desktop": 24,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://bidil.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.korlym.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 96.1,
+        "desktop": 3.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.zeposia.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.rezurock.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 68.2,
+        "desktop": 31.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.prograf.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://azstarys.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 58,
+        "desktop": 42,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.vonjo.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 73.3,
+        "desktop": 26.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tukysa.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.mayzent.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.xospata.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.fotivda.com/": {
+      "loadingPerformance": null,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 80.5,
+        "desktop": 19.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.oracea.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xadago.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xyrem.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://patient.boehringer-ingelheim.com/us/products/gilotrif/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.idhifa.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://adcirca.com/patient/index.aspx": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.letairis.com/patients/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.aplenzin.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.delstrigo.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://us.scemblix.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.harvoni.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://gleostine.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.loreevxr.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://jaypirca.lilly.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 2,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 2,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 88.5,
+        "desktop": 3.7,
+        "tablet": 7.9
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://contrave.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 86.6,
+        "desktop": 12.1,
+        "tablet": 1.3
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://clozaril.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lorbrena.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 81.5,
+        "desktop": 18.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.jnjwithme.com/patient/intelence/cost-support/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.salix.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 48.9,
+        "desktop": 51.1,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.rubraca.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.cambiahealth.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 35.7,
+        "desktop": 64.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://provigil.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://hetlioz.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://odomzo.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.merckconnect.com/sivextro/dosing-administration/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.jynarque.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://ojjaara.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 69.1,
+        "desktop": 30.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tavalisse.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.relpax.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://retevmo.lilly.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://coreg.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://adzenysxrodt.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 35.1,
+        "desktop": 64.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://leadiant.com/products/carnitor/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.welireg.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://nerlynx.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://nuvigil.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.krazati.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://equetro.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.livtencity.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.evrysdi.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 2,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 93.9,
+        "desktop": 1.1,
+        "tablet": 5
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.bijuva.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 61.1,
+        "desktop": 38.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.inrebic.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.tavneos.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 59.5,
+        "desktop": 40.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.jornaypm.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 72.1,
+        "desktop": 27.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.cellcept.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.xalkori.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.katerzia.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": null,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.afinitor-hcp.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.xermelo.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://firdapse.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://spritam.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.cibinqo.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 93.9,
+        "desktop": 5,
+        "tablet": 1.2
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://baxdela.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.myfembree.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 60.6,
+        "desktop": 39.4,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.dyanavelxr.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 70.6,
+        "desktop": 29.4,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.skyclarys.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 76.2,
+        "desktop": 23.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.sunlenca.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://xphozah.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 89.3,
+        "desktop": 10.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tobipodhaler.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.anipharmaceuticals.com/products-detail.php?group=Arimidex%c2%ae+(anastrozole)+tablets": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "query string error",
+      "manualTest": true
+    },
+    "https://zonisade.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://radiuspharm.com/binosto/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lupkynis.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.silenor.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.gene.com/patients/medicines/zelboraf": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://zegeridotc.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.northera.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.balversa.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://ayvakit.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://thiolaec.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://subvenite.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.qinlock.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 44.7,
+        "desktop": 55.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tepmetko.com/us-en/patients-and-caregivers.html": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.alunbrig.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.talzenna.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://tlando.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "http://matulane.com/obtain-matulane.asp": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.pemazyre.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.tazverik.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.gene.com/patients/medicines/rozlytrek": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.qbrelis.com/": {
+      "loadingPerformance": 1,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": null,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 100,
+        "desktop": 0,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://thyquidity.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://eprontia.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://isturisa.com/patient/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 57.4,
+        "desktop": 42.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.viagra.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 91.1,
+        "desktop": 8.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.gene.com/patients/medicines/cotellic": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://seysara.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.sympazan.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://tiglutik.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://lysodren.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.solosec.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.samsca.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.fintepla.com/": {
+      "loadingPerformance": 1,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 84.3,
+        "desktop": 15.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://orladeyo.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 76,
+        "desktop": 24,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.fruzaqla.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 84.1,
+        "desktop": 15.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.upsher-smith.com/products/qudexy-xr-topiramate-extended-release-capsules/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.cuvposa.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.bafiertam.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.cerdelga.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://galafold.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.revatio.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://filspari.com/igan/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 56.1,
+        "desktop": 43.9,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.treximet.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.doryx.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.emflaza.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.ponvoryus.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.keveyis.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.zipsor.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.zydelig.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://daybue.com/": {
+      "loadingPerformance": 2,
+      "interactivity": null,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 44.2,
+        "desktop": 55.8,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lytgobi.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://koselugo.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 59.3,
+        "desktop": 40.7,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://fleqsuvy.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.kalydeco.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.cystadane.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://versacloz.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.quillichewer.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.ravicti.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 1,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.recorlev.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://xatmep.com/hcp/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.mycapssa.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://soltamox.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.rezlidhia.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.lumryz.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 93.5,
+        "desktop": 6.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.quillivantxr.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 64.5,
+        "desktop": 35.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.procysbi.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.truqap.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": {
+        "phone": 84.9,
+        "desktop": 9,
+        "tablet": 6.2
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://cotemplaxrodt.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 39.8,
+        "desktop": 60.2,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.targretin.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://voquezna.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 75.7,
+        "desktop": 24.3,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.cometriq.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.kuvan.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://ferriprox.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://bonjesta.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 1,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 1
+      },
+      "device": {
+        "phone": 70,
+        "desktop": 30,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://rhodespharma.com/catalog/#!aptensio-xr-capsules-cii": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.caprelsa.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://metopirone.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://us.vijoice.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.mulpleta.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.litfulo.com/": {
+      "loadingPerformance": 3,
+      "interactivity": 3,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 87.9,
+        "desktop": 8.5,
+        "tablet": 3.6
+      },
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.pyrukynd.com/": {
+      "loadingPerformance": 2,
+      "interactivity": 3,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.impavido.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": null,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.vanflyta.com/en": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.absorica.com/": {
+      "loadingPerformance": 3,
+      "interactivity": null,
+      "visualStability": 3,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://dojolvi.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://epaned.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": "no data",
+      "manualTest": false
+    },
+    "https://www.turalio.com/en": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": 3,
+        "interactivity": 3,
+        "visualStability": 3
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.juxtapid.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": null,
+      "fullDataRange": {
+        "loadingPerformance": null,
+        "interactivity": null,
+        "visualStability": null
+      },
+      "device": null,
+      "error": null,
+      "manualTest": false
+    },
+    "https://www.ogsiveo.com/": {
+      "loadingPerformance": null,
+      "interactivity": null,
+      "visualStability": 2,
+      "fullDataRange": {
+        "loadingPerformance": 2,
+        "interactivity": 3,
+        "visualStability": 2
+      },
+      "device": {
+        "phone": 69.6,
+        "desktop": 30.5,
+        "tablet": 0
+      },
+      "error": null,
+      "manualTest": false
+    }
+  }
+}
