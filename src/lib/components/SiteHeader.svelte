@@ -38,8 +38,7 @@
     <h1
       class="flex flex-1 items-center justify-end text-sm sm:text-base md:text-lg text-center leading-[1.1] md:text-right"
     >
-      The U.S. Prescription Medication Brand Websites: Performance and
-      Accessibility Analysis
+      U.S. Prescription Drug Brand Homepages Benchmark
     </h1>
   </div>
 </header>

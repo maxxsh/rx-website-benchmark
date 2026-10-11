@@ -1,4 +1,4 @@
-<div class="text-base text-gray-700 mb-6 max-w-5xl">
+<div class="text-lg text-gray-700 mb-6 max-w-5xl">
   <p>
     This website presents the benchmark data, analysis, and visualizations
     accompanying the article:

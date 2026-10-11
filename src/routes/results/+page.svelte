@@ -18,8 +18,15 @@
 
 <div class="results-page self-center content-width flex flex-col gap-12 pb-16">
   <section class="py-0 items-start gap-4">
-    <h2 class="text-5xl">Findings</h2>
     <ArticleContext />
+    <h2 class="text-5xl">Findings</h2>
+    <p class="text-base text-gray-700 mb-4">
+      This page summarizes the measurements collected across 338 prescription
+      drug brand homepages, including web performance, accessibility, and
+      readability. Results reflect the study's data collection period and should
+      not be interpreted as current website assessments.
+    </p>
+
     <nav
       aria-label="Results sections"
       class="flex flex-wrap gap-x-6 gap-y-2 text-base"

@@ -491,6 +491,12 @@
   <section class="relative scroll-mt-[72px] pt-0 items-start">
     <ArticleContext />
     <div class="w-full mb-12">
+      <p class="text-base text-gray-700 mb-4">
+        The dataset includes 338 U.S. prescription drug brand homepages
+        evaluated for web performance, accessibility, and readability. Select a
+        brand to visit its website or explore the available measurements and
+        reports.
+      </p>
       <table
         class="text-xs w-full min-w-max border-collapse border leading-1.1 border-gray-300 [&_th]:border [&_th]:border-gray-300 [&_th]:px-1 [&_th]:py-0.5 [&_th]:font-semibold [&_thead_tr]:bg-gray-100 [&_td]:border [&_td]:border-gray-300 [&_td]:px-1 [&_td]:py-0.5 text-center [&_tbody_tr:hover]:bg-gray-50"
       >
