@@ -1,5 +1,5 @@
 <footer class="flex flex-col items-center bg-[#1a2055] text-white">
-  <div class="site-width flex flex-col gap-5 py-8 text-base">
+  <div class="content-width flex flex-col gap-5 py-8 text-base">
     <div>
       <p class="font-semibold">Prescription Drug Website Benchmark</p>
       <p class="mt-2">
@@ -48,8 +48,13 @@
           ></path></svg
         >
       </a>
-      <a class="underline" href="https://link.springer.com/journal/10209"
-        >Journal on Springer</a
+      <a
+        class="underline"
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://link.springer.com/article/10.1007/s10209-026-01394-9"
+      >
+        Article on Springer</a
       >
     </nav>
   </div>

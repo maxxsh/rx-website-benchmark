@@ -3,9 +3,7 @@
     This website presents the benchmark data, analysis, and visualizations
     accompanying the article
     <cite
-      ><a
-        class="underline"
-        href="https://link.springer.com/article/10.1007/s10209-026-01394-9"
+      ><a class="underline" href="https://doi.org/10.1007/s10209-026-01394-9"
         >Regulated Medication Information, Accessible Web Delivery? A
         Cross-Sectional Evaluation of United States Prescription Drug Brand
         Homepages</a
