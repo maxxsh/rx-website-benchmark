@@ -25,7 +25,7 @@ Readability is a project pipeline, combining several tools and scoring rules. Au
 
 **Regulated Medication Information, Accessible Web Delivery? A Cross-Sectional Evaluation of United States Prescription Drug Brand Homepages**
 
-[Universal Access in the Information Society · Springer](https://link.springer.com/journal/10209)
+[DOI:10.1007/s10209-026-01394-9](https://doi.org/10.1007/s10209-026-01394-9)
 
 The companion code connects four parts of the research workflow:
 
