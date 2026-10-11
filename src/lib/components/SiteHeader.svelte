@@ -20,7 +20,7 @@
             href="/"
             aria-current={page.url.pathname === "/" ? "page" : undefined}
           >
-            Home
+            Dataset
           </a>
         </li>
         <li>
@@ -29,7 +29,7 @@
             href="/results"
             aria-current={page.url.pathname === "/results" ? "page" : undefined}
           >
-            Results
+            Findings
           </a>
         </li>
       </ul>
