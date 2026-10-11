@@ -16,7 +16,7 @@
   />
 </svelte:head>
 
-<section class="py-0 items-start gap-4 pb-16">
+<section class="py-0 items-start gap-4">
   <ArticleContext />
   <h2 class="text-5xl">Findings</h2>
   <p class="text-base text-gray-700 mb-4">
@@ -44,7 +44,7 @@
   <ComponentSummarySection componentSummary={data.componentSummary} />
 </section>
 
-<div id="figures" class="flex flex-col gap-12 scroll-mt-8">
+<div id="figures" class="flex flex-col gap-12 scroll-mt-8 pb-16">
   <h2>Figures</h2>
   <CruxVisual />
   <Pa11yVisual />
