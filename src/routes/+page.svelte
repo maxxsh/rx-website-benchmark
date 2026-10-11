@@ -498,7 +498,7 @@
         reports.
       </p>
       <table
-        class="text-xs w-full min-w-max border-collapse border leading-1.1 border-gray-300 [&_th]:border [&_th]:border-gray-300 [&_th]:px-1 [&_th]:py-0.5 [&_th]:font-semibold [&_thead_tr]:bg-gray-100 [&_td]:border [&_td]:border-gray-300 [&_td]:px-1 [&_td]:py-0.5 text-center [&_tbody_tr:hover]:bg-gray-50"
+        class="text-xs w-full min-w-min border-collapse border leading-1.1 border-gray-300 [&_th]:border [&_th]:border-gray-300 [&_th]:px-1 [&_th]:py-0.5 [&_th]:font-semibold [&_thead_tr]:bg-gray-100 [&_td]:border [&_td]:border-gray-300 [&_td]:px-1 [&_td]:py-0.5 text-center [&_tbody_tr:hover]:bg-gray-50"
       >
         <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <thead
