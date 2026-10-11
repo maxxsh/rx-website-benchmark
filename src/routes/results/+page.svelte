@@ -18,7 +18,6 @@
 
 <div class="results-page self-center content-width flex flex-col gap-12 pb-16">
   <section class="py-0 items-start gap-4">
-    s
     <h2 class="text-5xl">Findings</h2>
     <ArticleContext />
     <nav
