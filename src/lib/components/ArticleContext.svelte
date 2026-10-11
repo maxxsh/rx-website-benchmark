@@ -1,15 +1,14 @@
-<div class="text-base text-gray-600 mb-6 max-w-5xl">
+<div class="text-base text-gray-700 mb-6 max-w-5xl">
   <p>
     This website presents the benchmark data, analysis, and visualizations
-    accompanying the article
-    <cite
-      ><a class="underline" href="https://doi.org/10.1007/s10209-026-01394-9"
-        >Regulated Medication Information, Accessible Web Delivery? A
-        Cross-Sectional Evaluation of United States Prescription Drug Brand
-        Homepages</a
-      ></cite
-    >
-    by Max Shestov and Christopher Felix Brewer, in Universal Access in the Information
-    Society (Springer).
+    accompanying the article:
+  </p>
+  <p class="citation">
+    Shestov, M., Felix Brewer, C. Regulated medication information, accessible
+    web delivery? A cross-sectional evaluation of united states prescription
+    drug brand homepages. <cite>Univ Access Inf Soc 25, 128 (2026).</cite>
+    <a href="https://doi.org/10.1007/s10209-026-01394-9">
+      https://doi.org/10.1007/s10209-026-01394-9
+    </a>
   </p>
 </div>
