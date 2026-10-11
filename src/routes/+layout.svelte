@@ -29,7 +29,10 @@
 
 <SiteHeader />
 
-<main id="main" class="site-width flex flex-col mt-10 lg:mt-16 grow">
+<main
+  id="main"
+  class="container-pad items-center site-width flex flex-col mt-10 lg:mt-16 grow"
+>
   {@render children()}
 </main>
 

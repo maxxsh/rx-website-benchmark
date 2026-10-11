@@ -178,7 +178,8 @@
     width: 100%;
     max-width: 1660px;
   }
-  .content-width {
+  .content-width,
+  section {
     width: 100%;
     max-width: 1200px;
   }
@@ -191,7 +192,6 @@
   }
 
   .container-pad,
-  section,
   footer {
     width: 100%;
     @apply px-4 md:px-6;
