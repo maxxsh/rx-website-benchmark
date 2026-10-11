@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>Results | Prescription Drug Brand Websites</title>
+  <title>Findings | Prescription Drug Brand Websites</title>
   <meta
     name="description"
     content="Study summary and figures accompanying a cross-sectional evaluation of 338 official U.S. prescription drug brand homepages."
@@ -18,7 +18,8 @@
 
 <div class="results-page self-center content-width flex flex-col gap-12 pb-16">
   <section class="py-0 items-start gap-4">
-    <h2 class="text-5xl">Results</h2>
+    s
+    <h2 class="text-5xl">Findings</h2>
     <ArticleContext />
     <nav
       aria-label="Results sections"
