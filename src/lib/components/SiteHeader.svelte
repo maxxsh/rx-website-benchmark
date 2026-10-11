@@ -7,8 +7,10 @@
   class="bg-[#f2f6ff] container-pad w-full py-2 md:py-3 z-50 flex flex-col items-center top-0 shadow-md transition-all transform ease-in-out duration-500"
 >
   <a class="sr-only focus:not-sr-only" href="#main">Skip to content</a>
-  <div class="flex items-center content-width justify-between gap-2">
-    <nav class="items-center justify-end grow w-full">
+  <div
+    class="flex flex-col-reverse md:flex-row items-center content-width justify-between gap-y-2 gap-x-8"
+  >
+    <nav class="items-center justify-end">
       <ul
         class="flex items-center flex-wrap gap-4 md:gap-6 text-base text-[#606060]"
       >
@@ -32,18 +34,12 @@
         </li>
       </ul>
     </nav>
-    <nav
-      id="menu"
-      aria-label="Main"
-      class="flex items-center justify-end shrink-0"
+
+    <h1
+      class="flex flex-1 items-center justify-end text-sm sm:text-base md:text-lg text-center leading-[1.1] md:text-right"
     >
-      <ul class="flex items-center gap-4">
-        <li>
-          <a class="btn bg-[#B114BF] text-white" href="https://link.springer.com/journal/10209" title="Journal page; the direct article link will be added when available">Article / Journal</a>
-        </li>
-      </ul>
-    </nav>
-
-
+      The U.S. Prescription Medication Brand Websites: Performance and
+      Accessibility Analysis
+    </h1>
   </div>
 </header>
