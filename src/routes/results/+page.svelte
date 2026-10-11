@@ -18,7 +18,7 @@
 
 <div class="results-page self-center content-width flex flex-col gap-12 pb-16">
   <section class="py-0 items-start gap-4">
-    <h1>Results</h1>
+    <h2 class="text-5xl">Results</h2>
     <ArticleContext />
     <nav
       aria-label="Results sections"
@@ -39,7 +39,7 @@
   </section>
 
   <div id="figures" class="flex flex-col gap-12 scroll-mt-8">
-    <h2 class="text-3xl px-4 md:px-6">Figures</h2>
+    <h2>Figures</h2>
     <CruxVisual />
     <Pa11yVisual />
   </div>

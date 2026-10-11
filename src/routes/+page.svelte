@@ -366,7 +366,6 @@
     };
   });
 
-
   $: sortedData =
     enrichedDataWithScore.length > 0
       ? [...enrichedDataWithScore].sort((a, b) => {
@@ -483,10 +482,6 @@
 <!-- Lighthouse Reports Table -->
 {#if isLoading}
   <section class="relative gap-6 scroll-mt-[72px] pt-0 items-start">
-    <h1 class="">
-      Prescription Medication Brand Websites: Performance and Accessibility
-      Analysis
-    </h1>
     <ArticleContext />
     <div class="text-center py-12">
       <p class="text-lg">Loading benchmark data...</p>
@@ -494,10 +489,6 @@
   </section>
 {:else if enrichedData && enrichedData.length > 0}
   <section class="relative scroll-mt-[72px] pt-0 items-start">
-    <h1 class="">
-      Prescription Medication Brand Websites: Performance and Accessibility
-      Analysis
-    </h1>
     <ArticleContext />
     <div class="w-full mb-12">
       <table
@@ -533,7 +524,14 @@
                 <span class="-ml-1">{sortDirection === "asc" ? "↑" : "↓"}</span>
               {/if}
             </th>
-            <th rowspan="2" class="">Reports<sup><a href="#reports-note" aria-label="Read about report dates and the Vis link">1</a></sup></th>
+            <th rowspan="2" class=""
+              >Reports<sup
+                ><a
+                  href="#reports-note"
+                  aria-label="Read about report dates and the Vis link">1</a
+                ></sup
+              ></th
+            >
             <th
               rowspan="2"
               class="cursor-pointer"
@@ -726,7 +724,12 @@
               tabindex="0"
               title="Confidence-adjusted readability (0–100) - title tag"
             >
-              READ_S<sup><a href="#readability-note" aria-label="Read about the READ_S calculation">2</a></sup>
+              READ_S<sup
+                ><a
+                  href="#readability-note"
+                  aria-label="Read about the READ_S calculation">2</a
+                ></sup
+              >
               {#if sortBy === "readScore"}
                 <span class="-ml-1">{sortDirection === "asc" ? "↑" : "↓"}</span>
               {/if}
@@ -1046,27 +1049,27 @@
     </div>
     <div class="w-full flex flex-col gap-4" aria-label="Table notes">
       <p id="reports-note" class="text-xs text-gray-600 scroll-mt-8">
-        <sup>1</sup> In the Reports column, <strong>Vis</strong> opens the live
-        Chrome User Experience Report (CrUX) visualization. It shows the data
-        currently available in that service, which may change over time; it does
-        not reproduce the snapshot used for this study. A visualization fixed to
-        the study's collection date is not provided. This link is included for
-        convenience and exploratory browsing. The linked Lighthouse and Pa11y
-        reports are saved outputs from the study audits and reflect the pages
-        as assessed on their respective audit dates. The CrUX values in this
-        table come from the study's saved dataset, not the live visualization.
+        <sup>1</sup> In the Reports column, <strong>Vis</strong> opens the live Chrome
+        User Experience Report (CrUX) visualization. It shows the data currently
+        available in that service, which may change over time; it does not reproduce
+        the snapshot used for this study. A visualization fixed to the study's collection
+        date is not provided. This link is included for convenience and exploratory
+        browsing. The linked Lighthouse and Pa11y reports are saved outputs from
+        the study audits and reflect the pages as assessed on their respective audit
+        dates. The CrUX values in this table come from the study's saved dataset,
+        not the live visualization.
       </p>
-    <div id="readability-note" class="scroll-mt-8">
-    <p class="text-xs text-gray-600">
-      <sup>2</sup> READ_S (confidence-adjusted readability, 0-100) combines
-      bounded Flesch Reading Ease and an inverted, normalized Gunning Fog score
-      (READ_S = 0.8 · FRE0-100 + 0.2 · FOG0-100). Because readability estimates
-      can be unstable when extracted text is sparse, we apply a word-count
-      confidence weight c(W) (0 at W ≤ 100, 1 at W ≥ 300) and shrink
-      low-confidence values toward READ_ref, defined as the median READ_S among
-      pages with W ≥ 300: READ_S = c(W) · READ_S + (1 - c(W)) · READ_ref.
-    </p>
-    </div>
+      <div id="readability-note" class="scroll-mt-8">
+        <p class="text-xs text-gray-600">
+          <sup>2</sup> READ_S (confidence-adjusted readability, 0-100) combines bounded
+          Flesch Reading Ease and an inverted, normalized Gunning Fog score (READ_S
+          = 0.8 · FRE0-100 + 0.2 · FOG0-100). Because readability estimates can be
+          unstable when extracted text is sparse, we apply a word-count confidence
+          weight c(W) (0 at W ≤ 100, 1 at W ≥ 300) and shrink low-confidence values
+          toward READ_ref, defined as the median READ_S among pages with W ≥ 300:
+          READ_S = c(W) · READ_S + (1 - c(W)) · READ_ref.
+        </p>
+      </div>
     </div>
   </section>
 {/if}
