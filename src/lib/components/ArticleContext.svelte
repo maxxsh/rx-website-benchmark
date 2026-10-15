@@ -5,7 +5,7 @@
   </p>
   <p class="citation">
     Shestov, M., Felix Brewer, C. Regulated medication information, accessible
-    web delivery? A cross-sectional evaluation of united states prescription
+    web delivery? A cross-sectional evaluation of United States prescription
     drug brand homepages. <cite>Univ Access Inf Soc 25, 128 (2026).</cite>
     <a href="https://doi.org/10.1007/s10209-026-01394-9">
       https://doi.org/10.1007/s10209-026-01394-9
